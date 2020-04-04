@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        come-togethe
+        COME TOGETHER MOFOS
       </h1>
       <h2 class="subtitle">
         Come Together website
