@@ -1,6 +1,35 @@
 
+// nuxt.config.js
+import blogs from './content/blogs.json'
+
 export default {
+  
   mode: 'universal',
+   /**
+   * Generate config
+   */
+  generate: {
+    routes: [].concat(blogs.map(blog => `/blog/${blog.slug}`))
+  },
+  /*
+   ** Build configuration
+   */
+  build: {
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {
+ 
+      // Add this to your build config
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        options: {
+          vue: true
+        }
+      })
+    }
+  },
   /*
   ** Headers of the page
   */

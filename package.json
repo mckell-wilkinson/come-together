@@ -8,10 +8,16 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "node content/index.js &amp;&amp; nux"
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.9",
+    "@webpack-cli/init": "^0.3.0",
+    "front-matter-markdown": "^0.4.4",
+    "frontmatter-markdown-loader": "^3.3.0",
     "nuxt": "^2.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
+  }
 }

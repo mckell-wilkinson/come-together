@@ -2,9 +2,12 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">
-        COME TOGETHER MOFOS
-      </h1>
+  <ul>
+    <li v-for="(blog, index) in blogList"
+      :key="index"> {{blog}}</li>
+  </ul>
+      
+    
       <h2 class="subtitle">
         Come Together website
       </h2>
@@ -14,7 +17,7 @@
           target="_blank"
           class="button--green"
         >
-          Documentation
+          Documenta
         </a>
         <a
           href="https://github.com/nuxt/nuxt.js"
@@ -31,20 +34,44 @@
 <script>
 import Logo from '~/components/Logo.vue'
 
-export default {
-  components: {
-    Logo
-  }
-}
+
 
 //Netlify identity widget
+
+// pages/index.vue
+import blogs from '~/content/blogs.json'
+ 
 export default {
-  head() {
+      components: {
+    Logo
+  },
+    head() {
     return {
       script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
     };
   },
-};
+  async asyncData({ app }) {
+    async function awaitImport(blog) {
+      const wholeMD = await import(`~/content/blog/${blog.slug}.md`)
+      return {
+        attributes: wholeMD.attributes,
+        link: blog.slug
+      }
+    }
+ 
+    const blogList = await Promise.all(
+      blogs.map(blog => awaitImport(blog))
+    ).then(res => {
+      return {
+        blogList: res
+      }
+    })
+ 
+    return blogList
+  }
+}
+
+
 </script>
 
 <style>
