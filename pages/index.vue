@@ -1,77 +1,35 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-  <ul>
-    <li v-for="(blog, index) in blogList"
-      :key="index"> {{blog}}</li>
-  </ul>
-      
-    
-      <h2 class="subtitle">
-        Come Together website
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documenta
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div>
+    <logo />
+    <h1 class="title">Nuxt.js & Netlify CMS Starter</h1>
+    <h2 class="subtitle">Truly fantastic. Sometimes I astound even myself.</h2>
+    <a href="https://github.com/xdesro/nuxt-netlify-cms-starter">GitHub</a>
+    <a href="http://i.ncredibly.online">Twitter</a>
+    <nuxt-link to="/blog">Blog</nuxt-link>
+    <div class="deploy-button">
+      <a
+        href="https://app.netlify.com/start/deploy?repository=https://github.com/xdesro/nuxt-netlify-cms-starter"
+      >
+        <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
+      </a>
     </div>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-
-
-
-//Netlify identity widget
-
-// pages/index.vue
-import blogs from '~/content/blogs.json'
- 
 export default {
-      components: {
+  components: {
     Logo
   },
-    head() {
+  head() {
     return {
-      script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
-    };
-  },
-  async asyncData({ app }) {
-    async function awaitImport(blog) {
-      const wholeMD = await import(`~/content/blog/${blog.slug}.md`)
-      return {
-        attributes: wholeMD.attributes,
-        link: blog.slug
-      }
+      script: [
+        { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
+      ]
     }
- 
-    const blogList = await Promise.all(
-      blogs.map(blog => awaitImport(blog))
-    ).then(res => {
-      return {
-        blogList: res
-      }
-    })
- 
-    return blogList
   }
 }
-
-
 </script>
 
 <style>
@@ -83,26 +41,27 @@ export default {
   align-items: center;
   text-align: center;
 }
-
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   display: block;
-  font-weight: 300;
-  font-size: 100px;
+  font-weight: bold;
+  font-size: 3.2rem;
   color: #35495e;
   letter-spacing: 1px;
 }
-
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
+  font-size: 2rem;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
 }
-
-.links {
-  padding-top: 15px;
+a {
+  font-weight: bold;
+  color: #526488;
+}
+.deploy-button {
+  margin-top: 1rem;
 }
 </style>
