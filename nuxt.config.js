@@ -18,7 +18,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   generate: {
-    fallback: true,
+    
     routes: function() {
       const fs = require('fs')
       return fs.readdirSync('./assets/content/blog').map(file => {
@@ -27,7 +27,8 @@ export default {
           payload: require(`./assets/content/blog/${file}`)
         }
       })
-    }
+    },
+    fallback: true,
   },
   /*
    ** Customize the progress-bar color
