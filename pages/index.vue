@@ -3,7 +3,7 @@
 
 <Header />
 
-Latest blogs - shows 3 if (if there are 3 to show)
+Latest blogs
     <ul>
       
       <!-- Limits number of blogposts displayed to three -->

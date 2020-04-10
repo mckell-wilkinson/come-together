@@ -1,8 +1,9 @@
 <template>
   <div>
+    <Header />
     <ul id="blog-list">
       <!-- Limits number of blogposts displayed to three -->
-      <li v-for="(blogPost, index) in blogPosts" :key="index">
+      <li class="blog-item" v-for="(blogPost, index) in blogPosts" :key="index">
         <img :src="blogPost.thumbnail" />
         <nuxt-link :to="`blog/${blogPost.slug}`">{{
           blogPost.title
@@ -10,22 +11,32 @@
         <p>{{ blogPost.description }}</p>
       </li>
     </ul>
-    <button v-on:click="moreBlogs(blogIncrementer)">More blogs</button>
-
-    {{ blogIncrementer }}
+    <button class="more-blogs" @click="moreBlogs(blogIncrementer)">
+      More blogs +
+    </button>
+    <Footer />
   </div>
 </template>
 <script>
+import Header from "~/components/Header.vue";
+import Footer from "~/components/Footer.vue";
+
 export default {
   data() {
     return {
-      blogIncrementer: 10
+      //used to
+      blogIncrementer: 10,
+      userScroll: 0
     };
+  },
+  components: {
+    Header,
+    Footer
   },
   computed: {
     blogPosts() {
       let blogPosts = this.$store.state.blogPosts;
-      //below will show three blog posts
+      //below will show 10 blog posts - more blog posts added on click using function moreBlogs
       let blogs = blogPosts.slice(0, 10);
       return blogs;
     }
@@ -41,10 +52,11 @@ export default {
         blogList.insertAdjacentHTML(
           "beforeend",
           `
-      
+      <li class="blog-item">
         <img src="${blogsNew[n].thumbnail}">
-        <a href="">${blogsNew[n].title}</a>
-        <p>${blogsNew[n].description}</p>  
+        <a href="blog/${blogsNew[n].slug}">${blogsNew[n].title}</a>
+        <p>b${blogsNew[n].description}</p>  
+        </li>
         
       `
         );
@@ -54,3 +66,28 @@ export default {
   }
 };
 </script>
+<style scoped>
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.blog-item {
+  animation: fadeIn 1s;
+}
+
+.more-blogs {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+</style>
