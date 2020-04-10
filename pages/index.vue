@@ -8,9 +8,10 @@ Latest blogs - shows 3 if (if there are 3 to show)
       
       <!-- Limits number of blogposts displayed to three -->
         <li v-for="(blogPost, index) in blogPosts" :key="index"> 
+          <img :src="blogPost.thumbnail">
         <nuxt-link :to="`blog/${blogPost.slug}`">{{blogPost.title}}</nuxt-link>
         <p>{{ blogPost.description }}</p>    
-        <p>{{ blogPost.thumbnail}} </p>
+
       </li>
      
     </ul>
