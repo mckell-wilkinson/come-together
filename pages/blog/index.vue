@@ -27,34 +27,30 @@ export default {
       let blogPosts = this.$store.state.blogPosts;
       //below will show three blog posts
       let blogs = blogPosts.slice(0, 10);
-      console.log(blogs);
       return blogs;
     }
   },
   methods: {
+    //this will add the next ten blogs on click of more blogs button
     moreBlogs(n) {
-
-      let blogPosts = this.$store.state.blogPosts;
-      let blogs = blogPosts.slice(0, n);
+      let blogPostsNew = this.$store.state.blogPosts;
+      let blogsNew = blogPostsNew.slice(0, n + 10);
       let blogList = document.getElementById("blog-list");
 
-      for (let i = 3; i < blogs.length; i++) {
+      for (n; n < blogsNew.length; n++) {
         blogList.insertAdjacentHTML(
           "beforeend",
           `
       
-        <img src="${blogs[i].thumbnail}">
-        <a href="">${blogs[i].title}</a>
-        <p>${blogs[i].description}</p>  
+        <img src="${blogsNew[n].thumbnail}">
+        <a href="">${blogsNew[n].title}</a>
+        <p>${blogsNew[n].description}</p>  
         
       `
         );
       }
       this.blogIncrementer = this.blogIncrementer + 10;
-      console.log(blogs)
-      return blogs;
     }
-  },
-
+  }
 };
 </script>
