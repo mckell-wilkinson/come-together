@@ -1,60 +1,73 @@
 <template>
   <div>
-    <logo />
-    <h1 class="title">Come Together</h1>
-    <nuxt-link to="/blog">Blog</nuxt-link>
 
+<Header />
+
+Latest blogs - shows 3 if (if there are 3 to show)
+    <ul>
+      
+      <!-- Limits number of blogposts displayed to three -->
+        <li v-for="(blogPost, index) in blogPosts" :key="index"> 
+        <nuxt-link :to="`blog/${blogPost.slug}`">{{blogPost.title}}</nuxt-link>
+        <p>{{ blogPost.description }}</p>    
+        <p>{{ blogPost.thumbnail}} </p>
+      </li>
+     
+    </ul>
+    <Footer />
   </div>
+
+  
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+
+
+import Header from "~/components/Header.vue";
+import Footer from "~/components/Footer.vue";
+
 export default {
-  components: {
-    Logo
+
+    data() {
+    return {
+      index: 0,
+    
+    };
   },
+  components: {
+    Header,
+    Footer
+  },
+  //pulls through blogposts
+  computed: {
+    blogPosts() {
+      let blogPosts = this.$store.state.blogPosts;
+      //below will show three blog posts
+      let blogs = blogPosts.slice(0,3);
+      return blogs;
+    }
+  },
+  methods: {
+
+    //used to limit number of blogposts
+    incrementInd(n) {
+      return n++
+    }
+  },
+
   head() {
     return {
       script: [
-        { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
+        { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: bold;
-  font-size: 3.2rem;
-  color: #35495e;
-  letter-spacing: 1px;
-  text-align: center;
-}
-.subtitle {
-  font-weight: 300;
-  font-size: 2rem;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-a {
-  font-weight: bold;
-  color: #526488;
-  text-align: center;
-}
-.deploy-button {
-  margin-top: 1rem;
+
+.hide {
+  display: none;
 }
 </style>

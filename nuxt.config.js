@@ -1,4 +1,5 @@
-  
+
+
 export default {
   mode: 'universal',
   /*
@@ -29,7 +30,10 @@ export default {
       })
     },
     routes: [
-      '/blog',
+      '/blog', 
+      '/about', 
+      '/events',
+  
     ],
     fallback: true,
   },
