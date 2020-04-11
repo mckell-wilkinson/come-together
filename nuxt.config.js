@@ -36,6 +36,7 @@ export default {
   
     ],
     fallback: true,
+    subFolders: false
   },
   /*
    ** Customize the progress-bar color
