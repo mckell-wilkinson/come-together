@@ -25,7 +25,7 @@ import Footer from "~/components/Footer.vue";
 export default {
   data() {
     return {
-      //used to
+      //used to show next ten blogs on click of moreBlogs
       blogIncrementer: 10
     };
   },
@@ -34,14 +34,6 @@ export default {
     Footer
   },
  
- function() {
-    console.log('test')
-      let blogPosts = this.$store.state.blogPosts;
-      //below will show 10 blog posts - more blog posts added on click using function moreBlogs
-      let blogs = blogPosts.slice(0, 10);
-      return blogs;
-  },
-  
   
   computed: {
     blogPosts() {
