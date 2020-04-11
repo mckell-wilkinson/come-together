@@ -35,7 +35,7 @@ export default {
     Footer
   },
   beforeCreate: function() {
-    
+    console.log('test')
       let blogPosts = this.$store.state.blogPosts;
       //below will show 10 blog posts - more blog posts added on click using function moreBlogs
       let blogs = blogPosts.slice(0, 10);
@@ -45,10 +45,12 @@ export default {
   
   computed: {
     blogPosts() {
+      console.log('hello');
       let blogPosts = this.$store.state.blogPosts;
       //below will show 10 blog posts - more blog posts added on click using function moreBlogs
       let blogs = blogPosts.slice(0, 10);
       return blogs;
+      
     }
   },
   methods: {
