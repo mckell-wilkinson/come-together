@@ -34,7 +34,8 @@ export default {
     Header,
     Footer
   },
-  beforeCreate: function() {
+ 
+ function() {
     console.log('test')
       let blogPosts = this.$store.state.blogPosts;
       //below will show 10 blog posts - more blog posts added on click using function moreBlogs
