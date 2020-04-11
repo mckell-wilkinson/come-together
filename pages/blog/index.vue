@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <div class="test">Hello</div>
     <ul id="blog-list">
       <!-- Limits number of blogposts displayed to three -->
       <li class="blog-item" v-for="(blogPost, index) in blogPosts" :key="index">
@@ -90,4 +91,10 @@ export default {
   cursor: pointer;
 }
 
+.test {
+  color: red;
+}
+
 </style>
+
+
