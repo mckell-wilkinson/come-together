@@ -3,7 +3,7 @@
 
 <Header />
 
-Latest blogs
+Homepage
     <ul>
       
       <!-- Limits number of blogposts displayed to three -->
