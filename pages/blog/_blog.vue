@@ -15,8 +15,7 @@ export default {
       }
   },
     
-  computed: {
-    blogPosts() {
+ beforeCreate: function() {
       console.log('hello');
       let blogPosts = this.$store.state.blogPosts;
       console.log(blogPosts);
@@ -25,6 +24,6 @@ export default {
       return blogs;
       
     }
-  },
 }
+
 </script>
