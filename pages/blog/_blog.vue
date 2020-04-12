@@ -15,7 +15,7 @@ export default {
       }
   },
     
- beforeCreate: function() {
+created: function() {
       console.log('hello');
       let blogPosts = this.$store.state.blogPosts;
       console.log(blogPosts);
