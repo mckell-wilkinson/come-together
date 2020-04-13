@@ -1,4 +1,7 @@
 
+import { routeMap, otherRoutes } from './config/generate';
+import path from 'path';
+import glob from 'glob';
 
 export default {
   mode: 'universal',
@@ -34,8 +37,7 @@ export default {
       '/blog', 
       '/about', 
       '/events',
-      '/blog/:blog'
-
+      otherRoutes.concat(getDynamicPaths(routeMap))
 
     ],
   
@@ -73,4 +75,20 @@ export default {
      */
     extend(config, ctx) {}
   }
+}
+
+/**
+ * Create an array of URLs from a list of files
+ * @param {*} urlFilepathTable
+ */
+
+function getDynamicPaths(urlFilepathTable) {
+  return [].concat(
+    ...Object.keys(urlFilepathTable).map((url) => {
+      const filepathGlob = urlFilepathTable[url]
+      return glob.sync(filepathGlob, { cwd: 'content' }).map((filepath) => {
+        return `${url}/${path.basename(filepath, '.md')}`
+      })
+    })
+  )
 }
