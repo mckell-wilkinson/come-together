@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 
 
 export default {
@@ -23,12 +23,7 @@ export default {
   generate: {
     subFolders: false,
     fallback: true,
-    // routes() {
-    //   return axios.get('./assets/content/blog')
-    //   .then((res) => {
-    //     return res.data.map(())
-    //   });
-    // }
+ 
  
     routes: [
       '/blog', 
