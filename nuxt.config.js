@@ -34,7 +34,7 @@ export default {
       '/blog', 
       '/about', 
       '/events',
-      '/blog/_blog.vue'
+      '/blog/:blog'
 
 
     ],
