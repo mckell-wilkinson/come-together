@@ -14,6 +14,8 @@ export default {
         blogPost: await require(`~/assets/content/blog/${params.blog}.json`)
       }
   },
+
+  
     
 
 }

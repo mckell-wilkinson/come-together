@@ -1,7 +1,14 @@
 
 
+  let dynamicRoutes = () => {
+  return new Promise(resolve => {
+    resolve(this.$store.state.blogPosts.map(blog => `blog/${blog.slug}`))
+  })
+   }
+
 
 export default {
+
   mode: 'universal',
   /*
    ** Headers of the page
@@ -27,15 +34,19 @@ export default {
       '/blog', 
       '/about', 
       '/events',
+      dynamicRoutes,
       function() {
-        const fs = require('fs')
+        const fs = require('fs');
         return fs.readdirSync('./assets/content/blog').map(file => {
           return {
             route: `/blog/${file.slice(2, -5)}`,
             payload: require(`./assets/content/blog/${file}`)
           }
         })
+       
       },
+
+     
     ],
   
   },
