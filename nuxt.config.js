@@ -1,10 +1,4 @@
-
-
-  let dynamicRoutes = () => {
-  return new Promise(resolve => {
-    resolve(this.$store.state.blogPosts.map(blog => `blog/${blog.slug}`))
-  })
-   }
+import axios from 'axios';
 
 
 export default {
@@ -29,17 +23,23 @@ export default {
   generate: {
     subFolders: false,
     fallback: true,
+    // routes() {
+    //   return axios.get('./assets/content/blog')
+    //   .then((res) => {
+    //     return res.data.map(())
+    //   });
+    // }
  
     routes: [
       '/blog', 
       '/about', 
       '/events',
-      dynamicRoutes,
+
       function() {
         const fs = require('fs');
         return fs.readdirSync('./assets/content/blog').map(file => {
           return {
-            route: `/blog/${file.slice(2, -5)}`,
+            route: `/blog/${file}`,
             payload: require(`./assets/content/blog/${file}`)
           }
         })
