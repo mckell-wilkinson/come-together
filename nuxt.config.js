@@ -34,6 +34,11 @@ export default {
       '/blog', 
       '/about', 
       '/events',
+      '/blog/2020-04-11-blog-2',
+      '/blog/2020-04-11-blog-3',
+      '/blog/2020-04-11-blog'
+
+
     ],
   
    
