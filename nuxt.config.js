@@ -32,13 +32,12 @@ export default {
       })
     },
     routes: [
-      '/ blog', 
+      '/blog', 
       '/about', 
       '/events',
-      './assets/content/blog/**.json'
-      // ...fg.sync(['./assets/content/blog/**.json', './app/content/pages/**.json']).map(url => ({
-      //   route: url.replace(/^.\/assets\/content(\/pages)?|.json$/gi, ''),
-      //   payload: require(url),
+      ...fg.sync(['./assets/content/blog/**.json']).map(url => ({
+        route: url.replace(/^.\/assets\/content(\/blog)?|.json$/gi, ''),
+        payload: require(url),
 
     ],
   
