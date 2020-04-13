@@ -4,12 +4,12 @@
     <div class="test">Hello</div>
     <ul id="blog-list">
       <!-- Limits number of blogposts displayed to three -->
-      <li class="blog-item" v-for="(blogPost, index) in blogPosts" :key="index">
-        <img :src="blogPost.thumbnail" />
-        <nuxt-link :to="`blog/${blogPost.slug}`">{{
-          blogPost.title
+      <li class="blog-item" v-for="(blogs, index) in blogPosts" :key="index">
+        <img :src="blogs.thumbnail" />
+        <nuxt-link :to="`blog/${blogs.slug}`">{{
+          blogs.title
         }}</nuxt-link>
-        <p>{{ blogPost.description }}</p>
+        <p>{{ blogs.description }}</p>
       </li>
     </ul>
     <button class="more-blogs" @click="moreBlogs(blogIncrementer)">
@@ -23,6 +23,7 @@ import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
 
 export default {
+  
   data() {
     return {
       //used to show next ten blogs on click of moreBlogs
@@ -34,18 +35,16 @@ export default {
     Footer
   },
  
-  
   computed: {
     blogPosts() {
-      console.log('hello');
       let blogPosts = this.$store.state.blogPosts;
-      console.log(blogPosts);
       //below will show 10 blog posts - more blog posts added on click using function moreBlogs
       let blogs = blogPosts.slice(0, 10);
       return blogs;
       
     }
   },
+
   methods: {
     //this will add the next ten blogs on click of more blogs button
     moreBlogs(n) {
@@ -70,6 +69,7 @@ export default {
     }
   }
 };
+
 </script>
 <style scoped>
 
