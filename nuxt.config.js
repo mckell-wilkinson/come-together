@@ -22,26 +22,22 @@ export default {
   generate: {
     subFolders: false,
     fallback: true,
-    routes: function() {
-      const fs = require('fs')
-      return fs.readdirSync('./assets/content/blog').map(file => {
-        return {
-          route: `/blog/${file.slice(2, -5)}`,
-          payload: require(`./assets/content/blog/${file}`)
-        }
-      })
-    },
+ 
     routes: [
       '/blog', 
       '/about', 
       '/events',
-      ...fg.sync(['./assets/content/blog/**.json']).map(url => ({
-        route: url.replace(/^.\/assets\/content(\/blog)?|.json$/gi, ''),
-        payload: require(url),
-
+      function() {
+        const fs = require('fs')
+        return fs.readdirSync('./assets/content/blog').map(file => {
+          return {
+            route: `/blog/${file.slice(2, -5)}`,
+            payload: require(`./assets/content/blog/${file}`)
+          }
+        })
+      },
     ],
   
-   
   },
   /*
    ** Customize the progress-bar color
