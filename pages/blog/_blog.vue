@@ -14,6 +14,16 @@ export default {
         blogPost: await require(`~/assets/content/blog/${params.blog}.json`)
       }
   },
+
+    computed: {
+    blogPost() {
+      let blogPosts = this.$store.state.blogPosts;
+      //below will show 10 blog posts - more blog posts added on click using function moreBlogs
+      let blogs = blogPosts.slice(0, 10);
+      return blogs;
+      
+    }
+  },
     
 
 }
