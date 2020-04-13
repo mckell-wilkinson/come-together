@@ -1,5 +1,4 @@
 
-import { routeMap, otherRoutes } from './config/generate';
 
 
 export default {
