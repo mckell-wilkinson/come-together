@@ -1,3 +1,14 @@
+function test() {
+               
+  const fs = require('fs');
+  return fs.readdirSync('./assets/content/blog').map(file => {
+    return `/blog/${file.slice(0, -5)}`
+    
+  });
+} 
+
+console.log(test());
+
 
 
 export default {
@@ -31,9 +42,7 @@ export default {
                
         const fs = require('fs');
         return fs.readdirSync('./assets/content/blog').map(file => {
-         
-              `/blog/${file.slice(0, -5)}`
-            
+          return `/blog/${file.slice(0, -5)}`
           
         });
       },     
@@ -41,7 +50,9 @@ export default {
       'events',
       'about',
       'blog'
-    ]
+    ],
+
+  
   },
   /*
    ** Customize the progress-bar color
