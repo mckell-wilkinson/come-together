@@ -1,13 +1,13 @@
 
-  //  function test() {
-  //   const fs = require("fs");
-  //   let blogRoutes = fs.readdirSync("./assets/content/blog").map(file => {
-  //     return `"/blog/${file.slice(0, -5)}"`
-  //   });
-  //   return `routes: [${blogRoutes}, "/events", "/about", "/blog"]`
-  // }
+   function test() {
+    const fs = require("fs");
+    let blogRoutes = fs.readdirSync("./assets/content/blog").map(file => {
+      return `"/blog/${file.slice(0, -5)}"`
+    });
+    return `routes: [${blogRoutes}, "/events", "/about", "/blog"]`
+  }
 
-  // console.log(test());
+  console.log(test());
 
 export default {
   mode: "universal",
@@ -71,6 +71,12 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend (config, { isDev, isClient }) {
+ 
+      config.node = {
+           fs: 'empty'
+       }
+
+   }
   }
 };
