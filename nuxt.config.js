@@ -2,9 +2,9 @@
   //  function test() {
   //   const fs = require("fs");
   //   let blogRoutes = fs.readdirSync("./assets/content/blog").map(file => {
-  //     return `"blog/${file.slice(0, -5)}"`
+  //     return `"/blog/${file.slice(0, -5)}"`
   //   });
-  //   return `routes: [${blogRoutes}, "events", "about", "blog"]`
+  //   return `routes: [${blogRoutes}, "/events", "/about", "/blog"]`
   // }
 
   // console.log(test());
@@ -34,9 +34,9 @@ export default {
     function() {
       const fs = require("fs");
       let blogRoutes = fs.readdirSync("./assets/content/blog").map(file => {
-        return `"blog/${file.slice(0, -5)}"`
+        return `"/blog/${file.slice(0, -5)}"`
       });
-      return `routes: [${blogRoutes}, "events", "about", "blog"]`
+      return `routes: [${blogRoutes}, "/events", "/about", "/blog"]`
     }
    
   },
