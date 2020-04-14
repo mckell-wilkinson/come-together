@@ -1,16 +1,15 @@
 
-   function test() {
-    const fs = require("fs");
-    let blogRoutes = fs.readdirSync("./assets/content/blog").map(file => {
-      return `"/blog/${file.slice(0, -5)}"`
-    });
-    return `routes: [${blogRoutes}, "/events", "/about", "/blog"]`
-  }
+  //  function test() {
+  //   const fs = require("fs");
+  //   let blogRoutes = fs.readdirSync("./assets/content/blog").map(file => {
+  //     return `"/blog/${file.slice(0, -5)}"`
+  //   });
+  //   return `routes: [${blogRoutes}, "/events", "/about", "/blog"]`
+  // }
 
-  console.log(test());
+  // console.log(test());
 
 export default {
-  
   mode: "universal",
   /*
    ** Headers of the page
@@ -32,12 +31,13 @@ export default {
     subFolders: false,
     fallback: true,
 
-    function() {
+    routes: function() {
+      console.log()
       const fs = require("fs");
       let blogRoutes = fs.readdirSync("./assets/content/blog").map(file => {
         return `"/blog/${file.slice(0, -5)}"`
       });
-      return `routes: [${blogRoutes}, "/events", "/about", "/blog"]`
+      return `[${blogRoutes}, "/events", "/about", "/blog"]`
     },
     // routes: ["/blog/2020-04-11-blog-2", "/blog/2020-04-11-blog-3", "/blog/2020-04-11-blog", "/events", "/about", "/blog"],
    
@@ -72,12 +72,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend (config, { isDev, isClient }) {
- 
-      config.node = {
-           fs: 'empty'
-       }
-
-   }
+    extend(config, ctx) {}
   }
 };
