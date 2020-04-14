@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.9",
     "@webpack-cli/init": "^0.3.0",
+    "axios": "^0.19.2",
     "front-matter-markdown": "^0.4.4",
     "frontmatter-markdown-loader": "^3.3.0",
     "nuxt": "^2.0.0"
@@ -21,7 +22,6 @@
     "webpack-cli": "^3.3.11",
     "@nuxtjs/markdownit": "^1.2.6",
     "nuxt": "^2.11.0"
-    
   },
   "repository": {
     "type": "git",

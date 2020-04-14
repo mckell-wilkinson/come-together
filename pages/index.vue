@@ -24,8 +24,10 @@ Homepage
 <script>
 
 
+
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
+
 
 export default {
 
@@ -43,11 +45,21 @@ export default {
   computed: {
     blogPosts() {
       let blogPosts = this.$store.state.blogPosts;
+      // console.log(blogPosts)
       //below will show three blog posts
       let blogs = blogPosts.slice(0,3);
       return blogs;
     }
   },
+
+  //     async asyncData() {
+ 
+  //     let allBlogs = await ("~/assets/content/blog");
+  //     return {
+  //       route: `/blog/${allBlogs.slug}`
+  //     }
+  // },
+
   methods: {
 
     //used to limit number of blogposts
@@ -64,6 +76,7 @@ export default {
     };
   }
 };
+
 </script>
 
 <style>

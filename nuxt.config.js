@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 
 
 export default {
@@ -23,12 +23,27 @@ export default {
   generate: {
     subFolders: false,
     fallback: true,
- 
+
+    routes () {
+      return axios.get('/assets/content/blog')
+        .then((res) => {
+          return res.data.map((blog) => {
+            return '/blog/' + blog.slug
+          })
+        })
+    },
+
  
     routes: [
       {
-        path:"/blog/:blog",
-        name:"blog-blog"
+        path:"/",
+        name:"home"
+      },
+
+
+      {
+        path:"/blog",
+        name:"blog"
       },
       {
         path:"/about",
@@ -37,12 +52,19 @@ export default {
       {
         path:"/events",
         name:"events"
+      },
+      {
+        path: "http://localhost:3000/blog/2020-04-11-blog-2",
+        name: "blog-2"
       }
 
       
 
+    
+
+
       // function() {
-      //   console.log('test')
+       
       //   const fs = require('fs');
       //   return fs.readdirSync('./assets/content/blog').map(file => {
       //     return {

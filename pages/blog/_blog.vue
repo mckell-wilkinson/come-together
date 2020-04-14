@@ -6,7 +6,9 @@
   </article>
 </template>
 <script>
+
 export default {
+  
   async asyncData({ params, payload }) {
     if (payload) return { blogPost: payload }
     else
@@ -15,9 +17,12 @@ export default {
       }
   },
 
-  
+                 
     
+  }  
 
-}
+  
+
+
 
 </script>
