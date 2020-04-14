@@ -1,13 +1,4 @@
 
-  //  function test() {
-  //   const fs = require("fs");
-  //   let blogRoutes = fs.readdirSync("./assets/content/blog").map(file => {
-  //     return `"/blog/${file.slice(0, -5)}"`
-  //   });
-  //   return `routes: [${blogRoutes}, "/events", "/about", "/blog"]`
-  // }
-
-  // console.log(test());
 
 export default {
   mode: "universal",
@@ -31,14 +22,7 @@ export default {
     subFolders: false,
     fallback: true,
 
-    // function() {
-    //   const fs = require("fs");
-    //   let blogRoutes = fs.readdirSync("./assets/content/blog").map(file => {
-    //     return `"/blog/${file.slice(0, -5)}"`
-    //   });
-    //   return `routes: [${blogRoutes}, "/test"]`
-    // },
-    // routes: ["/blog/2020-04-11-blog-2", "/blog/2020-04-11-blog-3", "/blog/2020-04-11-blog", "/events", "/about", "/blog"],
+
     routes: function() {
       const fs = require('fs');
       const path = require('path');
