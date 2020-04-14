@@ -42,14 +42,19 @@ export default {
                
         const fs = require('fs');
         return fs.readdirSync('./assets/content/blog').map(file => {
-          return `/blog/${file.slice(0, -5)}`
+          return `blog/${file.slice(0, -5)}`
           
         });
       },     
       
       'events',
       'about',
-      'blog'
+      'blog',
+      'blog/2020-04-11-blog-2',
+      'blog/2020-04-11-blog-3',
+      'blog/2020-04-11-blog'
+
+
     ],
 
   
