@@ -37,7 +37,8 @@ export default {
         return `"/blog/${file.slice(0, -5)}"`
       });
       return `routes: [${blogRoutes}, "/events", "/about", "/blog"]`
-    }
+    },
+    routes: ["/blog/2020-04-11-blog-2", "/blog/2020-04-11-blog-3", "/blog/2020-04-11-blog", "/events", "/about", "/blog"],
    
   },
   /*
