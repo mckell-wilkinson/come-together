@@ -1,66 +1,38 @@
-function test() {
-               
-  const fs = require('fs');
-  return fs.readdirSync('./assets/content/blog').map(file => {
-    return `/blog/${file.slice(0, -5)}`
-    
-  });
-} 
-
-console.log(test());
-
-
 
 export default {
-
-  mode: 'universal',
+  mode: "universal",
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.npm_package_name || "",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
+        hid: "description",
+        name: "description",
+        content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   generate: {
     subFolders: false,
     fallback: true,
 
-   
- 
-    routes: [
-
-     
-      
-      'events',
-      'about',
-      'blog',
-      function() {
-               
-        const fs = require('fs');
-        return fs.readdirSync('./assets/content/blog').map(file => {
-          return `"blog/${file.slice(0, -5)}",`
-          
-        });
-      }
-
-
-    ]
-
-  
+    // routes: function() {
+    //   const fs = require("fs");
+    //   return fs.readdirSync("./assets/content/blog").map(file => {
+    //     return `blog/${file.slice(0, -5)}`;
+    //   });
+    // },
+    routes: ["event", "blog", "about"]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: "#fff" },
   /*
    ** Global CSS
    */
@@ -76,7 +48,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/markdownit'],
+  modules: ["@nuxtjs/markdownit"],
   markdownit: {
     injected: true
   },
@@ -89,4 +61,4 @@ export default {
      */
     extend(config, ctx) {}
   }
-}
+};
