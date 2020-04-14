@@ -29,17 +29,29 @@ export default {
       '/blog', 
       '/about', 
       '/events',
+      '/blog/:blog',
 
       function() {
+        console.log('test')
         const fs = require('fs');
         return fs.readdirSync('./assets/content/blog').map(file => {
           return {
-            route: `/blog/${file}`,
+            route: `/blog/${file.slice(0, -5)}`,
             payload: require(`./assets/content/blog/${file}`)
           }
         })
        
       },
+      // function() {
+      //   const fs = require('fs');
+      //   return fs.readdirSync('./assets/content/blog').map(file => {
+      //     return {
+      //       route: `/blog/${file.slice(2, -5)}`,
+      //       payload: require(`./assets/content/blog/${file}`)
+      //     }
+      //   })
+       
+      // },
 
      
     ],
