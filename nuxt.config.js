@@ -31,11 +31,10 @@ export default {
                
         const fs = require('fs');
         return fs.readdirSync('./assets/content/blog').map(file => {
-          return {
-            routes: [
+         
               `/blog/${file.slice(0, -5)}`
-            ]
-          }
+            
+          
         });
       },     
       
