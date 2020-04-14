@@ -1,4 +1,17 @@
-import axios from 'axios';
+
+
+      function test() {
+       
+        const fs = require('fs');
+        console.log(fs);
+        return fs.readdirSync('./assets/content/blog').map(blog => {
+         console.log(`/blog/${blog.slice(0)}`);
+          
+        })
+       
+      }
+
+      test();
 
 
 export default {
@@ -23,68 +36,13 @@ export default {
   generate: {
     subFolders: false,
     fallback: true,
-
-    routes () {
-      return axios.get('/assets/content/blog')
-        .then((res) => {
-          return res.data.map((blog) => {
-            return '/blog/' + blog.slug
-          })
-        })
-    },
-
  
     routes: [
-      {
-        path:"/",
-        name:"home"
-      },
 
-
-      {
-        path:"/blog",
-        name:"blog"
-      },
-      {
-        path:"/about",
-        name:"about"
-      },
-      {
-        path:"/events",
-        name:"events"
-      },
-      {
-        path: "http://localhost:3000/blog/2020-04-11-blog-2",
-        name: "blog-2"
-      }
-
-      
-
-    
-
-
-      // function() {
-       
-      //   const fs = require('fs');
-      //   return fs.readdirSync('./assets/content/blog').map(file => {
-      //     return {
-      //       route: `/blog/${file.slice(0, -5)}`,
-      //       payload: require(`./assets/content/blog/${file}`)
-      //     }
-      //   })
-       
-      // },
-      // function() {
-      //   const fs = require('fs');
-      //   return fs.readdirSync('./assets/content/blog').map(file => {
-      //     return {
-      //       route: `/blog/${file.slice(2, -5)}`,
-      //       payload: require(`./assets/content/blog/${file}`)
-      //     }
-      //   })
-       
-      // },
-
+      "/blog/2020-04-11-blog-2",
+      "blog",
+      "events",
+      "event"
      
     ],
   
@@ -122,3 +80,5 @@ export default {
     extend(config, ctx) {}
   }
 }
+
+
