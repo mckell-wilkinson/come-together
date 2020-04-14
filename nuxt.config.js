@@ -38,22 +38,22 @@ export default {
  
     routes: [
 
-      function() {
-               
-        const fs = require('fs');
-        return fs.readdirSync('./assets/content/blog').map(file => {
-          return `blog/${file.slice(0, -5)}`
-          
-        });
-      },     
+     
       
       'events',
       'about',
       'blog',
+      function() {
+               
+        const fs = require('fs');
+        return fs.readdirSync('./assets/content/blog').map(file => {
+          return `"blog/${file.slice(0, -5)}",`
+          
+        });
+      }
 
 
-
-    ],
+    ]
 
   
   },
