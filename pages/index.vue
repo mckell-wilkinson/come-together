@@ -1,9 +1,6 @@
 <template>
   <div>
-
 <Header />
-
-Homepage
     <ul>
       
       <!-- Limits number of blogposts displayed to three -->
@@ -13,6 +10,7 @@ Homepage
         <p>{{ blogPost.description }}</p>    
 
       </li>
+
      
     </ul>
     <Footer />
@@ -22,8 +20,6 @@ Homepage
 </template>
 
 <script>
-
-
 
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
@@ -40,25 +36,20 @@ export default {
   components: {
     Header,
     Footer
+    
   },
   //pulls through blogposts
   computed: {
     blogPosts() {
       let blogPosts = this.$store.state.blogPosts;
-      // console.log(blogPosts)
       //below will show three blog posts
       let blogs = blogPosts.slice(0,3);
       return blogs;
-    }
+    },
+
+
   },
 
-  //     async asyncData() {
- 
-  //     let allBlogs = await ("~/assets/content/blog");
-  //     return {
-  //       route: `/blog/${allBlogs.slug}`
-  //     }
-  // },
 
   methods: {
 
@@ -74,6 +65,11 @@ export default {
         { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
       ]
     };
+  },
+  mounted: function() {
+
+
+    
   }
 };
 

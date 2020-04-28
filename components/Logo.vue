@@ -1,6 +1,8 @@
 <template>
 
-<!-- logo to go here -->
+<div>
+  <img src="/img/logo.svg" alt="">
+</div>
 </template>
 <style>
 .NuxtLogo {
