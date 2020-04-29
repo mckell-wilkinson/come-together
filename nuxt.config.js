@@ -1,5 +1,3 @@
-
-
 export default {
   mode: "universal",
   /*
@@ -16,24 +14,24 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+    {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Montserrat:wght@500;700&display=swap'}
+  ]
   },
   generate: {
     subFolders: false,
     fallback: true,
 
-
     routes: function() {
-      const fs = require('fs');
-      const path = require('path');
-      return fs.readdirSync('./assets/content/blog').map(file => {
+      const fs = require("fs");
+      const path = require("path");
+      return fs.readdirSync("./assets/content/blog").map(file => {
         return {
           route: `/blog/${path.parse(file).name}`, // Return the slug
-          payload: require(`./assets/content/blog/${file}`),
+          payload: require(`./assets/content/blog/${file}`)
         };
       });
     }
-   
   },
   /*
    ** Customize the progress-bar color
