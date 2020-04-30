@@ -73,10 +73,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 .insta {
   margin: 6em auto;
+
 }
 
 .insta > ul > li {
@@ -129,7 +130,7 @@ li:last-child {
 @media only screen and (min-width: 900px) {
 
     .insta > ul > li {
-    width: 33%;
+    width: 33.333%;
 
 }
 
@@ -142,10 +143,12 @@ li:last-child {
 }
 .insta > ul > li:nth-child(3n + 3) { 
  padding: 0.5em 0 0.5em 0.5em;
-}
-
-
 
 }
+
+
+
+}
+
 
 </style>

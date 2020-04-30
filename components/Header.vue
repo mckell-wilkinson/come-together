@@ -1,19 +1,24 @@
 <template>
   <div class="header-container">
-    <ul>
-      <li>
-        <Logo />
-      </li>
-      <li class="intro-header-list">
-        <h2 class="intro-header">
-          We’re an art collective based in Manchester. Our main objective is to bring people together through music and the arts. 
-        </h2>
-      </li>
+    <Logo />
+    <div class="content">
+      <ul>
+        <li>
+          <h1 class="come-together-header">Come Together Collective</h1>
+        </li>
+        <li class="intro-header-list">
+          <div class="float-right">
+            <h2 class="intro-header">
+              We’re an art collective based in Manchester. Our main objective is, as the name suggests, to bring people together.
+            </h2>
+          </div>
+        </li>
 
-      <li class="hamburger-container">
-        <img class="hamburger" src="/img/menu.svg" alt="Hamburger menu" />
-      </li>
-    </ul>
+        <li class="hamburger-container">
+          <img class="hamburger" src="/img/menu.svg" alt="Hamburger menu" />
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -27,13 +32,13 @@ export default {
 };
 </script>
 
-<style>
-.header-container > ul {
+<style scoped>
+.header-container > .content > ul {
   display: inline-flex;
   list-style-type: none;
   justify-content: space-between;
   padding: 0;
-  margin-top: 30px;
+  margin-top: 55px;
 }
 
 .hamburger {
@@ -41,22 +46,15 @@ export default {
   float: right;
 }
 
-  h1.come-together-header,
-  .intro-header {
-    display: none;
-  }
-
+h1.come-together-header,
+.intro-header {
+  display: none;
+}
 
 @media only screen and (min-width: 1024px) {
-  
-
-    h1.come-together-header,
+  h1.come-together-header,
   .intro-header {
     display: block;
-  }
-  .header-container > ul > li {
-    justify-content: space-between;
-    align-content: flex-end;
   }
 
   .hamburger-container {
@@ -67,21 +65,19 @@ export default {
     font-size: 0.6em;
   }
 
-
   h1.come-together-header,
   .intro-header {
     text-align: left;
     padding: 0;
     margin: 0;
   }
-    .intro-header {
-    font-size: 0.8em;
-    transform: translateY(35px);
-    text-align: right;
-    
+  .intro-header {
+    font-size: 16px;
+  }
+
+  .float-right {
+    width: 86%;
+    float: right;
   }
 }
-
-
-
 </style>

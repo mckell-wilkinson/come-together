@@ -1,17 +1,11 @@
 <template>
 
 
-<div class="logo-container">
-  <ul>
-    <li>
-  <img class="appear logo" src="/img/logo.svg" alt="">
-   <h1 class="come-together-header">Come Together Collective</h1>
-    </li>
- 
-  </ul>
 
-  
-  </div>
+  <img class="appear logo" src="/img/logo.svg" alt="">
+
+
+
 
 </template>
 <style scoped>
@@ -22,7 +16,10 @@
 
 .logo {
   width: 50px;
-  float: left;
+  position: absolute;
+  left: 44px;
+  top: 39px;
+
 }
 
 .logo-container > ul >li {
@@ -32,7 +29,7 @@
 @media only screen and (min-width: 1024px) {
 
   .logo {
-    width: 100px;
+    width: 70px;
   }
 
 .logo-container > ul >li {

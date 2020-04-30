@@ -6,6 +6,7 @@
 
 <style>
 
+
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +31,7 @@ h5 {
 }
 
 .content {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -56,6 +57,10 @@ h5 {
   body {
     font-size: 24px;
   }
+
+    .content {
+    width: 75%;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -64,6 +69,7 @@ h5 {
     font-size: 28px;
   }
 
+
 }
 
 @media only screen and (min-width: 1400px) {
@@ -71,6 +77,14 @@ h5 {
   body {
     font-size: 32px;
   }
+
+      .content {
+    width: 80%;
+  }
+
+  /* .content {
+    width: 78%;
+  } */
 
 }
 

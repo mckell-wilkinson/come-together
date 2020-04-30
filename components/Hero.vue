@@ -1,12 +1,12 @@
 <template>
   <div class="hero">
+    <Header />
     <div class="content">
-      <Header />
       <h1 class="come-together">Come Together Collective</h1>
+       <img class="roundel" src="/img/roundel.svg" alt="" />
       <h2 class="intro">
         We’re an art collective based in Manchester. Our main objective is to bring people together through music and the arts. 
       </h2>
-      <img class="roundel" src="/img/roundel.svg" alt="" />
       <div class="welcome-container">
         <img class="welcome" src="/img/welcome.svg" alt="" />
       </div>
@@ -49,13 +49,17 @@ h2 {
 
 .roundel {
   margin: 0 auto;
-  padding: 4em 0;
+  padding: 2em 0;
   width: 80%;
   display: block;
 }
 
 .welcome-container {
   display: none;
+}
+
+.intro {
+  padding-bottom: 4em;
 }
 
 @media only screen and (min-width: 400px) {
@@ -94,7 +98,7 @@ h2 {
 @media only screen and (min-width: 1024px) {
 
   .roundel {
-  margin: 40vh auto 0;
+  margin: 30vh auto 0;
   transform: translateY(-40%);
   padding: 0;
 
@@ -119,6 +123,7 @@ h2 {
 .roundel {
   width: 30%;
 }
+
   .welcome {
 
     bottom: -63px;
