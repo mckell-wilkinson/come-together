@@ -104,5 +104,23 @@ h5 {
 
 }
 
+@media only screen and (min-width: 2000px) {
+
+  body {
+    font-size: 40px;
+  }
+
+}
+
+@media only screen and (min-width: 3000px) {
+
+  body {
+    font-size: 60px;
+  }
+
+}
+
+
+
 
 </style>

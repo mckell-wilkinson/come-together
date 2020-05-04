@@ -80,4 +80,22 @@ h1.come-together-header,
     float: right;
   }
 }
+
+
+@media only screen and (min-width: 2000px) {
+
+  .intro-header {
+    font-size: 24px;
+  }
+
+}
+
+@media only screen and (min-width: 3000px) {
+
+  .intro-header {
+    font-size: 30px;
+  }
+
+}
+
 </style>

@@ -16,7 +16,7 @@
 
 .logo {
   width: 50px;
-  position: absolute;
+  position: fixed;
   left: 44px;
   top: 39px;
 
@@ -52,6 +52,14 @@
   100% {
     opacity: 1;
   }
+}
+
+@media only screen and (min-width: 3000px) {
+
+  .logo {
+    width: 100px;
+  }
+
 }
 
 

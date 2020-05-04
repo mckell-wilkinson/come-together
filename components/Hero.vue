@@ -8,7 +8,7 @@
         We’re an art collective based in Manchester. Our main objective is to bring people together through music and the arts. 
       </h2>
       <div class="welcome-container">
-        <img class="welcome" src="/img/welcome.svg" alt="" />
+        <img class="welcome" id="welcome" src="/img/welcome.svg" alt="" />
       </div>
     </div>
   </div>
@@ -17,11 +17,32 @@
 <script>
 import Header from "~/components/Header.vue";
 
+
 export default {
   components: {
     Header
+  },
+  created(){
+
+    //allows window to exist
+    if (process.browser){
+
+      //rotate welcome icon on scroll 
+      window.document.onscroll = function () {
+    scrollRotate();
+};
+
+function scrollRotate() {
+    let image = document.getElementById("welcome");
+    image.style.transform = "rotate(-" + window.pageYOffset/2.5 + "deg)";
+}
+      
+    }
   }
 };
+
+
+
 </script>
 
 <style scoped>

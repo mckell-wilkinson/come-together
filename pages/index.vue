@@ -11,7 +11,7 @@
 
       </div>
     </div>
-    <!-- <ul> 
+        <!-- <ul> 
       Limits number of blogposts displayed to three
         <li v-for="(blogPost, index) in blogPosts" :key="index"> 
           <img :src="blogPost.thumbnail">
@@ -21,6 +21,7 @@
     </ul> -->
     <!-- <Footer /> -->
     <Sidebar />
+    <SidebarSocial/>
   </div>
 </template>
 
@@ -29,6 +30,8 @@
 import Footer from "~/components/Footer.vue";
 import Sidebar from "~/components/SidebarMenu.vue";
 import Hero from "~/components/Hero.vue";
+import SidebarSocial from "~/components/SidebarSocial.vue";
+
 
 export default {
   data() {
@@ -39,7 +42,8 @@ export default {
   components: {
     Footer,
     Sidebar,
-    Hero
+    Hero,
+    SidebarSocial
   },
   //pulls through blogposts
   computed: {
