@@ -15,7 +15,7 @@
         </li>
 
         <li class="hamburger-container">
-          <img class="hamburger" src="/img/menu.svg" alt="Hamburger menu" />
+          <img class="hamburger" src="/img/assets/menu.svg" alt="Hamburger menu" />
         </li>
       </ul>
     </div>

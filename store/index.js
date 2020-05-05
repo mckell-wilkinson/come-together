@@ -1,18 +1,18 @@
 export const state = () => ({
     blogPosts: [],
     insta: [
-      "/img/img-1.jpg",
-      "/img/img-2.jpg",
-      "/img/img-3.jpg",
-      "/img/img-4.jpg",
-      "/img/img-5.jpg",
-      "/img/img-6.jpg",
-      "/img/img-7.jpg",
-      "/img/img-8.jpg",
-      "/img/img-9.jpg",
-      "/img/img-1.jpg",
-      "/img/img-2.jpg",
-      "/img/img-3.jpg"
+      "/img/assets/img-1.jpg",
+      "/img/assets/img-2.jpg",
+      "/img/assets/img-3.jpg",
+      "/img/assets/img-4.jpg",
+      "/img/assets/img-5.jpg",
+      "/img/assets/img-6.jpg",
+      "/img/assets/img-7.jpg",
+      "/img/assets/img-8.jpg",
+      "/img/assets/img-9.jpg",
+      "/img/assets/img-1.jpg",
+      "/img/assets/img-2.jpg",
+      "/img/assets/img-3.jpg"
     ],
 
   })

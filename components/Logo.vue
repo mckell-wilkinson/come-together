@@ -2,7 +2,7 @@
 
 
 
-  <img class="appear logo" src="/img/logo.svg" alt="">
+  <img class="appear logo" src="/img/assets/logo.svg" alt="">
 
 
 
