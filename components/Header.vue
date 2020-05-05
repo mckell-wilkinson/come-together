@@ -9,13 +9,18 @@
         <li class="intro-header-list">
           <div class="float-right">
             <h2 class="intro-header">
-              We’re an art collective based in Manchester. Our main objective is, as the name suggests, to bring people together.
+              We’re an art collective based in Manchester. Our main objective
+              is, as the name suggests, to bring people together.
             </h2>
           </div>
         </li>
 
         <li class="hamburger-container">
-          <img class="hamburger" src="/img/assets/menu.svg" alt="Hamburger menu" />
+          <img
+            class="hamburger"
+            src="/img/assets/menu.svg"
+            alt="Hamburger menu"
+          />
         </li>
       </ul>
     </div>
@@ -44,6 +49,9 @@ export default {
 .hamburger {
   width: 30px;
   float: right;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 h1.come-together-header,
@@ -81,21 +89,15 @@ h1.come-together-header,
   }
 }
 
-
 @media only screen and (min-width: 2000px) {
-
   .intro-header {
     font-size: 24px;
   }
-
 }
 
 @media only screen and (min-width: 3000px) {
-
   .intro-header {
     font-size: 30px;
   }
-
 }
-
 </style>

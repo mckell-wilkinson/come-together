@@ -1,12 +1,5 @@
 <template>
-
-
-
-  <img class="appear logo" src="/img/assets/logo.svg" alt="">
-
-
-
-
+  <img class="appear logo" src="/img/assets/logo.svg" alt="" />
 </template>
 <style scoped>
 .appear {
@@ -16,34 +9,32 @@
 
 .logo {
   width: 50px;
-  position: fixed;
-  left: 44px;
-  top: 39px;
-
+  position: absolute;
+  left: 15px;
+  top: 10px;
 }
 
-.logo-container > ul >li {
-  list-style-type:none;
+.logo-container > ul > li {
+  list-style-type: none;
 }
 
 @media only screen and (min-width: 1024px) {
-
   .logo {
     width: 70px;
+    left: 44px;
+    top: 39px;
+    position: fixed;
   }
 
-.logo-container > ul >li {
-  display: inline-flex;
-  align-items: center;
+  .logo-container > ul > li {
+    display: inline-flex;
+    align-items: center;
+  }
 
+  .come-together-header {
+    margin-left: 30px;
+  }
 }
-
-.come-together-header {
-  margin-left: 30px;
-}
-}
-
-
 
 @keyframes appear {
   0% {
@@ -55,12 +46,8 @@
 }
 
 @media only screen and (min-width: 3000px) {
-
   .logo {
     width: 100px;
   }
-
 }
-
-
 </style>

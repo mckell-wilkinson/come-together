@@ -3,12 +3,18 @@
     <Header />
     <div class="content">
       <h1 class="come-together">Come Together Collective</h1>
-       <img class="roundel" src="/img/assets/roundel.svg" alt="" />
+      <img class="roundel" src="/img/assets/roundel.svg" alt="" />
       <h2 class="intro">
-        We’re an art collective based in Manchester. Our main objective is to bring people together through music and the arts. 
+        We’re an art collective based in Manchester. Our main objective is to
+        bring people together through music and the arts.
       </h2>
       <div class="welcome-container">
-        <img class="welcome" id="welcome" src="/img/assets/welcome.svg" alt="" />
+        <img
+          class="welcome"
+          id="welcome"
+          src="/img/assets/welcome.svg"
+          alt=""
+        />
       </div>
     </div>
   </div>
@@ -17,32 +23,25 @@
 <script>
 import Header from "~/components/Header.vue";
 
-
 export default {
   components: {
     Header
   },
-  created(){
-
+  created() {
     //allows window to exist
-    if (process.browser){
+    if (process.browser) {
+      //rotate welcome icon on scroll
+      window.document.onscroll = function() {
+        scrollRotate();
+      };
 
-      //rotate welcome icon on scroll 
-      window.document.onscroll = function () {
-    scrollRotate();
-};
-
-function scrollRotate() {
-    let image = document.getElementById("welcome");
-    image.style.transform = "rotate(-" + window.pageYOffset/2.5 + "deg)";
-}
-      
+      function scrollRotate() {
+        let image = document.getElementById("welcome");
+        image.style.transform = "rotate(-" + window.pageYOffset / 2.5 + "deg)";
+      }
     }
   }
 };
-
-
-
 </script>
 
 <style scoped>
@@ -58,9 +57,10 @@ h1 {
   font-size: 2.3em;
   margin-top: 2em;
 }
-  h1.come-together, .intro {
-    display: block;
-  }
+h1.come-together,
+.intro {
+  display: block;
+}
 
 h2 {
   font-weight: 500;
@@ -107,25 +107,20 @@ h2 {
 }
 
 @media only screen and (min-width: 900px) {
-
   .welcome {
-
     bottom: -50px;
-   
   }
 }
 
-
 @media only screen and (min-width: 1024px) {
-
   .roundel {
-  margin: 30vh auto 0;
-  transform: translateY(-40%);
-  padding: 0;
+    margin: 30vh auto 0;
+    transform: translateY(-40%);
+    padding: 0;
+  }
 
-}
-
-  h1.come-together, .intro {
+  h1.come-together,
+  .intro {
     display: none;
   }
 
@@ -133,43 +128,30 @@ h2 {
     width: 35%;
   }
 
-    .welcome {
-
+  .welcome {
     bottom: -55px;
-   
   }
 }
 
 @media only screen and (min-width: 1200px) {
-.roundel {
-  width: 30%;
-}
+  .roundel {
+    width: 30%;
+  }
 
   .welcome {
-
     bottom: -63px;
-   
   }
 }
 
 @media only screen and (min-width: 1400px) {
-
   .welcome {
-
     bottom: -74px;
-   
   }
 }
 
 @media only screen and (min-width: 1600px) {
-
   .welcome {
-
     bottom: -77px;
-   
   }
 }
-
-
-
 </style>

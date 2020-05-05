@@ -2,36 +2,40 @@
   <div>
     <Hero />
     <div class="content">
-    <div class="insta">
+      <div class="insta">
         <ul>
-          <li v-for="(insta, index) in instaImages" :key="index">
-            <img :src="insta">
+          <li
+            class="insta-image"
+            v-for="(insta, index) in instaImages"
+            :key="index"
+          >
+            <img :src="insta" />
           </li>
         </ul>
-
       </div>
+      <h2>Blogs</h2>
+      <ul>
+        <li v-for="(blogPost, index) in blogPosts" :key="index">
+          <img :src="blogPost.thumbnail" />
+          <nuxt-link :to="`blog/${blogPost.slug}`"
+            ><h4>{{ blogPost.title }}</h4></nuxt-link
+          >
+          <p>{{ blogPost.description }}</p>
+        </li>
+      </ul>
     </div>
-        <!-- <ul> 
-      Limits number of blogposts displayed to three
-        <li v-for="(blogPost, index) in blogPosts" :key="index"> 
-          <img :src="blogPost.thumbnail">
-        <nuxt-link :to="`blog/${blogPost.slug}`">{{blogPost.title}}</nuxt-link>
-        <p>{{ blogPost.description }}</p>    
-      </li>
-    </ul> -->
+
     <!-- <Footer /> -->
     <Sidebar />
-    <SidebarSocial/>
+    <SidebarSocial />
   </div>
 </template>
 
 <script>
-
 import Footer from "~/components/Footer.vue";
 import Sidebar from "~/components/SidebarMenu.vue";
 import Hero from "~/components/Hero.vue";
 import SidebarSocial from "~/components/SidebarSocial.vue";
-
 
 export default {
   data() {
@@ -50,7 +54,7 @@ export default {
     blogPosts() {
       let blogPosts = this.$store.state.blogPosts;
       //below will show three blog posts
-      let blogs = blogPosts.slice(0, 3);
+      let blogs = blogPosts.slice(0, 4);
       return blogs;
     },
     instaImages() {
@@ -78,10 +82,8 @@ export default {
 </script>
 
 <style scoped>
-
 .insta {
   margin: 6em auto;
-
 }
 
 .insta > ul > li {
@@ -89,9 +91,7 @@ export default {
   list-style-type: none;
 }
 
-
 @media only screen and (min-width: 600px) {
-
   .insta > ul {
     display: flex;
     flex-wrap: wrap;
@@ -106,53 +106,44 @@ export default {
     /* flex-grow: 1; */
     padding: 0.5em 0;
     margin: 0;
-}
+  }
 
-.insta > ul > li:nth-child(even) { 
- padding: 0.5em 0 0.5em 0.5em;
-}
+  .insta > ul > li:nth-child(even) {
+    padding: 0.5em 0 0.5em 0.5em;
+  }
 
-.insta > ul > li:nth-child(odd) { 
- padding: 0.5em 0.5em 0.5em 0;
-}
+  .insta > ul > li:nth-child(odd) {
+    padding: 0.5em 0.5em 0.5em 0;
+  }
 
-li:last-child {
-
-  flex-grow: 10;
-}
+  li:last-child {
+    flex-grow: 10;
+  }
 
   .insta > ul > li > img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  vertical-align: bottom;
-  margin: 0;
-  padding: 0;
-  } 
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width: 900px) {
-
-    .insta > ul > li {
+  .insta > ul > li {
     width: 33.333%;
+  }
 
+  .insta > ul > li:nth-child(3n + 1) {
+    padding: 0.5em 0.5em 0.5em 0;
+  }
+
+  .insta > ul > li:nth-child(3n + 2) {
+    padding: 0.5em;
+  }
+  .insta > ul > li:nth-child(3n + 3) {
+    padding: 0.5em 0 0.5em 0.5em;
+  }
 }
-
-.insta > ul > li:nth-child(3n + 1) { 
- padding: 0.5em 0.5em 0.5em 0;
-}
-
-.insta > ul > li:nth-child(3n + 2) {  
- padding: 0.5em;
-}
-.insta > ul > li:nth-child(3n + 3) { 
- padding: 0.5em 0 0.5em 0.5em;
-
-}
-
-
-
-}
-
-
 </style>
