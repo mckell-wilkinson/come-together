@@ -16,14 +16,13 @@
         </li>
 
         <li class="hamburger-container">
-          <img
-            class="hamburger"
-            src="/img/assets/menu.svg"
-            alt="Hamburger menu"
-          />
+          <div class="icon">
+            <div class="hamburger" v-on:click="hamburger"></div>
+          </div>
         </li>
       </ul>
     </div>
+    <div id="mobile-menu"></div>
   </div>
 </template>
 
@@ -33,6 +32,16 @@ import Logo from "~/components/Logo.vue";
 export default {
   components: {
     Logo
+  },
+
+  methods: {
+    hamburger() {
+      let icon = document.querySelector(".icon");
+      icon.classList.toggle("cross");
+
+      let showMobileMenu = document.getElementById("mobile-menu");
+      showMobileMenu.classList.toggle("mobile-menu");
+    }
   }
 };
 </script>
@@ -46,12 +55,89 @@ export default {
   margin-top: 55px;
 }
 
+
+.icon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 25px;
+  right: -5px;
+  width: 45px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 1;
+}
+
 .hamburger {
   width: 30px;
-  float: right;
+  height: 3px;
+  background: #444;
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 35px;
+  right: 0px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.hamburger:before,
+.hamburger:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: #444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.hamburger:before {
+  top: -8px;
+}
+
+.hamburger:after {
+  top: 8px;
+}
+
+.icon.cross .hamburger {
+  background: rgba(0, 0, 0, 0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+
+.icon.cross .hamburger:before {
+  top: 0;
+  transform: rotate(45deg);
+  background: #fff;
+}
+.icon.cross .hamburger:after {
+  top: 0;
+  transform: rotate(135deg);
+  background: #fff;
+}
+
+.mobile-menu {
+  width: 100vw;
+  height: 100vh;
+  background: #e62f20;
+  position: absolute;
+  top: 0;
+  right: 0;
+  animation: showMobile 0.5s ease-out;
+}
+
+@keyframes showMobile {
+
+  from {
+opacity: 0;
+border-radius: 100% 0 0 100%;
+width: 0vw;
+height: 100vh;
+
+  }
+
+  to {
+
+  }
+  
 }
 
 h1.come-together-header,
