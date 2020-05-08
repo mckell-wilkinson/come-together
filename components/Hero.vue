@@ -3,14 +3,14 @@
     <Header />
     <div class="content">
       <h1 class="come-together">Come Together Collective</h1>
-      <img class="roundel" src="/img/assets/roundel.svg" alt="" />
+      <img class="roundel appear" src="/img/assets/roundel.svg" alt="" />
       <h2 class="intro">
         We’re an art collective based in Manchester. Our main objective is to
         bring people together through music and the arts.
       </h2>
       <div class="welcome-container">
         <img
-          class="welcome"
+          class="welcome appear"
           id="welcome"
           src="/img/assets/welcome.svg"
           alt=""

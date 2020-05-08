@@ -121,6 +121,19 @@ h5 {
 }
 
 
+@keyframes appear {
+  from {
+    opacity: 0;
 
+  } 
+
+  to {
+    opacity: 1;
+  }
+}
+
+.appear {
+    animation: appear 0.3s ease-out;
+}
 
 </style>

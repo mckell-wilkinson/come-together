@@ -1,11 +1,7 @@
 <template>
-  <img class="appear logo" src="/img/assets/logo.svg" alt="" />
+  <img class="logo" src="/img/assets/logo.svg" alt="" />
 </template>
 <style scoped>
-.appear {
-  animation: 1s appear;
-  margin: auto;
-}
 
 .logo {
   width: 50px;
@@ -36,14 +32,6 @@
   }
 }
 
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
 @media only screen and (min-width: 3000px) {
   .logo {

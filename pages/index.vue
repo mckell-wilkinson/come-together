@@ -3,6 +3,7 @@
     <Hero />
     <div class="content">
       <div class="insta">
+          <h2>Art, music & community</h2>
         <ul>
           <li
             class="insta-image"
@@ -91,6 +92,11 @@ export default {
   list-style-type: none;
 }
 
+.insta-image {
+  cursor: pointer;
+}
+
+
 @media only screen and (min-width: 600px) {
   .insta > ul {
     display: flex;
@@ -145,5 +151,25 @@ export default {
   .insta > ul > li:nth-child(3n + 3) {
     padding: 0.5em 0 0.5em 0.5em;
   }
+  
+.insta-image:hover:after {
+  content: "Follow us on insta";
+  font-family: "Corben", cursive;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  position: relative;
+  top: -100%;
+  text-align: center;
+   display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
 }
+
+}
+
+
 </style>

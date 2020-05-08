@@ -8,7 +8,7 @@
         </li>
         <li class="intro-header-list">
           <div class="float-right">
-            <h2 class="intro-header">
+            <h2 v-show="$route.path === '/'" class="intro-header appear">
               We’re an art collective based in Manchester. Our main objective
               is, as the name suggests, to bring people together.
             </h2>
@@ -16,13 +16,28 @@
         </li>
 
         <li class="hamburger-container">
-          <div class="icon">
+          <div class="icon icon-background">
             <div class="hamburger" v-on:click="hamburger"></div>
           </div>
         </li>
       </ul>
     </div>
-    <div id="mobile-menu"></div>
+    <div id="mobile-menu" class="mobile-menu hide">
+      <ul class="hide mobile-items" id="mobile-items">
+        <li>
+          <nuxt-link to="/blog"><h3>BLOG</h3></nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/about"><h3>ABOUT</h3></nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/events"><h3>EVENTS</h3></nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/events"><h3>CONTACT & SOCIAL</h3></nuxt-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -36,17 +51,26 @@ export default {
 
   methods: {
     hamburger() {
-      let icon = document.querySelector(".icon");
-      icon.classList.toggle("cross");
+      const icon = document.querySelector(".icon");
+      icon.classList.toggle("cross"); 
+      icon.classList.toggle("icon-background");
 
-      let showMobileMenu = document.getElementById("mobile-menu");
-      showMobileMenu.classList.toggle("mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenu.classList.toggle("hide");
+
+      const mobileItems = document.getElementById("mobile-items");
+      mobileItems.classList.toggle("hide");
     }
   }
 };
 </script>
 
 <style scoped>
+
+.hide {
+  display: none;
+}
+
 .header-container > .content > ul {
   display: inline-flex;
   list-style-type: none;
@@ -55,38 +79,41 @@ export default {
   margin-top: 55px;
 }
 
-
 .icon {
-  position: absolute;
+  position: fixed;
   transform: translate(-50%, -50%);
   top: 25px;
   right: -5px;
   width: 45px;
-  height: 60px;
+  height: 45px;
   cursor: pointer;
   z-index: 1;
 }
 
+.icon-background {
+  background: #f6f2f1;
+  border-radius: 100%;
+  opacity: 0.8;
+}
+
 .hamburger {
-  width: 30px;
+  width: 27px;
   height: 3px;
-  background: #444;
-  position: absolute;
-  top: 35px;
-  right: 0px;
+  background: #222;
+  position: fixed;
+  top: 23px;
+  right: 5px;
   transform: translate(-50%, -50%);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: 0.5s;
 }
 
 .hamburger:before,
 .hamburger:after {
   content: "";
-  position: absolute;
+  position: fixed;
   width: 30px;
   height: 3px;
-  background: #444;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background: #222;
   transition: 0.5s;
 }
 
@@ -100,7 +127,6 @@ export default {
 
 .icon.cross .hamburger {
   background: rgba(0, 0, 0, 0);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
 }
 
 .icon.cross .hamburger:before {
@@ -118,31 +144,46 @@ export default {
   width: 100vw;
   height: 100vh;
   background: #e62f20;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  animation: showMobile 0.5s ease-out;
+  animation: showMobile 0.6s ease-out;
+}
+
+.hide {
+  display: none;
+}
+
+.mobile-items {
+  position: fixed;
+  top: 50vh;
+  transform: translateY(-50%);
+}
+
+.mobile-items > li > a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8em;
+}
+
+.mobile-items > li {
+  list-style-type: none;
+  margin: 0 0 2em;
 }
 
 @keyframes showMobile {
-
   from {
-opacity: 0;
-border-radius: 100% 0 0 100%;
-width: 0vw;
-height: 100vh;
-
+    opacity: 0;
+    border-radius: 0 0 0 10000px;
+    width: 0vw;
+    height: 0vh;
   }
-
-  to {
-
-  }
-  
 }
 
 h1.come-together-header,
 .intro-header {
   display: none;
+
 }
 
 @media only screen and (min-width: 1024px) {
