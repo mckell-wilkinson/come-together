@@ -23,6 +23,7 @@
       </ul>
     </div>
     <div id="mobile-menu" class="mobile-menu hide">
+       <img class="roundel" src="/img/assets/roundel.svg" alt="" />
       <ul class="hide mobile-items" id="mobile-items">
         <li>
           <nuxt-link to="/blog"><h3>BLOG</h3></nuxt-link>
@@ -150,8 +151,10 @@ export default {
   animation: showMobile 0.6s ease-out;
 }
 
-.hide {
-  display: none;
+.roundel {
+  width: 700px;
+  opacity: 0.2;
+  animation: showMobile 0.6s ease-out;
 }
 
 .mobile-items {
