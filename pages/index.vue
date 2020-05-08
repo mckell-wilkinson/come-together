@@ -5,7 +5,7 @@
       <div class="insta">
           <h2>Art, music & community</h2>
         <ul>
-          <li
+          <li data-aos="fade-up"
             class="insta-image"
             v-for="(insta, index) in instaImages"
             :key="index"

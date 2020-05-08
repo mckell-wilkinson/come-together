@@ -158,6 +158,7 @@ export default {
   position: fixed;
   top: 50vh;
   transform: translateY(-50%);
+  text-align: center;
 }
 
 .mobile-items > li > a {

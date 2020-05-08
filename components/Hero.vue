@@ -51,6 +51,7 @@ export default {
   position: relative;
   padding: 0;
   position: relative;
+  min-height: 90vh;
 }
 
 h1 {
