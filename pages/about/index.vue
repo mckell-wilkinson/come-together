@@ -3,7 +3,7 @@
     <Header />
     <div class="content">
       <ul class="about-intro">
-        <h1>About</h1>
+        <li><h1>About</h1></li>
         <li>
           <p>
             <strong>
@@ -32,38 +32,16 @@
         </li>
       </ul>
       <ul class="meet-team">
-        <li>
-          <h3>Rosin</h3>
-          <p class="job-title">Creative Director and Media Manager</p>
-          <img class="roundel" src="/img/assets/roisin.png" alt="" />
+        <li v-for="(people, index) in people" :key="index">
+         <h3>{{people.name}}</h3>
+         <p>{{people.title}}</p>
+         <img :src=people.image alt="">
         </li>
-        <li>
-          <h3>Ellie</h3>
-          <p class="job-title">Creative Director and Media Manager</p>
-          <img class="roundel" src="/img/assets/ellie.png" alt="" />
-        </li>
-        <li>
-          <h3>Laura Lanks</h3>
-          <p class="job-title">Creative Director and Media Manager</p>
-          <img class="roundel" src="/img/assets/roisin.png" alt="" />
-        </li>
-        <li>
-          <h3>Rosin</h3>
-          <p class="job-title">Creative Director and Media Manager</p>
-          <img class="roundel" src="/img/assets/roisin.png" alt="" />
-        </li>
-        <li>
-          <h3>Rosin</h3>
-          <p class="job-title">Creative Director and Media Manager</p>
-          <img class="roundel" src="/img/assets/roisin.png" alt="" />
-        </li>
-        <li>
-          <h3>Rosin</h3>
-          <p class="job-title">Creative Director and Media Manager</p>
-          <img class="roundel" src="/img/assets/roisin.png" alt="" />
-        </li>
+         
       </ul>
     </div>
+    <sidebar />
+    <sidebarSocial />
     <Footer />
   </div>
 </template>
@@ -71,11 +49,70 @@
 <script>
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
+import sidebar from "~/components/SidebarMenu";
+import sidebarSocial from "~/components/SidebarSocial";
 
 export default {
   components: {
     Header,
-    Footer
+    Footer,
+    sidebar,
+    sidebarSocial
+  },
+  computed: {
+      people() {
+      let people = this.$store.state.about;
+      return people;
+    }
   }
 };
 </script>
+
+<style>
+
+li {
+  list-style-type: none;
+}
+
+
+h1 {
+  margin: 3em 0 1em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+@media only screen and (min-width: 1024px) {
+
+
+.about-intro {
+display: flex;
+justify-content: space-between;
+}
+
+.about-intro > ul > li {
+  width: 50%;
+}
+
+.about-intro > li > p:nth-child(1) {
+  margin-top: 6em;
+}
+
+.about-intro > li:nth-child(odd) {
+  padding-right: 4em;
+}
+
+h1 {
+  text-align: right;
+  position: sticky;
+  top: 0;
+  font-size: 1.4em;
+}
+
+p {
+  font-size: 0.8em;
+}
+
+}
+</style>

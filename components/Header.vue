@@ -16,9 +16,11 @@
         </li>
 
         <li class="hamburger-container">
-          <div class="icon icon-background">
-            <div class="hamburger" v-on:click="hamburger"></div>
-          </div>
+       <div id="hamburger" v-on:click="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
         </li>
       </ul>
     </div>
@@ -52,9 +54,9 @@ export default {
 
   methods: {
     hamburger() {
-      const icon = document.querySelector(".icon");
-      icon.classList.toggle("cross"); 
-      icon.classList.toggle("icon-background");
+      const icon = document.getElementById("hamburger");
+      icon.classList.toggle("open"); 
+     
 
       const mobileMenu = document.getElementById("mobile-menu");
       mobileMenu.classList.toggle("hide");
@@ -80,66 +82,82 @@ export default {
   margin-top: 55px;
 }
 
-.icon {
-  position: fixed;
-  transform: translate(-50%, -50%);
-  top: 25px;
-  right: -5px;
-  width: 45px;
+#hamburger {
+  width: 30px;
   height: 45px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  margin: 0;
+  padding: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
   cursor: pointer;
   z-index: 1;
 }
 
-.icon-background {
-  background: #f6f2f1;
-  border-radius: 100%;
-  opacity: 0.8;
-}
-
-.hamburger {
-  width: 27px;
+#hamburger span {
+  display: block;
+  position: absolute;
   height: 3px;
+  width: 100%;
   background: #222;
-  position: fixed;
-  top: 23px;
-  right: 5px;
-  transform: translate(-50%, -50%);
-  transition: 0.5s;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
 }
 
-.hamburger:before,
-.hamburger:after {
-  content: "";
-  position: fixed;
-  width: 30px;
-  height: 3px;
-  background: #222;
-  transition: 0.5s;
+#hamburger span:nth-child(1) {
+  top: 0px;
 }
 
-.hamburger:before {
-  top: -8px;
-}
-
-.hamburger:after {
+#hamburger span:nth-child(2) {
   top: 8px;
 }
 
-.icon.cross .hamburger {
-  background: rgba(0, 0, 0, 0);
+#hamburger span:nth-child(3) {
+  top: 18px;
 }
 
-.icon.cross .hamburger:before {
-  top: 0;
-  transform: rotate(45deg);
+#hamburger.open span {
   background: #fff;
 }
-.icon.cross .hamburger:after {
-  top: 0;
+
+#hamburger.open span:nth-child(1) {
+  top: 8px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
   transform: rotate(135deg);
-  background: #fff;
 }
+
+#hamburger.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#hamburger.open span:nth-child(3) {
+  top: 8px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
 
 .mobile-menu {
   width: 100vw;

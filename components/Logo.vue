@@ -1,5 +1,5 @@
 <template>
-  <img class="logo" src="/img/assets/logo.svg" alt="" />
+   <nuxt-link :to="`/`"><img class="logo" src="/img/assets/logo.svg" alt="" /></nuxt-link>
 </template>
 <style scoped>
 

@@ -13,6 +13,39 @@ export const state = () => ({
     "/img/assets/img-1.jpg",
     "/img/assets/img-2.jpg",
     "/img/assets/img-3.jpg"
+  ],
+
+  about: [
+    {
+      name: 'Roisin',
+      title: 'Creative and Media Manager',
+      image: '/img/assets/roisin.png'
+    },
+    {
+      name: 'Ellie',
+      title: 'Visual Branding and Technical Director',
+      image: '/img/assets/ellie.png'
+   },
+    {
+      name: 'Laura Lanks',
+      title: 'Project Manager',
+      image: '/img/assets/lanks.png'
+   },
+    {
+      name: 'Rowan',
+      title: 'Artistic Consultant',
+      image: '/img/assets/rowan.png'
+   },
+    {
+      name: 'Molly',
+      title: 'Music Director',
+      image: '/img/assets/molly.png'
+   },
+    {
+      name: 'Yasmin',
+      title: 'Educational Lead and Tehcnical Assitant',
+      image: '/img/assets/yasmin.png'
+   },
   ]
 });
 

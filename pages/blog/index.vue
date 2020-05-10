@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="test">Hello</div>
+    
     <ul id="blog-list">
       <!-- Limits number of blogposts displayed to three -->
       <li class="blog-item" v-for="(blog, index) in blogPost" :key="index">
