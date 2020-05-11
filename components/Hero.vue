@@ -27,7 +27,7 @@ export default {
   components: {
     Header
   },
-  created() {
+  mounted() {
     //allows window to exist
     if (process.browser) {
       //rotate welcome icon on scroll

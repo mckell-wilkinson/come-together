@@ -10,7 +10,9 @@
             v-for="(insta, index) in instaImages"
             :key="index"
           >
+          <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/cometogethercollective/">
             <img :src="insta" />
+          </a>
           </li>
         </ul>
       </div>
@@ -126,7 +128,7 @@ export default {
     flex-grow: 10;
   }
 
-  .insta > ul > li > img {
+  .insta > ul > li > a > img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -153,11 +155,11 @@ export default {
   }
   
 .insta-image:hover:after {
-  content: "Follow us on insta";
+  content: url("~static/img/assets/instagram.svg");
   font-family: "Corben", cursive;
   height: 100%;
   width: 100%;
-  background: #000;
+  background: linear-gradient(to right, #E71D73, #E62F20);
   color: #fff;
   position: relative;
   top: -100%;
@@ -167,6 +169,8 @@ export default {
   align-items: center;
   justify-content: center;
   opacity: 0.7;
+  pointer-events: none;
+
 }
 
 }

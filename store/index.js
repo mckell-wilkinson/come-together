@@ -27,7 +27,7 @@ export const state = () => ({
       image: '/img/assets/ellie.png'
    },
     {
-      name: 'Laura Lanks',
+      name: "Laura 'Lanks'",
       title: 'Project Manager',
       image: '/img/assets/lanks.png'
    },

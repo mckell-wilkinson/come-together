@@ -27,15 +27,17 @@
             far.
           </p>
           <p>
-            Say hello, get in touch and we’ll see you soon.
+            Say hello, <nuxt-link to="/contact">get in touch</nuxt-link> and we’ll see you soon.
           </p>
         </li>
       </ul>
       <ul class="meet-team">
         <li v-for="(people, index) in people" :key="index">
+          <div class="person">
          <h3>{{people.name}}</h3>
          <p>{{people.title}}</p>
          <img :src=people.image alt="">
+          </div>
         </li>
          
       </ul>
@@ -83,6 +85,14 @@ p {
   margin: 0 0 1em;
 }
 
+.meet-team {
+  margin-top: 3em;
+}
+
+.meet-team > li {
+  margin: 3em auto;
+}
+
 @media only screen and (min-width: 1024px) {
 
 
@@ -105,13 +115,30 @@ justify-content: space-between;
 
 h1 {
   text-align: right;
-  position: sticky;
-  top: 0;
   font-size: 1.4em;
 }
 
 p {
-  font-size: 0.8em;
+  font-size: 0.7em;
+}
+
+.meet-team > li {
+  margin: 0 0 1.5em;
+  padding: 0 1em;
+  width: 50%;
+  display: inline-flex;
+}
+
+.meet-team > li:nth-child(4n-7) {
+transform: translateX(50px);
+}
+
+.meet-team > li:nth-child(4n-6) {
+transform: translateX(50px);
+}
+
+.person > p {
+font-size: 0.6em;
 }
 
 }

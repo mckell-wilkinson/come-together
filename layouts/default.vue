@@ -32,6 +32,10 @@ h5 {
   font-family: "Corben", cursive;
 }
 
+a {
+  color: #E62F20;
+}
+
 .content {
   width: 80%;
   margin: 0 auto;
