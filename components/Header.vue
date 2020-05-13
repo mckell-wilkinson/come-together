@@ -4,7 +4,7 @@
     <div class="content">
       <ul>
         <li>
-          <h1 class="come-together-header">Come Together Collective</h1>
+          <h1 v-show="$route.path === '/'" class="come-together-header">Come Together Collective</h1>
         </li>
         <li class="intro-header-list">
           <div class="float-right">

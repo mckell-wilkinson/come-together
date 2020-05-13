@@ -17,13 +17,27 @@
         </ul>
       </div>
       <h2>Blogs</h2>
-      <ul>
-        <li v-for="(blogPost, index) in blogPosts" :key="index">
-          <img :src="blogPost.thumbnail" />
-          <nuxt-link :to="`blog/${blogPost.slug}`"
-            ><h4>{{ blogPost.title }}</h4></nuxt-link
-          >
-          <p>{{ blogPost.description }}</p>
+     <ul id="blog-list">
+        <!-- Limits number of blogposts displayed to three -->
+        <li class="blog-item" v-for="(blog, index) in blogPost" :key="index">
+          <div class="blog-content">
+            <ul>
+              <li>
+                <img :src="blog.thumbnail" />
+              </li>
+              <li>
+                <h4>
+                  <nuxt-link :to="`blog/${blog.slug}`">{{
+                    blog.title
+                  }}</nuxt-link>
+                </h4>
+                <p class="blog-description">{{ blog.description }}</p>
+                <p class="blog-date">
+                  {{ new Date(blog.date).toDateString() }}
+                </p>
+              </li>
+            </ul>
+          </div>
         </li>
       </ul>
     </div>
@@ -54,11 +68,11 @@ export default {
   },
   //pulls through blogposts
   computed: {
-    blogPosts() {
-      let blogPosts = this.$store.state.blogPosts;
+    blogPost() {
+      let blogPost = this.$store.state.blogPosts;
       //below will show three blog posts
-      let blogs = blogPosts.slice(0, 4);
-      return blogs;
+      let blog = blogPost.slice(0, 4);
+      return blog;
     },
     instaImages() {
       let insta = this.$store.state.insta;
