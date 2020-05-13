@@ -142,4 +142,90 @@ a {
     animation: appear 0.3s ease-out;
 }
 
+
+
+/*Blogs styled here */
+
+#blog-list {
+  margin-top: 3em;
+}
+
+#blog-list li {
+  margin: 2em auto;
+  list-style-type: none;
+}
+
+.blog-description {
+  font-size: 1em;
+  margin: 1em 0 0;
+}
+
+.blog-date {
+  font-size: 0.7em;
+  opacity: 0.8;
+}
+
+.blog-item > img {
+  margin-bottom: 0.5em;
+}
+
+@media only screen and (min-width: 1024px) {
+  
+  #blog-list > li {
+  width: 33.33%;
+  display: inline-flex;
+  }
+
+  
+
+  .blog-content {
+    padding: 0 1em;
+  }
+
+  .blog-description {
+    display: none;
+  }
+
+  .blog-date {
+    margin: 0.5em 0 0;
+  }
+
+  #blog-list > li:nth-child(1) {
+    width: 100%;
+
+  }
+
+
+
+  #blog-list > li:nth-child(1) > .blog-content > ul {
+    display: inline-flex;
+    justify-content:space-between;
+    padding: 0;
+    margin: 0;
+
+  }
+
+    #blog-list > li:nth-child(1) > .blog-content > ul > li:nth-child(1) {
+     width: 60%;
+     float: left;
+
+  }
+
+      #blog-list > li:nth-child(1) > .blog-content > ul > li:nth-child(2) {
+     width: 30%;
+  }
+
+        #blog-list > li:nth-child(1) > .blog-content > ul > li > .blog-description {
+     display: block;
+     font-size: 0.6em;
+  }
+
+
+
+
+  
+
+
+}
+
 </style>

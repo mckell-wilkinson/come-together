@@ -1,30 +1,46 @@
 <template>
   <div>
     <Header />
-    
-    <ul id="blog-list">
-      <!-- Limits number of blogposts displayed to three -->
-      <li class="blog-item" v-for="(blog, index) in blogPost" :key="index">
-        <img :src="blog.thumbnail" />
-        <nuxt-link :to="`blog/${blog.slug}`">{{
-          blog.title
-        }}</nuxt-link>
-        <p>{{ blog.description }}</p>
-      </li>
-    </ul>
-    <button class="more-blogs" @click="moreBlogs(blogIncrementer)">
-      More blogs +
-    </button>
+    <div class="content">
+      <ul id="blog-list">
+        <!-- Limits number of blogposts displayed to three -->
+        <li class="blog-item" v-for="(blog, index) in blogPost" :key="index">
+          <div class="blog-content">
+            <ul>
+              <li>
+                <img :src="blog.thumbnail" />
+              </li>
+              <li>
+                <h4>
+                  <nuxt-link :to="`blog/${blog.slug}`">{{
+                    blog.title
+                  }}</nuxt-link>
+                </h4>
+                <p class="blog-description">{{ blog.description }}</p>
+                <p class="blog-date">
+                  {{ new Date(blog.date).toDateString() }}
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <button class="more-blogs" @click="moreBlogs(blogIncrementer)">
+        More blogs +
+      </button>
+    </div>
+<SideBarMenu />
+<SideBarSocial />
     <Footer />
   </div>
 </template>
 <script>
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
+import SideBarMenu from "~/components/SidebarMenu.vue";
+import SideBarSocial from "~/components/SidebarSocial.vue";
 
 export default {
-  
-  
   data() {
     return {
       //used to show next ten blogs on click of moreBlogs
@@ -33,16 +49,18 @@ export default {
   },
   components: {
     Header,
-    Footer
+    Footer,
+    SideBarMenu,
+    SideBarSocial
+
   },
- 
+
   computed: {
     blogPost() {
       let blogPosts = this.$store.state.blogPosts;
       //below will show 10 blog posts - more blog posts added on click using function moreBlogs
       let blogs = blogPosts.slice(0, 10);
       return blogs;
-      
     }
   },
 
@@ -70,11 +88,8 @@ export default {
     }
   }
 };
-
 </script>
 <style scoped>
-
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -99,7 +114,4 @@ export default {
 .test {
   color: red;
 }
-
 </style>
-
-
