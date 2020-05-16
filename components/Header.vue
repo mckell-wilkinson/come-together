@@ -25,7 +25,7 @@
       </ul>
     </div>
     <div id="mobile-menu" class="mobile-menu hide">
-       <img class="roundel" src="/img/assets/roundel.svg" alt="" />
+       <!-- <img class="roundel" src="/img/assets/roundel.svg" alt="" /> -->
       <ul class="hide mobile-items" id="mobile-items">
         <li>
           <nuxt-link to="/blog"><h3>BLOG</h3></nuxt-link>
