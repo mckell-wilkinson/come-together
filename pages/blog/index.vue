@@ -7,7 +7,7 @@
         <li class="blog-item" v-for="(blog, index) in blogPost" :key="index">
           <div class="blog-content">
             <ul>
-              <li>
+              <li class="blog-img">
                 <img :src="blog.thumbnail" />
               </li>
               <li>
@@ -25,12 +25,16 @@
           </div>
         </li>
       </ul>
-      <button class="more-blogs" @click="moreBlogs(blogIncrementer)">
-        More blogs +
+      <button
+        id="more-blogs"
+        class="more-blogs hide"
+        @click="moreBlogs(blogIncrementer)"
+      >
+        More blogs
       </button>
     </div>
-<SideBarMenu />
-<SideBarSocial />
+    <SideBarMenu />
+    <SideBarSocial />
     <Footer />
   </div>
 </template>
@@ -52,44 +56,79 @@ export default {
     Footer,
     SideBarMenu,
     SideBarSocial
-
   },
 
   computed: {
     blogPost() {
-      let blogPosts = this.$store.state.blogPosts;
+      const blogPosts = this.$store.state.blogPosts;
       //below will show 10 blog posts - more blog posts added on click using function moreBlogs
-      let blogs = blogPosts.slice(0, 10);
+      const blogs = blogPosts.slice(0, 10);
+
       return blogs;
+    }
+  },
+
+  mounted() {
+    //if more than 10 blogs show the more blogs button
+    const blogs = this.$store.state.blogPosts;
+    const blogButton = document.getElementById("more-blogs");
+
+    if (blogs.length > 10) {
+      blogButton.classList.remove("hide");
     }
   },
 
   methods: {
     //this will add the next ten blogs on click of more blogs button
+
     moreBlogs(n) {
-      let blogPostsNew = this.$store.state.blogPosts;
-      let blogsNew = blogPostsNew.slice(0, n + 10);
-      let blogList = document.getElementById("blog-list");
+      const blogPostsNew = this.$store.state.blogPosts;
+      const blogsNew = blogPostsNew.slice(0, n + 10);
+      const blogList = document.getElementById("blog-list");
 
       for (n; n < blogsNew.length; n++) {
         blogList.insertAdjacentHTML(
           "beforeend",
           `
-      <li class="blog-item">
-        <img src="${blogsNew[n].thumbnail}">
-        <a href="blog/${blogsNew[n].slug}">${blogsNew[n].title}</a>
-        <p>b${blogsNew[n].description}</p>  
+         <li class="blog-item">
+          <div class="blog-content">
+            <ul>
+              <li class="blog-img">
+                <img src="${blogsNew[n].thumbnail}"/>
+              </li>
+              <li>
+                <h4>
+                  <a href="blog/${blogsNew[n].slug}">${blogsNew[n].title}</a>
+                </h4>
+                <p class="blog-description">${blogsNew[n].description}</p>
+                <p class="blog-date">
+                  ${new Date(blogsNew[n].date).toDateString()}
+                </p>
+              </li>
+            </ul>
+          </div>
         </li>
         
       `
         );
       }
       this.blogIncrementer = this.blogIncrementer + 10;
+
+//remove the more blogs button if all blogs are shown
+      const blogTotal = document.querySelectorAll(".blog-item");
+
+      if (blogPostsNew.length === blogTotal.length) {
+        const blogButton = document.getElementById("more-blogs");
+        blogButton.classList.add("hide");
+      }
     }
   }
 };
 </script>
 <style scoped>
+.hide {
+  display: none;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -109,9 +148,5 @@ export default {
   background: none;
   border: none;
   cursor: pointer;
-}
-
-.test {
-  color: red;
 }
 </style>

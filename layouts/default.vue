@@ -4,11 +4,7 @@
   </div>
 </template>
 
-
-
 <style>
-
-
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +29,7 @@ h5 {
 }
 
 a {
-  color: #E62F20;
+  color: #e62f20;
 }
 
 .content {
@@ -64,74 +60,57 @@ a {
     font-size: 24px;
   }
 
-    .content {
+  .content {
     width: 75%;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-
   body {
     font-size: 28px;
   }
-
-
 }
 
 @media only screen and (min-width: 1400px) {
-
   body {
     font-size: 32px;
   }
 
-      .content {
+  .content {
     width: 80%;
   }
 
-  /* .content {
-    width: 78%;
-  } */
 
 }
 
 @media only screen and (min-width: 1600px) {
-
   body {
     font-size: 34px;
   }
-
 }
 
 @media only screen and (min-width: 1800px) {
-
   body {
     font-size: 36px;
   }
-
 }
 
 @media only screen and (min-width: 2000px) {
-
   body {
     font-size: 40px;
   }
-
 }
 
 @media only screen and (min-width: 3000px) {
-
   body {
     font-size: 60px;
   }
-
 }
-
 
 @keyframes appear {
   from {
     opacity: 0;
-
-  } 
+  }
 
   to {
     opacity: 1;
@@ -139,25 +118,30 @@ a {
 }
 
 .appear {
-    animation: appear 0.3s ease-out;
+  animation: appear 0.3s ease-out;
 }
-
-
 
 /*Blogs styled here */
 
+.blog-item {
+  margin: 0 auto 3em;
+}
+
 #blog-list {
-  margin-top: 3em;
+  margin: 3em auto;
 }
 
 #blog-list li {
-  margin: 2em auto;
   list-style-type: none;
+}
+
+#blog-list > .blog-item > .blog-content > ul > .blog-img {
+  margin-bottom: 1em;
 }
 
 .blog-description {
   font-size: 1em;
-  margin: 1em 0 0;
+  margin: 0.5em 0 0;
 }
 
 .blog-date {
@@ -165,22 +149,54 @@ a {
   opacity: 0.8;
 }
 
-.blog-item > img {
-  margin-bottom: 0.5em;
+#more-blogs {
+  color: #fff;
+  background-color: #e62f20;
+  border: solid 5px #e62f20;
+  padding: 15px 20px;
+  font-size: 20px;
+  border-radius: 100px;
+  max-width: 300px;
+  font-weight: bold;
+  font-family: "Corben", cursive;
+  transition: .3s;
 }
 
+#more-blogs:hover {
+background: none;
+border: solid 5px #222;
+color: #222;
+
+}
 @media only screen and (min-width: 1024px) {
-  
   #blog-list > li {
-  width: 33.33%;
-  display: inline-flex;
+    width: 32.8%;
+    display: inline-flex;
+    margin: 2em auto 0;
+  }
+
+  #blog-list > .blog-item > .blog-content > ul > .blog-img {
+  margin-bottom: 0;
+}
+
+
+  .blog-item:nth-child(3n + 1) > .blog-content {
+    padding: 0 0 0 1em;
+  }
+
+    .blog-item:nth-child(3n + 2) > .blog-content {
+    padding: 0 1em 0 0;
+  }
+
+    .blog-item:nth-child(3n + 3) > .blog-content {
+    padding: 0 0.5em;
+  }
+
+    .blog-item:nth-child(1) > .blog-content {
+    padding: 0;
   }
 
   
-
-  .blog-content {
-    padding: 0 1em;
-  }
 
   .blog-description {
     display: none;
@@ -192,40 +208,45 @@ a {
 
   #blog-list > li:nth-child(1) {
     width: 100%;
-
   }
-
-
 
   #blog-list > li:nth-child(1) > .blog-content > ul {
     display: inline-flex;
-    justify-content:space-between;
+    justify-content: space-between;
     padding: 0;
     margin: 0;
-
   }
 
-    #blog-list > li:nth-child(1) > .blog-content > ul > li:nth-child(1) {
-     width: 60%;
-     float: left;
-
+  #blog-list > li:nth-child(1) > .blog-content > ul > li:nth-child(1) {
+    width: 60%;
+    float: left;
   }
 
-      #blog-list > li:nth-child(1) > .blog-content > ul > li:nth-child(2) {
-     width: 30%;
+  #blog-list > li:nth-child(1) > .blog-content > ul > li:nth-child(2) {
+    width: 35%;
   }
 
-        #blog-list > li:nth-child(1) > .blog-content > ul > li > .blog-description {
-     display: block;
-     font-size: 0.6em;
+  #blog-list > li:nth-child(1) > .blog-content > ul > li > .blog-description {
+    display: block;
+    font-size: 0.6em;
   }
 
+     #blog-list > li:nth-child(1) {
+margin: 0;
+padding: 0;
+  }
 
-
-
-  
-
-
+     #blog-list > li:nth-child(2) {
+margin-top: 1em;
+padding: 0;
+  }
+     #blog-list > li:nth-child(3) {
+margin-top: 1em;
+padding: 0;
+  }
+     #blog-list > li:nth-child(4) {
+margin-top: 1em;
+padding: 0;
+  }
 }
-
 </style>

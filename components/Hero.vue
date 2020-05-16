@@ -28,15 +28,14 @@ export default {
     Header
   },
   mounted() {
-    //allows window to exist
-    if (process.browser) {
+    let image = document.getElementById("welcome");
+    if (process.browser && image) {
       //rotate welcome icon on scroll
       window.document.onscroll = function() {
         scrollRotate();
       };
 
       function scrollRotate() {
-        let image = document.getElementById("welcome");
         image.style.transform = "rotate(-" + window.pageYOffset / 2.5 + "deg)";
       }
     }

@@ -167,6 +167,7 @@ export default {
   top: 0;
   right: 0;
   animation: showMobile 0.6s ease-out;
+  z-index: 2;
 }
 
 .roundel {
