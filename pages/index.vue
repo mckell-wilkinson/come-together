@@ -43,7 +43,7 @@
   
     </div>
 
-    <!-- <Footer /> -->
+    <Footer />
     <Sidebar />
     <SidebarSocial />
   </div>

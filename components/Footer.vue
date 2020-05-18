@@ -1,5 +1,102 @@
 <template>
-<div>
-    Footer component
-</div>
+  <footer>
+    <div class="content">
+      <div class="social-container">
+        <ul>
+          <li>
+            <nuxt-link :to="`/`">
+              <img
+                class="social-logo"
+                src="/img/assets/instagram-black.svg"
+                alt="Instagram logo"
+              />
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="`/`">
+              <img
+                class="social-logo"
+                src="/img/assets/facebook.svg"
+                alt="Instagram logo"
+              />
+            </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link :to="`/`">
+              <img
+                class="social-logo"
+                src="/img/assets/mail.svg"
+                alt="Instagram logo"
+              />
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
+      <div class="privacy-container">
+        <ul>
+          <li>
+              <p>
+            <nuxt-link :to="`/`">
+              Privacy statement
+            </nuxt-link>
+              </p>
+          </li>
+          <li>
+              <p>
+            <nuxt-link :to="`/`">
+              Terms of service
+            </nuxt-link>
+              </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </template>
+
+<script>
+export default {
+  components: {
+    // Logo
+  }
+};
+</script>
+
+<style scoped>
+footer {
+  margin: 3em auto 0;
+  background: #f6f2f1;
+  padding: 1em 0;
+}
+
+img {
+  margin-bottom: 0;
+}
+
+.social-logo {
+  width: 25px;
+}
+
+.social-container > ul {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  margin: 0 auto 0.5em;
+}
+
+.social-container > ul > li {
+  text-align: center;
+  margin: 0 0.5em;
+}
+
+
+
+p {
+    text-align: center;
+    font-size: 0.5em;
+}
+
+a {
+    color: #222;
+}
+</style>
