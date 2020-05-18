@@ -20,19 +20,7 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  /* .sidebar {
-    position: fixed;
-    top: 50vh;
-    left: -46.5%;
-    display: block;
-    text-align: right;
-  }
 
-  .sidebar > ul {
-    list-style-type: none;
-    display: inline-flex;
-    transform: rotate(270deg);
-  } */
 
   .sidebar {
     display: block;
