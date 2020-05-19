@@ -3,23 +3,36 @@
     <Hero />
     <div class="content">
       <div class="insta">
-          <h2>Art, music & community</h2>
+        <h2>Art, music & community</h2>
+        <p>
+          <a href="">Follow us on instagram</a> to be the first to hear about
+          all the latest events. Don't miss out on enjoying some of the best
+          local talent and meeting like-minded people.
+        </p>
         <ul>
-          <li data-aos="fade-up"
-            class="insta-image"
+          <li
+            class="insta-image fade-in"
             v-for="(insta, index) in instaImages"
             :key="index"
           >
-          <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/cometogethercollective/">
-            <img :src="insta" />
-          </a>
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://www.instagram.com/cometogethercollective/"
+            >
+              <img :src="insta" />
+            </a>
           </li>
         </ul>
       </div>
       <h2>Blogs</h2>
-     <ul id="blog-list">
+      <ul id="blog-list">
         <!-- Limits number of blogposts displayed to three -->
-        <li class="blog-item" v-for="(blog, index) in blogPost" :key="index">
+        <li
+          class="blog-item fade-in"
+          v-for="(blog, index) in blogPost"
+          :key="index"
+        >
           <div class="blog-content">
             <ul>
               <li>
@@ -40,7 +53,6 @@
           </div>
         </li>
       </ul>
-  
     </div>
 
     <Footer />
@@ -100,6 +112,14 @@ export default {
 </script>
 
 <style scoped>
+p {
+  color: #555;
+  margin: 0 0 1em;
+}
+
+h2 {
+  margin-bottom: 0.5em;
+}
 .insta {
   margin: 6em auto;
 }
@@ -113,10 +133,9 @@ export default {
   cursor: pointer;
 }
 
-    #blog-list {
-    margin: 0;
-  }
-
+#blog-list {
+  margin: 0;
+}
 
 @media only screen and (min-width: 600px) {
   .insta > ul {
@@ -172,85 +191,79 @@ export default {
   .insta > ul > li:nth-child(3n + 3) {
     padding: 0.5em 0 0.5em 0.5em;
   }
-  
-.insta-image:hover:after {
-  content: url("~static/img/assets/instagram.svg");
-  font-family: "Corben", cursive;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to right, #E71D73, #E62F20);
-  color: #fff;
-  position: relative;
-  top: -100%;
-  text-align: center;
-   display:flex;
-  flex-direction:row;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.7;
-  pointer-events: none;
 
-}
-
+  .insta-image:hover:after {
+    content: url("~static/img/assets/instagram.svg");
+    font-family: "Corben", cursive;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #e71d73, #e62f20);
+    color: #fff;
+    position: relative;
+    top: -100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    pointer-events: none;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-
   #blog-list {
     margin: 0;
   }
 
- #blog-list > li {
+  #blog-list > li {
     width: 33%;
     display: inline-flex;
     margin: 2em auto 0;
   }
 
-   #blog-list > li:nth-child(1) {
-margin: 0;
-padding: 0;
+  #blog-list > li:nth-child(1) {
+    margin: 0;
+    padding: 0;
   }
 
-     #blog-list > li:nth-child(2) {
-margin-top: 1em;
-padding: 0;
+  #blog-list > li:nth-child(2) {
+    margin-top: 1em;
+    padding: 0;
   }
-     #blog-list > li:nth-child(3) {
-margin-top: 1em;
-padding: 0;
+  #blog-list > li:nth-child(3) {
+    margin-top: 1em;
+    padding: 0;
   }
-     #blog-list > li:nth-child(4) {
-margin-top: 1em;
-padding: 0;
+  #blog-list > li:nth-child(4) {
+    margin-top: 1em;
+    padding: 0;
   }
 
   #blog-list > .blog-item > .blog-content > ul > .blog-img {
-  margin-bottom: 0;
-}
-
+    margin-bottom: 0;
+  }
 
   .blog-item:nth-child(3n + 1) > .blog-content {
     padding: 0 0 0 1em;
   }
 
-    .blog-item:nth-child(3n + 2) > .blog-content {
+  .blog-item:nth-child(3n + 2) > .blog-content {
     padding: 0 1em 0 0;
   }
 
-    .blog-item:nth-child(3n + 3) > .blog-content {
+  .blog-item:nth-child(3n + 3) > .blog-content {
     padding: 0 0.5em;
   }
 
-    .blog-item:nth-child(1) > .blog-content {
+  .blog-item:nth-child(1) > .blog-content {
     padding: 0;
     margin-top: 0;
   }
 
-      .blog-item:nth-child(1) > .blog-content > ul > li:nth-child(1) {
+  .blog-item:nth-child(1) > .blog-content > ul > li:nth-child(1) {
     margin: 0 1em 0 0;
   }
-
-  
 
   .blog-description {
     display: none;
@@ -285,6 +298,4 @@ padding: 0;
     font-size: 0.6em;
   }
 }
-
-
 </style>

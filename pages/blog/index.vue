@@ -4,7 +4,11 @@
     <div class="content">
       <ul id="blog-list">
         <!-- Limits number of blogposts displayed to three -->
-        <li class="blog-item" v-for="(blog, index) in blogPost" :key="index">
+        <li
+          class="blog-item fade-in"
+          v-for="(blog, index) in blogPost"
+          :key="index"
+        >
           <div class="blog-content">
             <ul>
               <li class="blog-img">
@@ -90,7 +94,7 @@ export default {
         blogList.insertAdjacentHTML(
           "beforeend",
           `
-         <li class="blog-item">
+         <li class="blog-item fade-in">
           <div class="blog-content">
             <ul>
               <li class="blog-img">
@@ -114,7 +118,7 @@ export default {
       }
       this.blogIncrementer = this.blogIncrementer + 10;
 
-//remove the more blogs button if all blogs are shown
+      //remove the more blogs button if all blogs are shown
       const blogTotal = document.querySelectorAll(".blog-item");
 
       if (blogPostsNew.length === blogTotal.length) {
@@ -128,20 +132,6 @@ export default {
 <style scoped>
 .hide {
   display: none;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.blog-item {
-  animation: fadeIn 1s;
 }
 
 .more-blogs {

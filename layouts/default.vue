@@ -5,6 +5,21 @@
 </template>
 
 <style>
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +44,7 @@ h5 {
 }
 
 a {
-  color: #e62f20;
+  color: #222;
 }
 
 .content {
@@ -192,12 +207,17 @@ a {
     padding: 0;
   }
 
+  .blog-item:nth-child(n + 2) > .blog-content > ul > li > h4 {
+    font-size: 0.6em;
+  }
+
   .blog-description {
     display: none;
   }
 
   .blog-date {
     margin: 0.5em 0 0;
+    font-size: 0.5em;
   }
 
   #blog-list > li:nth-child(1) {

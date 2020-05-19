@@ -4,11 +4,13 @@
     <div class="content">
       <ul>
         <li>
-          <h1 v-show="$route.path === '/'" class="come-together-header">Come Together Collective</h1>
+          <h1 v-show="$route.path === '/'" class="come-together-header fade-in">
+            Come Together Collective
+          </h1>
         </li>
         <li class="intro-header-list">
           <div class="float-right">
-            <h2 v-show="$route.path === '/'" class="intro-header appear">
+            <h2 v-show="$route.path === '/'" class="intro-header fade-in">
               We’re an art collective based in Manchester. Our main objective
               is, as the name suggests, to bring people together.
             </h2>
@@ -16,17 +18,17 @@
         </li>
 
         <li class="hamburger-container">
-       <div id="hamburger" v-on:click="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+          <div id="hamburger" v-on:click="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </li>
       </ul>
     </div>
     <div id="mobile-menu" class="mobile-menu hide">
-       <!-- <img class="roundel" src="/img/assets/roundel.svg" alt="" /> -->
-      <ul class="hide mobile-items" id="mobile-items">
+      <!-- <img class="roundel" src="/img/assets/roundel.svg" alt="" /> -->
+      <ul class="hide mobile-items fade-in" id="mobile-items">
         <li>
           <nuxt-link to="/blog"><h3>BLOG</h3></nuxt-link>
         </li>
@@ -55,8 +57,7 @@ export default {
   methods: {
     hamburger() {
       const icon = document.getElementById("hamburger");
-      icon.classList.toggle("open"); 
-     
+      icon.classList.toggle("open");
 
       const mobileMenu = document.getElementById("mobile-menu");
       mobileMenu.classList.toggle("hide");
@@ -69,7 +70,6 @@ export default {
 </script>
 
 <style scoped>
-
 .hide {
   display: none;
 }
@@ -94,10 +94,10 @@ export default {
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   cursor: pointer;
   z-index: 3;
 }
@@ -115,10 +115,10 @@ export default {
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 #hamburger span:nth-child(1) {
@@ -157,7 +157,6 @@ export default {
   -o-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
-
 
 .mobile-menu {
   width: 100vw;
@@ -206,7 +205,6 @@ export default {
 h1.come-together-header,
 .intro-header {
   display: none;
-
 }
 
 @media only screen and (min-width: 1024px) {

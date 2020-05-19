@@ -1,17 +1,17 @@
 <template>
-<div>
-<Header />
-  <div class="content">
-    <article>
-      <h1 class="blog-title">{{ blogPost.title }}</h1>
-      <img :src="blogPost.thumbnail" />
-      <div v-html="$md.render(blogPost.body)" />
-    </article>
+  <div>
+    <Header />
+    <div class="content">
+      <article class="fade-in">
+        <h1 class="blog-title">{{ blogPost.title }}</h1>
+        <img :src="blogPost.thumbnail" />
+        <div v-html="$md.render(blogPost.body)" />
+      </article>
+    </div>
+    <SideBarMenu />
+    <SideBarSocial />
+    <Footer />
   </div>
-  <SideBarMenu />
-  <SideBarSocial />
-  <Footer />
-</div>
 </template>
 
 <script>
@@ -37,15 +37,12 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
 h1.blog-title {
-text-align: left;
+  text-align: left;
 }
 
 img {
   margin-bottom: 1em;
 }
-
-
 </style>

@@ -2,9 +2,9 @@
   <div class="hero">
     <Header />
     <div class="content">
-      <h1 class="come-together">Come Together Collective</h1>
-      <img class="roundel appear" src="/img/assets/roundel.svg" alt="" />
-      <h2 class="intro">
+      <h1 class="come-together fade-in">Come Together Collective</h1>
+      <img class="roundel fade-in" src="/img/assets/roundel.svg" alt="" />
+      <h2 class="intro fade-in">
         We’re an art collective based in Manchester. Our main objective is to
         bring people together through music and the arts.
       </h2>

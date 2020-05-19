@@ -35,18 +35,18 @@
       <div class="privacy-container">
         <ul>
           <li>
-              <p>
-            <nuxt-link :to="`/`">
-              Privacy statement
-            </nuxt-link>
-              </p>
+            <p>
+              <nuxt-link :to="`/`">
+                Privacy statement
+              </nuxt-link>
+            </p>
           </li>
           <li>
-              <p>
-            <nuxt-link :to="`/`">
-              Terms of service
-            </nuxt-link>
-              </p>
+            <p>
+              <nuxt-link :to="`/`">
+                Terms of service
+              </nuxt-link>
+            </p>
           </li>
         </ul>
       </div>
@@ -89,14 +89,16 @@ img {
   margin: 0 0.5em;
 }
 
-
-
 p {
-    text-align: center;
-    font-size: 0.5em;
+  text-align: center;
+  font-size: 0.5em;
 }
 
 a {
-    color: #222;
+  color: #222;
+}
+
+ul {
+  list-style-type: none;
 }
 </style>

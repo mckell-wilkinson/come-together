@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="content">
+    <div class="content fade-in">
       <ul class="about-intro">
         <li><h1>About</h1></li>
         <li>
@@ -27,19 +27,19 @@
             far.
           </p>
           <p>
-            Say hello, <nuxt-link to="/contact">get in touch</nuxt-link> and we’ll see you soon.
+            Say hello, <nuxt-link to="/contact">get in touch</nuxt-link> and
+            we’ll see you soon.
           </p>
         </li>
       </ul>
       <ul class="meet-team">
         <li v-for="(people, index) in people" :key="index">
           <div class="person">
-         <h3>{{people.name}}</h3>
-         <p>{{people.title}}</p>
-         <img :src=people.image alt="">
+            <h3>{{ people.name }}</h3>
+            <p>{{ people.title }}</p>
+            <img :src="people.image" alt="" />
           </div>
         </li>
-         
       </ul>
     </div>
     <sidebar />
@@ -62,7 +62,7 @@ export default {
     sidebarSocial
   },
   computed: {
-      people() {
+    people() {
       let people = this.$store.state.about;
       return people;
     }
@@ -71,11 +71,9 @@ export default {
 </script>
 
 <style>
-
 li {
   list-style-type: none;
 }
-
 
 h1 {
   margin: 3em 0 1em;
@@ -94,52 +92,49 @@ p {
 }
 
 @media only screen and (min-width: 1024px) {
+  .about-intro {
+    display: flex;
+    justify-content: space-between;
+  }
 
+  .about-intro > ul > li {
+    width: 50%;
+  }
 
-.about-intro {
-display: flex;
-justify-content: space-between;
-}
+  .about-intro > li > p:nth-child(1) {
+    margin-top: 6em;
+  }
 
-.about-intro > ul > li {
-  width: 50%;
-}
+  .about-intro > li:nth-child(odd) {
+    padding-right: 4em;
+  }
 
-.about-intro > li > p:nth-child(1) {
-  margin-top: 6em;
-}
+  h1 {
+    text-align: right;
+    font-size: 1.4em;
+  }
 
-.about-intro > li:nth-child(odd) {
-  padding-right: 4em;
-}
+  p {
+    font-size: 0.7em;
+  }
 
-h1 {
-  text-align: right;
-  font-size: 1.4em;
-}
+  .meet-team > li {
+    margin: 0 0 1.5em;
+    padding: 0 1em;
+    width: 50%;
+    display: inline-flex;
+  }
 
-p {
-  font-size: 0.7em;
-}
+  .meet-team > li:nth-child(4n-7) {
+    transform: translateX(50px);
+  }
 
-.meet-team > li {
-  margin: 0 0 1.5em;
-  padding: 0 1em;
-  width: 50%;
-  display: inline-flex;
-}
+  .meet-team > li:nth-child(4n-6) {
+    transform: translateX(50px);
+  }
 
-.meet-team > li:nth-child(4n-7) {
-transform: translateX(50px);
-}
-
-.meet-team > li:nth-child(4n-6) {
-transform: translateX(50px);
-}
-
-.person > p {
-font-size: 0.6em;
-}
-
+  .person > p {
+    font-size: 0.6em;
+  }
 }
 </style>
