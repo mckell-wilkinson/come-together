@@ -3,7 +3,7 @@
     <Header />
     <div class="content fade-in">
         <div class="contact">
-<form name="contact" action="thanks" netlify>
+<form name="contact" netlify>
   <p>
     <label>Name <input type="text" name="name" /></label>
   </p>
