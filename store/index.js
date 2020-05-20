@@ -68,11 +68,11 @@ export const actions = {
       return res;
     });
 
-    // //sort by date
 
-    // blogPosts.sort(function(a, b) {
-    //   return new Date(b.date) - new Date(a.date);
-    // });
+
+    blogPosts.sort(function(a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
 
     await commit("setBlogPosts", blogPosts);
   }
