@@ -26,7 +26,7 @@
 
   .sidebar > ul {
     position: fixed;
-    top: 150px;
+    top: 50px;
     left: 70px;
     list-style-type: none;
     width: 0;

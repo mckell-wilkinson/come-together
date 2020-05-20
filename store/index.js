@@ -17,35 +17,35 @@ export const state = () => ({
 
   about: [
     {
-      name: 'Roisin',
-      title: 'Creative and Media Manager',
-      image: '/img/assets/roisin.png'
+      name: "Roisin",
+      title: "Creative and Media Manager",
+      image: "/img/assets/roisin.png"
     },
     {
-      name: 'Ellie',
-      title: 'Visual Branding and Technical Director',
-      image: '/img/assets/ellie.png'
-   },
+      name: "Ellie",
+      title: "Visual Branding and Technical Director",
+      image: "/img/assets/ellie.png"
+    },
     {
       name: "Laura 'Lanks'",
-      title: 'Project Manager',
-      image: '/img/assets/lanks.png'
-   },
+      title: "Project Manager",
+      image: "/img/assets/lanks.png"
+    },
     {
-      name: 'Rowan',
-      title: 'Artistic Consultant',
-      image: '/img/assets/rowan.png'
-   },
+      name: "Rowan",
+      title: "Artistic Consultant",
+      image: "/img/assets/rowan.png"
+    },
     {
-      name: 'Molly',
-      title: 'Music Director',
-      image: '/img/assets/molly.png'
-   },
+      name: "Molly",
+      title: "Music Director",
+      image: "/img/assets/molly.png"
+    },
     {
-      name: 'Yasmin',
-      title: 'Educational Lead and Tehcnical Assitant',
-      image: '/img/assets/yasmin.png'
-   },
+      name: "Yasmin",
+      title: "Educational Lead and Tehcnical Assitant",
+      image: "/img/assets/yasmin.png"
+    }
   ]
 });
 
@@ -67,6 +67,13 @@ export const actions = {
       res.slug = key.slice(2, -5);
       return res;
     });
+
+    // //sort by date
+
+    // blogPosts.sort(function(a, b) {
+    //   return new Date(b.date) - new Date(a.date);
+    // });
+
     await commit("setBlogPosts", blogPosts);
   }
 };

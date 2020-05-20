@@ -2,7 +2,7 @@
   <div class="sidebar">
     <ul>
       <li>
-        <nuxt-link to="/">CONTACT&SOCIAL</nuxt-link>
+        <nuxt-link to="/contact">CONTACT&SOCIAL</nuxt-link>
       </li>
     </ul>
   </div>
@@ -20,7 +20,7 @@
 
   .sidebar > ul {
     position: fixed;
-    top: 150px;
+    top: 50px;
     left: 95vw;
     list-style-type: none;
     width: 0;
