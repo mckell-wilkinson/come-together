@@ -180,6 +180,26 @@ a {
   background-color: #e62f20;
   border: solid 5px #e62f20;
 }
+
+button {
+  background: none;
+  border: solid 5px #222;
+  color: #222;
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 100px;
+  max-width: 200px;
+  font-weight: bold;
+  font-family: "Corben", cursive;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #e62f20;
+  border: solid 5px #e62f20;
+}
 @media only screen and (min-width: 1024px) {
   #blog-list > li {
     width: 32.8%;
