@@ -1,7 +1,0 @@
-{
-  "date": "2020-01-01T22:59:27.153Z",
-  "title": "Come Together for Iris Mai",
-  "description": "A charity event for a special person",
-  "body": "<div id=\"eventbrite-widget-container-38298737555\"></div>\n\n<script src=\"https://www.eventbrite.co.uk/static/widgets/eb_widgets.js\"></script>\n\n<script type=\"text/javascript\">\n    var exampleCallback = function() {\n        console.log('Order complete!');\n    };\n\n    window.EBWidgets.createWidget({\n        // Required\n        widgetType: 'checkout',\n        eventId: '38298737555',\n        iframeContainerId: 'eventbrite-widget-container-38298737555',\n\n        // Optional\n        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided\n        onOrderComplete: exampleCallback  // Method called when an order has successfully completed\n    });\n</script>",
-  "thumbnail": "/img/record.jpg"
-}
