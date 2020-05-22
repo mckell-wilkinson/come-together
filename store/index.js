@@ -1,5 +1,6 @@
 export const state = () => ({
   blogPosts: [],
+  eventPosts: [],
   insta: [
     "/img/assets/img-1.jpg",
     "/img/assets/img-2.jpg",
@@ -52,6 +53,9 @@ export const state = () => ({
 export const mutations = {
   setBlogPosts(state, list) {
     state.blogPosts = list;
+  },
+  setEventPosts(state, list) {
+    state.eventPosts = list;
   }
 };
 
@@ -62,10 +66,23 @@ export const actions = {
       false,
       /\.json$/
     );
+
+    let eventFiles = await require.context(
+      "~/assets/content/event/",
+      false,
+      /\.json$/
+    );
+
     let blogPosts = files.keys().map(key => {
       let res = files(key);
       res.slug = key.slice(2, -5);
       return res;
+    });
+    
+    let eventPosts = eventFiles.keys().map(key => {
+      let result = eventFiles(key);
+      result.slug = key.slice(2, -5);
+      return result;
     });
 
 
@@ -75,5 +92,6 @@ export const actions = {
     });
 
     await commit("setBlogPosts", blogPosts);
+    await commit("setEventPosts", eventPosts);
   }
 };
