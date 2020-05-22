@@ -78,17 +78,22 @@ export const actions = {
       res.slug = key.slice(2, -5);
       return res;
     });
-    
+
     let eventPosts = eventFiles.keys().map(key => {
       let result = eventFiles(key);
       result.slug = key.slice(2, -5);
       return result;
     });
 
-
+    //sort newest published first
 
     blogPosts.sort(function(a, b) {
       return new Date(b.date) - new Date(a.date);
+    });
+
+    //sort soonest event first
+    eventPosts.sort(function(a, b) {
+      return new Date(a.eventdate) - new Date(b.eventdate);
     });
 
     await commit("setBlogPosts", blogPosts);

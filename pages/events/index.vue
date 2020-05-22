@@ -2,10 +2,11 @@
   <div>
     <Header />
     <div class="content">
-      <ul id="event-list">
+      <div class="event">
+        <div v-if="event.length > 0">
+                <ul id="event-list">
         <!-- Limits number of eventposts displayed to three -->
-        <li
-          class="event-item fade-in"
+        <li class="event-item fade-in"
           v-for="(event, index) in eventPost"
           :key="index"
         >
@@ -20,16 +21,24 @@
                     event.title
                   }}</a>
                 </h4>
-                <p class="event-description">{{ event.description }}</p>
+               
                 <p class="event-date">
-                  {{ new Date(event.eventdate).toDateString() }} at {{new Date(event.eventdate).toLocaleTimeString()}}
+                  {{event.location}}, {{new Date(event.eventdate).toDateString() }} at {{new Date(event.eventdate).toLocaleTimeString([], {timeStyle: 'short'})}}
                 </p>
+                 <p class="event-description">{{ event.description }}</p>
               </li>
             </ul>
           </div>
         </li>
       </ul>
+        </div>
+        <div v-else>
+       <h2>
+          Sorry we don't have any events on at the moment! Please check back soon.
+        </h2>
+        </div>
 
+    </div>
     </div>
     <SideBarMenu />
     <SideBarSocial />
@@ -46,7 +55,8 @@ export default {
   data() {
     return {
       //used to show next ten events on click of moreevents
-      eventIncrementer: 10
+      event: this.$store.state.eventPosts
+
     };
   },
   components: {
@@ -59,78 +69,49 @@ export default {
   computed: {
     eventPost() {
       const eventPosts = this.$store.state.eventPosts;
-      //below will show 10 event posts - more event posts added on click using function moreevents
-      const events = eventPosts.slice(0, 10);
-
-      return events;
+      return eventPosts;
     }
   },
 
-  mounted() {
-    //if more than 10 events show the more events button
-    const events = this.$store.state.eventPosts;
-    const eventButton = document.getElementById("more-events");
-
-    if (events.length > 10) {
-      eventButton.classList.remove("hide");
-    }
-  },
-
-  methods: {
-    //this will add the next ten events on click of more events button
-
-    moreevents(n) {
-      const eventPostsNew = this.$store.state.eventPosts;
-      const eventsNew = eventPostsNew.slice(0, n + 10);
-      const eventList = document.getElementById("event-list");
-
-      for (n; n < eventsNew.length; n++) {
-        eventList.insertAdjacentHTML(
-          "beforeend",
-          `
-         <li class="event-item fade-in">
-          <div class="event-content">
-            <ul>
-              <li class="event-img">
-                <img src="${eventsNew[n].thumbnail}"/>
-              </li>
-              <li>
-                <h4>
-                  <a href="event/${eventsNew[n].slug}">${eventsNew[n].title}</a>
-                </h4>
-                <p class="event-description">${eventsNew[n].description}</p>
-                <p class="event-date">
-                  ${new Date(eventsNew[n].date).toDateString()}
-                </p>
-              </li>
-            </ul>
-          </div>
-        </li>
-        
-      `
-        );
-      }
-      this.eventIncrementer = this.eventIncrementer + 10;
-
-      //remove the more events button if all events are shown
-      const eventTotal = document.querySelectorAll(".event-item");
-
-      if (eventPostsNew.length === eventTotal.length) {
-        const eventButton = document.getElementById("more-events");
-        eventButton.classList.add("hide");
-      }
-    }
-  }
 };
 </script>
 <style scoped>
-.hide {
-  display: none;
+
+body {
+  height: 100vh;
 }
 
-.more-events {
-  background: none;
-  border: none;
-  cursor: pointer;
+.content {
+  margin-top: 6em;
 }
+
+ul {
+  list-style-type: none;
+}
+
+.event-date {
+  color: #E62F20;
+}
+
+p {
+  margin: 0.5em 0;
+}
+
+.event-item {
+  margin-bottom: 2em;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .event {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+
 </style>
