@@ -17,10 +17,10 @@ collections:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Publish date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - {label: "Featured Image", name: "thumbnail", widget: "image", required: true}
+      - {label: "Featured image", name: "thumbnail", widget: "image", required: true}
 
 
   - name: 'event'
@@ -28,10 +28,15 @@ collections:
     folder: 'assets/content/event'
     create: true
     format: 'json'
-    # slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Publish date', name: 'date', widget: 'datetime' }
+      - {label: "Featured image", name: "thumbnail", widget: "image", required: true}
+      - { label: 'Event date', name: 'date', widget: 'date' }
+      - { label: 'Event start time', name: 'date', widget: 'time' }
+      - { label: 'Event end time', name: 'date', widget: 'time' }
+      - { label: 'Link to eventbrite', name: 'title', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
