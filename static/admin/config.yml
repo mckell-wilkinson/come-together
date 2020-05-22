@@ -6,6 +6,7 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+
   - name: 'blog'
     label: 'Blog'
     folder: 'assets/content/blog'
@@ -21,7 +22,8 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: true}
 
-        - name: 'event'
+
+  - name: 'event'
     label: 'Event'
     folder: 'assets/content/event'
     create: true
