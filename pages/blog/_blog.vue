@@ -2,7 +2,7 @@
   <div>
     <Header />
     <div class="content">
-      <article class="fade-in">
+      <article class="blog fade-in">
         <h1 class="blog-title">{{ blogPost.title }}</h1>
         <img :src="blogPost.thumbnail" />
         <div v-html="$md.render(blogPost.body)" />
@@ -45,4 +45,12 @@ h1.blog-title {
 img {
   margin-bottom: 1em;
 }
+
+@media only screen and (min-width: 1024px) {
+  .blog {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
 </style>

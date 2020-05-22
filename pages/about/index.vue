@@ -2,6 +2,7 @@
   <div>
     <Header />
     <div class="content fade-in">
+      <div class="about">
       <ul class="about-intro">
         <li><h1>About</h1></li>
         <li>
@@ -41,6 +42,7 @@
           </div>
         </li>
       </ul>
+    </div>
     </div>
     <sidebar />
     <sidebarSocial />
@@ -137,4 +139,12 @@ p {
     font-size: 0.6em;
   }
 }
+
+@media only screen and (min-width: 1024px) {
+  .about {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
 </style>

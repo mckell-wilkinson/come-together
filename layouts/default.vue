@@ -47,6 +47,11 @@ a {
   color: #222;
 }
 
+h1, h2, h3, h4, h5, p {
+  padding: 0;
+  margin: 0.5em 0;
+}
+
 .content {
   width: 80%;
   margin: 0 auto;

@@ -2,6 +2,7 @@
   <div>
     <Header />
     <div class="content">
+      <div class="blog">
       <ul id="blog-list">
         <!-- Limits number of blogposts displayed to three -->
         <li
@@ -36,6 +37,7 @@
       >
         More blogs
       </button>
+    </div>
     </div>
     <SideBarMenu />
     <SideBarSocial />
@@ -139,4 +141,12 @@ export default {
   border: none;
   cursor: pointer;
 }
+
+@media only screen and (min-width: 1024px) {
+  .blog {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
 </style>
