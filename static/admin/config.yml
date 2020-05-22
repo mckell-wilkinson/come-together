@@ -35,8 +35,6 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish date', name: 'date', widget: 'datetime' }
       - {label: "Featured image", name: "thumbnail", widget: "image", required: true}
-      - { label: 'Event date', name: 'date', widget: 'date' }
-      - { label: 'Event start time', name: 'date', widget: 'time' }
-      - { label: 'Event end time', name: 'date', widget: 'time' }
+      - { label: 'Event start date and time', name: 'date', widget: 'datetime' }
       - { label: 'Link to eventbrite', name: 'title', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
