@@ -4,7 +4,7 @@
     <div class="content fade-in">
       <div class="contact">
         <h1>Whatever the reason is drop a line here:</h1>
-        <form name="contact" method="POST" novalidate netlify>
+        <form name="contact" method="POST" action="contact/thanks" novalidate netlify>
           <p>
             <label>Name *<input type="text" name="person" required/></label>
           </p>
@@ -15,7 +15,7 @@
             <label>Message *<textarea type="textarea" name="message" required/></label>
           </p>
           <p>
-            <button type="button">Send</button>
+            <button type="submit">Send</button>
           </p>
         </form>
       </div>
