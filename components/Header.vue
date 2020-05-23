@@ -73,6 +73,9 @@ export default {
 .hide {
   display: none;
 }
+.content {
+  margin-top: 0;
+}
 
 .header-container > .content > ul {
   display: inline-flex;

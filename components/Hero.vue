@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <Header />
-    <div class="content">
+    <div id="content" class="content">
       <h1 class="come-together fade-in">Come Together Collective</h1>
       <img class="roundel fade-in" src="/img/assets/roundel.svg" alt="" />
       <h2 class="intro fade-in">
@@ -44,6 +44,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .hero {
   background: #f6f2f1;
   text-align: center;

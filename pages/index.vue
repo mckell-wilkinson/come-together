@@ -111,6 +111,7 @@ export default {
 </script>
 
 <style scoped>
+
 p {
   color: #555;
   margin: 0 0 1em;
