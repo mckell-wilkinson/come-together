@@ -5,6 +5,30 @@
 </template>
 
 <style>
+
+@font-face {
+  font-family: 'Corben';
+  font-weight: bold;
+  src: url('~static/fonts/Corben-Bold.ttf');
+}
+
+
+@font-face {
+  font-family: 'Corben';
+  font-weight: normal;
+  src: url('~static/fonts/Corben-Regular.ttf');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: normal;
+  src: url('~static/fonts/Montserrat-Medium.ttf');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  src: url('~static/fonts/Montserrat-Medium.ttf');
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -47,6 +71,10 @@ a {
   color: #222;
 }
 
+a:hover {
+  color: #E62F20;
+}
+
 h1, h2, h3, h4, h5, p {
   padding: 0;
   margin: 0.5em 0;
@@ -59,25 +87,25 @@ h1, h2, h3, h4, h5, p {
 
 @media only screen and (min-width: 400px) {
   body {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 @media only screen and (min-width: 600px) {
   body {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 @media only screen and (min-width: 900px) {
   body {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   body {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .content {
@@ -87,13 +115,13 @@ h1, h2, h3, h4, h5, p {
 
 @media only screen and (min-width: 1200px) {
   body {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
 
 @media only screen and (min-width: 1400px) {
   body {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .content {
@@ -103,19 +131,19 @@ h1, h2, h3, h4, h5, p {
 
 @media only screen and (min-width: 1600px) {
   body {
-    font-size: 34px;
+    font-size: 32px;
   }
 }
 
 @media only screen and (min-width: 1800px) {
   body {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 
 @media only screen and (min-width: 2000px) {
   body {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
@@ -159,12 +187,15 @@ h1, h2, h3, h4, h5, p {
 
 .blog-description {
   font-size: 1em;
-  margin: 0.5em 0 0;
+  margin: 0 !important;
+  padding: 0;
 }
 
 .blog-date {
   font-size: 0.7em;
   opacity: 0.8;
+  margin: 0 !important;
+  padding: 0;
 }
 
 #more-blogs {
@@ -186,7 +217,7 @@ h1, h2, h3, h4, h5, p {
   border: solid 5px #e62f20;
 }
 
-button {
+.button, button {
   background: none;
   border: solid 5px #222;
   color: #222;
@@ -200,11 +231,17 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover, button:hover {
   color: #fff;
   background-color: #e62f20;
   border: solid 5px #e62f20;
 }
+
+.content {
+  margin-top: 2em;
+}
+
+
 @media only screen and (min-width: 1024px) {
   #blog-list > li {
     width: 32.8%;
@@ -241,7 +278,6 @@ button:hover {
   }
 
   .blog-date {
-    margin: 0.5em 0 0;
     font-size: 0.5em;
   }
 

@@ -26,6 +26,7 @@
                   {{event.location}}, {{new Date(event.eventdate).toDateString() }} at {{new Date(event.eventdate).toLocaleTimeString([], {timeStyle: 'short'})}}
                 </p>
                  <p class="event-description">{{ event.description }}</p>
+                 <p><a class="button">Get your tickets</a></p>
               </li>
             </ul>
           </div>
@@ -81,16 +82,14 @@ body {
   height: 100vh;
 }
 
-.content {
-  margin-top: 6em;
-}
 
 ul {
   list-style-type: none;
 }
 
+
 .event-date {
-  color: #E62F20;
+  color: #555;
 }
 
 p {
@@ -98,6 +97,10 @@ p {
 }
 
 .event-item {
+  margin-bottom: 4em;
+}
+
+.event-description {
   margin-bottom: 2em;
 }
 
@@ -106,12 +109,13 @@ img {
   padding: 0;
 }
 
+
+
 @media only screen and (min-width: 1024px) {
   .event {
     width: 60%;
     margin: 0 auto;
   }
 }
-
 
 </style>

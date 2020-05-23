@@ -6,10 +6,9 @@
         <h2>Art, music & community</h2>
         <p>
           <a href="">Follow us on instagram</a> to be the first to hear about
-          all the latest events. Don't miss out on enjoying some of the best
-          local talent and meeting like-minded people.
+          all the latest events
         </p>
-        <ul>
+        <ul class="insta-list">
           <li
             class="insta-image fade-in"
             v-for="(insta, index) in instaImages"
@@ -137,6 +136,11 @@ h2 {
   margin: 0;
 }
 
+.insta-list > li:nth-child(n+7) {
+  display: none;
+}
+
+
 @media only screen and (min-width: 600px) {
   .insta > ul {
     display: flex;
@@ -181,6 +185,11 @@ h2 {
     width: 33.333%;
   }
 
+  .insta-list > li:nth-child(n+7) {
+  display: block;
+}
+
+
   .insta > ul > li:nth-child(3n + 1) {
     padding: 0.5em 0.5em 0.5em 0;
   }
@@ -197,7 +206,7 @@ h2 {
     font-family: "Corben", cursive;
     height: 100%;
     width: 100%;
-    background: linear-gradient(to right, #e71d73, #e62f20);
+    background: linear-gradient(to bottom right, rgb(59, 59, 59), #000);
     color: #fff;
     position: relative;
     top: -100%;
@@ -206,7 +215,7 @@ h2 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    opacity: 0.7;
+    opacity: 0.8;
     pointer-events: none;
   }
 }

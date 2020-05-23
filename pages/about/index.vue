@@ -103,9 +103,6 @@ p {
     width: 50%;
   }
 
-  .about-intro > li > p:nth-child(1) {
-    margin-top: 6em;
-  }
 
   .about-intro > li:nth-child(odd) {
     padding-right: 4em;

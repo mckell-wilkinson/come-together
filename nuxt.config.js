@@ -15,8 +15,7 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-    {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Montserrat:wght@500;700&display=swap'}
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
   ]
   },
   generate: {

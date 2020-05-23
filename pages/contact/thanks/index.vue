@@ -46,10 +46,6 @@ h1 {
     text-align: left;
 }
 
-.thanks {
-    margin-top: 6em;
-}
-
 @media only screen and (min-width: 1024px) {
   .thanks {
     width: 60%;

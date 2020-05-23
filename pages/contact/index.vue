@@ -6,13 +6,13 @@
         <h1>Whatever the reason is drop a line here:</h1>
         <form name="contact" action="contact/thanks" netlify>
           <p>
-            <label>Name* <input type="text" name="name" required/></label>
+            <label>Name *<input type="text" name="person" required/></label>
           </p>
           <p>
-            <label>Email* <input type="email" name="email" required/></label>
+            <label>Your email *<input type="email" name="email" required/></label>
           </p>
           <p>
-            <label>Message* <textarea type="textarea" name="message" required/></label>
+            <label>Message *<textarea type="textarea" name="message" required/></label>
           </p>
           <p>
             <button type="submit">Send</button>
@@ -45,6 +45,8 @@ export default {
 <style scoped>
 h1 {
   text-align: left;
+  margin: 0 0 2em;
+  padding: 0;
 }
 
 input,
@@ -70,9 +72,6 @@ textarea {
   height: 300px;
 }
 
-.contact {
-  margin-top: 6em;
-}
 
 @media only screen and (min-width: 1024px) {
   .contact {

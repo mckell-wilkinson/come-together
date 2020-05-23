@@ -48,7 +48,7 @@ img {
 
 @media only screen and (min-width: 1024px) {
   .blog {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
   }
 }
