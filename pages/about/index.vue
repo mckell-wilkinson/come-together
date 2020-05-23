@@ -57,6 +57,18 @@ import sidebar from "~/components/SidebarMenu";
 import sidebarSocial from "~/components/SidebarSocial";
 
 export default {
+  
+  head() {
+    return {
+      title: `Come Together | About`,
+        meta: [
+        { hid: 'description', name: 'description', content: 'We are an arts and community events collective based in Chorlton, Manchester' }
+      ],
+      script: [
+        { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
+      ]
+    };
+  },
   components: {
     Header,
     Footer,

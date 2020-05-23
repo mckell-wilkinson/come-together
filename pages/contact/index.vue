@@ -38,7 +38,22 @@ export default {
     Footer,
     sidebar,
     sidebarSocial
-  }
+  },
+
+    head() {
+    return {
+      title: `Come Together | Contact`,
+      meta: [
+ 
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Get in touch with us at Come Together to get involved or suggest an event"
+        }
+      ]
+    };
+  },
 };
 </script>
 

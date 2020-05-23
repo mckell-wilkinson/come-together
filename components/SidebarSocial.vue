@@ -2,7 +2,7 @@
   <div class="sidebar">
     <ul>
       <li>
-        <nuxt-link to="/contact">CONTACT&SOCIAL</nuxt-link>
+        <nuxt-link  v-bind:class="{ 'active': $route.path.includes('/contact') }" to="/contact">CONTACT&SOCIAL</nuxt-link>
       </li>
     </ul>
   </div>
@@ -11,6 +11,10 @@
 <style scoped>
 .sidebar {
   display: none;
+}
+
+.active {
+  color: #e62f20;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -27,9 +31,8 @@
   }
 
   .sidebar > ul > li {
-    width: 150px;
     /* transform: rotate(270deg); */
-    margin-top: 400px;
+    margin-top: 52vh;
     transform: translateX(-50%) rotate(90deg);
   }
 
@@ -47,16 +50,6 @@
 @media only screen and (min-width: 2000px) {
   a {
     font-size: 24px;
-  }
-
-  .sidebar > ul > li {
-    margin-top: 650px;
-  }
-}
-
-@media only screen and (min-width: 3000px) {
-  .sidebar > ul > li {
-    margin-top: 700px;
   }
 }
 </style>

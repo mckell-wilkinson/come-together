@@ -101,6 +101,10 @@ export default {
 
   head() {
     return {
+      title: `Come Together | Home`,
+        meta: [
+        { hid: 'description', name: 'description', content: 'We’re an art collective based in Manchester. Our main objective is, as the name suggests, to bring people together' }
+      ],
       script: [
         { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
       ]
@@ -111,6 +115,10 @@ export default {
 </script>
 
 <style scoped>
+
+.content {
+  margin-top: 0;
+}
 
 p {
   color: #555;

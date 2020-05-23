@@ -30,16 +30,19 @@
       <!-- <img class="roundel" src="/img/assets/roundel.svg" alt="" /> -->
       <ul class="hide mobile-items fade-in" id="mobile-items">
         <li>
-          <nuxt-link to="/blog"><h3>BLOG</h3></nuxt-link>
+          <nuxt-link to="/"><h3 v-bind:class="{ 'active': $route.path == '/' }">HOME</h3></nuxt-link>
+        </li>
+         <li>
+          <nuxt-link to="/blog"><h3 v-bind:class="{ 'active': $route.path.includes('/blog') }">BLOG</h3></nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/about"><h3>ABOUT</h3></nuxt-link>
+          <nuxt-link to="/about"><h3 v-bind:class="{ 'active': $route.path == '/about' }">ABOUT</h3></nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/events"><h3>EVENTS</h3></nuxt-link>
+          <nuxt-link to="/events"><h3 v-bind:class="{ 'active': $route.path == '/events' }">EVENTS</h3></nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/events"><h3>CONTACT & SOCIAL</h3></nuxt-link>
+          <nuxt-link to="/contact"><h3 v-bind:class="{ 'active': $route.path.includes('/contact') }">CONTACT & SOCIAL</h3></nuxt-link>
         </li>
       </ul>
     </div>
@@ -72,6 +75,11 @@ export default {
 <style scoped>
 .hide {
   display: none;
+}
+
+.active {
+  text-decoration: line-through;
+  text-decoration-color: #222;
 }
 .content {
   margin-top: 0;

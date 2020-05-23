@@ -1,14 +1,15 @@
 <template>
   <div class="hero">
     <Header />
-    <div id="content" class="content">
+    <div class="content">
       <h1 class="come-together fade-in">Come Together Collective</h1>
       <img class="roundel fade-in" src="/img/assets/roundel.svg" alt="" />
       <h2 class="intro fade-in">
         We’re an art collective based in Manchester. Our main objective is to
         bring people together through music and the arts.
       </h2>
-      <div class="welcome-container">
+    </div>
+          <div class="welcome-container">
         <img
           class="welcome appear"
           id="welcome"
@@ -16,7 +17,6 @@
           alt=""
         />
       </div>
-    </div>
   </div>
 </template>
 
@@ -45,6 +45,9 @@ export default {
 
 <style scoped>
 
+.content {
+  margin-top: 0;
+}
 
 .hero {
   background: #f6f2f1;
@@ -78,7 +81,7 @@ h2 {
 }
 
 .welcome-container {
-  display: none;
+display: none;
 }
 
 .intro {
@@ -98,19 +101,21 @@ h2 {
 
   .welcome-container {
     display: block;
-    position: relative;
+  position: absolute;
+  bottom: 0;
+
   }
   .welcome {
     width: 4.5em;
-    position: absolute;
-    bottom: -45px;
-    right: 0;
+    position: relative;
+    bottom: -54px;
+    left: 33vw;
   }
 }
 
 @media only screen and (min-width: 900px) {
   .welcome {
-    bottom: -50px;
+    bottom: -57px;
   }
 }
 
@@ -131,7 +136,7 @@ h2 {
   }
 
   .welcome {
-    bottom: -55px;
+    bottom: -66px;
   }
 }
 
@@ -141,19 +146,19 @@ h2 {
   }
 
   .welcome {
-    bottom: -63px;
+    bottom: -75px;
   }
 }
 
 @media only screen and (min-width: 1400px) {
   .welcome {
-    bottom: -74px;
+    bottom: -84px;
   }
 }
 
 @media only screen and (min-width: 1600px) {
   .welcome {
-    bottom: -77px;
+    bottom: -88px;
   }
 }
 </style>

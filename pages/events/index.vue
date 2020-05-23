@@ -4,42 +4,60 @@
     <div class="content">
       <div class="event">
         <div v-if="event.length > 0">
-                <ul id="event-list">
-        <!-- Limits number of eventposts displayed to three -->
-        <li class="event-item fade-in"
-          v-for="(event, index) in eventPost"
-          :key="index"
-        >
-          <div class="event-content">
-            <ul>
-              <li class="event-img">
-                <img :src="event.thumbnail" />
-              </li>
-              <li>
-                <h4>
-                  <a :href="`${event.url}`" target="_blank" rel="noreferrer noopener">{{
-                    event.title
-                  }}</a>
-                </h4>
-               
-                <p class="event-date">
-                  {{event.location}}, {{new Date(event.eventdate).toDateString() }} at {{new Date(event.eventdate).toLocaleTimeString([], {timeStyle: 'short'})}}
-                </p>
-                 <p class="event-description">{{ event.description }}</p>
-                 <p><a class="button">Get your tickets</a></p>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+          <ul id="event-list">
+            <!-- Limits number of eventposts displayed to three -->
+            <li
+              class="event-item fade-in"
+              v-for="(event, index) in eventPost"
+              :key="index"
+            >
+              <div class="event-content">
+                <ul>
+                  <li class="event-img">
+                    <img :src="event.thumbnail" />
+                  </li>
+                  <li>
+                    <h4>
+                      <a
+                        :href="`${event.url}`"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        >{{ event.title }}</a
+                      >
+                    </h4>
+
+                    <p class="event-date">
+                      {{ event.location }},
+                      {{ new Date(event.eventdate).toDateString() }} at
+                      {{
+                        new Date(event.eventdate).toLocaleTimeString([], {
+                          timeStyle: "short"
+                        })
+                      }}
+                    </p>
+                    <p class="event-description">{{ event.description }}</p>
+                    <p>
+                      <a
+                        :href="`${event.url}`"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="button"
+                        >Get your tickets</a
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         </div>
         <div v-else>
-       <h2>
-          Sorry we don't have any events on at the moment! Please check back soon.
-        </h2>
+          <h2>
+            Sorry we don't have any events on at the moment! Please check back
+            soon.
+          </h2>
         </div>
-
-    </div>
+      </div>
     </div>
     <SideBarMenu />
     <SideBarSocial />
@@ -57,7 +75,20 @@ export default {
     return {
       //used to show next ten events on click of moreevents
       event: this.$store.state.eventPosts
+    };
+  },
 
+  head() {
+    return {
+      title: `Come Together | Events`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Check out our latest events for the best local talent and fun times"
+        }
+      ]
     };
   },
   components: {
@@ -72,21 +103,17 @@ export default {
       const eventPosts = this.$store.state.eventPosts;
       return eventPosts;
     }
-  },
-
+  }
 };
 </script>
 <style scoped>
-
 body {
   height: 100vh;
 }
 
-
 ul {
   list-style-type: none;
 }
-
 
 .event-date {
   color: #555;
@@ -97,19 +124,12 @@ p {
 }
 
 .event-item {
-  margin-bottom: 4em;
+  margin-bottom: 6em;
 }
 
 .event-description {
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
-
-img {
-  margin: 0;
-  padding: 0;
-}
-
-
 
 @media only screen and (min-width: 1024px) {
   .event {
@@ -117,5 +137,4 @@ img {
     margin: 0 auto;
   }
 }
-
 </style>

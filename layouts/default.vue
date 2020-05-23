@@ -4,6 +4,7 @@
   </div>
 </template>
 
+
 <style>
 
 @font-face {
@@ -39,6 +40,7 @@
     opacity: 1;
   }
 }
+
 
 .fade-in {
   animation: fadeIn 1s;
@@ -83,29 +85,30 @@ h1, h2, h3, h4, h5, p {
 .content {
   width: 80%;
   margin: 0 auto;
+  margin-top: 4em;
 }
 
 @media only screen and (min-width: 400px) {
-  body {
-    font-size: 16px;
-  }
-}
-
-@media only screen and (min-width: 600px) {
   body {
     font-size: 18px;
   }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 600px) {
   body {
     font-size: 20px;
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 900px) {
   body {
     font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    font-size: 24px;
   }
 
   .content {
@@ -115,13 +118,13 @@ h1, h2, h3, h4, h5, p {
 
 @media only screen and (min-width: 1200px) {
   body {
-    font-size: 26px;
+    font-size: 28px;
   }
 }
 
 @media only screen and (min-width: 1400px) {
   body {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .content {
@@ -131,19 +134,19 @@ h1, h2, h3, h4, h5, p {
 
 @media only screen and (min-width: 1600px) {
   body {
-    font-size: 32px;
+    font-size: 34px;
   }
 }
 
 @media only screen and (min-width: 1800px) {
   body {
-    font-size: 34px;
+    font-size: 36px;
   }
 }
 
 @media only screen and (min-width: 2000px) {
   body {
-    font-size: 36px;
+    font-size: 38px;
   }
 }
 
@@ -229,6 +232,7 @@ h1, h2, h3, h4, h5, p {
   font-family: "Corben", cursive;
   transition: 0.3s;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .button:hover, button:hover {
@@ -237,9 +241,6 @@ h1, h2, h3, h4, h5, p {
   border: solid 5px #e62f20;
 }
 
-.content {
-  margin-top: 2em;
-}
 
 
 @media only screen and (min-width: 1024px) {

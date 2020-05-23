@@ -7,9 +7,10 @@
         <p>We'll be in touch soon 😃</p>
         </div> 
 </div>
+
+<Footer />
 <sidebar />
 <sidebarSocial />
-<Footer />
 </div>
 </template>
 
@@ -25,7 +26,21 @@ export default {
     Footer,
     sidebar,
     sidebarSocial
-  }
+  },
+      head() {
+    return {
+      title: `Come Together | Thanks for getting in touch`,
+      meta: [
+
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Thanks for getting in touch"
+        }
+      ]
+    };
+  },
 };
 
 </script>
@@ -34,12 +49,7 @@ export default {
 <style scoped>
 
 footer {
-    position: absolute;
-    bottom: 0;
-}
-
-body {
-        height: 100vh;
+  margin-top: 60vh;
 }
 
 h1 {
