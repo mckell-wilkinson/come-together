@@ -4,7 +4,7 @@
     <div class="content fade-in">
       <div class="contact">
         <h1>Whatever the reason is drop a line here:</h1>
-        <form name="contact"  method="POST" action="contact/thanks" novalidate netlify>
+        <form name="contact" method="POST" novalidate netlify>
           <p>
             <label>Name *<input type="text" name="person" required/></label>
           </p>
