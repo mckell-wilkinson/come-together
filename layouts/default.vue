@@ -244,7 +244,7 @@ h1, h2, h3, h4, h5, p {
 
 @media only screen and (min-width: 1024px) {
   #blog-list > li {
-    width: 32.8%;
+    width: 33.3333%;
     display: inline-flex;
     margin: 2em auto 0;
   }

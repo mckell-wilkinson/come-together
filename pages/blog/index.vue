@@ -3,41 +3,41 @@
     <Header />
     <div class="content">
       <div class="blog">
-      <ul id="blog-list">
-        <!-- Limits number of blogposts displayed to three -->
-        <li
-          class="blog-item fade-in"
-          v-for="(blog, index) in blogPost"
-          :key="index"
+        <ul id="blog-list">
+          <!-- Limits number of blogposts displayed to three -->
+          <li
+            class="blog-item fade-in"
+            v-for="(blog, index) in blogs"
+            :key="index"
+          >
+            <div class="blog-content">
+              <ul>
+                <li class="blog-img">
+                  <img :src="blog.thumbnail" />
+                </li>
+                <li>
+                  <h4>
+                    <nuxt-link :to="`blog/${blog.slug}`">{{
+                      blog.title
+                    }}</nuxt-link>
+                  </h4>
+                  <p class="blog-description">{{ blog.description }}</p>
+                  <p class="blog-date">
+                    {{ new Date(blog.date).toDateString() }}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <button
+          id="more-blogs"
+          class="more-blogs hide"
+          @click="moreBlogs(blogIncrementer)"
         >
-          <div class="blog-content">
-            <ul>
-              <li class="blog-img">
-                <img :src="blog.thumbnail" />
-              </li>
-              <li>
-                <h4>
-                  <nuxt-link :to="`blog/${blog.slug}`">{{
-                    blog.title
-                  }}</nuxt-link>
-                </h4>
-                <p class="blog-description">{{ blog.description }}</p>
-                <p class="blog-date">
-                  {{ new Date(blog.date).toDateString() }}
-                </p>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-      <button
-        id="more-blogs"
-        class="more-blogs hide"
-        @click="moreBlogs(blogIncrementer)"
-      >
-        More blogs
-      </button>
-    </div>
+          More blogs
+        </button>
+      </div>
     </div>
     <SideBarMenu />
     <SideBarSocial />
@@ -54,7 +54,8 @@ export default {
   data() {
     return {
       //used to show next ten blogs on click of moreBlogs
-      blogIncrementer: 10
+      blogIncrementer: 10,
+      blogs: []
     };
   },
   components: {
@@ -64,17 +65,14 @@ export default {
     SideBarSocial
   },
 
-  computed: {
-    blogPost() {
-      const blogPosts = this.$store.state.blogPosts;
-      //below will show 10 blog posts - more blog posts added on click using function moreBlogs
-      const blogs = blogPosts.slice(0, 10);
-
-      return blogs;
-    }
-  },
-
   mounted() {
+    const blogPosts = this.$store.state.blogPosts;
+    //below will show 10 blog posts - more blog posts added on click using function moreBlogs
+    const blog = blogPosts.slice(0, 10);
+    for (let i = 0; i < blog.length; i++) {
+      this.blogs.push(blog[i]);
+    }
+
     //if more than 10 blogs show the more blogs button
     const blogs = this.$store.state.blogPosts;
     const blogButton = document.getElementById("more-blogs");
@@ -89,41 +87,18 @@ export default {
 
     moreBlogs(n) {
       const blogPostsNew = this.$store.state.blogPosts;
-      const blogsNew = blogPostsNew.slice(0, n + 10);
+      const blogsNew = blogPostsNew.slice(0, n + 9);
       const blogList = document.getElementById("blog-list");
 
       for (n; n < blogsNew.length; n++) {
-        blogList.insertAdjacentHTML(
-          "beforeend",
-          `
-         <li class="blog-item fade-in">
-          <div class="blog-content">
-            <ul>
-              <li class="blog-img">
-                <img src="${blogsNew[n].thumbnail}"/>
-              </li>
-              <li>
-                <h4>
-                  <a href="blog/${blogsNew[n].slug}">${blogsNew[n].title}</a>
-                </h4>
-                <p class="blog-description">${blogsNew[n].description}</p>
-                <p class="blog-date">
-                  ${new Date(blogsNew[n].date).toDateString()}
-                </p>
-              </li>
-            </ul>
-          </div>
-        </li>
-        
-      `
-        );
+        this.blogs.push(blogsNew[n]);
       }
-      this.blogIncrementer = this.blogIncrementer + 10;
+      this.blogIncrementer = this.blogIncrementer + 9;
 
       //remove the more blogs button if all blogs are shown
       const blogTotal = document.querySelectorAll(".blog-item");
 
-      if (blogPostsNew.length === blogTotal.length) {
+      if (blogPostsNew.length === blogsNew.length) {
         const blogButton = document.getElementById("more-blogs");
         blogButton.classList.add("hide");
       }
@@ -148,5 +123,4 @@ export default {
     margin: 0 auto;
   }
 }
-
 </style>
