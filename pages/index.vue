@@ -19,7 +19,7 @@
               rel="noreferrer noopener"
               href="https://www.instagram.com/cometogethercollective/"
             >
-              <img :src="insta" />
+              <img :src="insta" alt="Follow us on instagram"/>
             </a>
           </li>
         </ul>
