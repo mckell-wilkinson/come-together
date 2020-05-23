@@ -6,13 +6,13 @@
         <h1>Whatever the reason is drop a line here:</h1>
         <form name="contact" method="POST" action="contact/thanks" netlify>
           <p>
-            <label>Name *<input type="text" name="person" required/></label>
+            <label>Name<input type="text" name="person"/></label>
           </p>
           <p>
-            <label>Your email *<input type="email" name="email" required/></label>
+            <label>Your email<input type="email" name="email"/></label>
           </p>
           <p>
-            <label>Message *<textarea type="textarea" name="message" required/></label>
+            <label>Message<textarea type="textarea" name="message"/></label>
           </p>
           <p>
             <button type="submit">Send</button>
