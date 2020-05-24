@@ -33,13 +33,13 @@
         </ul>
         <form name="contact" action="contact/thanks" netlify>
           <p>
-            <label>Name<input type="text" name="person"/></label>
+            <label>Name</label><input type="text" name="person"/>
           </p>
           <p>
-            <label>Your email<input type="email" name="email"/></label>
+            <label>Your email</label><input type="email" name="email"/>
           </p>
           <p>
-            <label>Message<textarea type="textarea" name="message"/></label>
+            <label>Message</label><textarea type="textarea" name="message"/>
           </p>
           <p>
             <button type="submit">Send</button>
