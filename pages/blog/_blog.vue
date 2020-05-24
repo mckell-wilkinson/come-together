@@ -59,14 +59,7 @@ img {
   margin-bottom: 1em;
 }
 
-@media only screen and (min-width: 1024px) {
-  .blog {
-    width: 80%;
-    margin: 0 auto;
-  }
 
-  .blog > .blog-body > p {
-    font-size: 0.7em;
-  }
-}
+
+
 </style>
