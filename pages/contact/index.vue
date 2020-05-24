@@ -4,7 +4,7 @@
     <div class="content fade-in">
       <div class="contact">
         <h1>Whatever the reason is drop a line here:</h1>
-        <hr>
+        <hr />
         <ul>
           <li>
             <img src="/img/assets/instagram-black.svg" />
@@ -29,22 +29,29 @@
               >
             </p>
           </li>
-            <hr />
+          <hr />
         </ul>
-        <form name="contact" action="contact/thanks" netlify>
-        <input type="hidden" name="contact" value="contact">
-          <p>
-            <label>Name</label><input type="text" name="person"/>
-          </p>
-          <p>
-            <label>Your email</label><input type="email" name="email"/>
-          </p>
-          <p>
-            <label>Message</label><textarea type="textarea" name="message"/>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
+        <form
+          name="contact"
+          data-netlify-recaptcha="true"
+          data-v-e1068a4a
+          method="post"
+        >
+          <input type="hidden" name="contact" value="contact-form" />
+          <label for="name" data-v-e1068a4a>
+            Name
+          </label>
+          <input name="name" type="text" data-v-e1068a4a />
+          <label for="email" data-v-e1068a4a>
+            Your email
+          </label>
+          <input name="email" type="email" data-v-e1068a4a />
+          <label for="body" data-v-e1068a4a>
+            Message
+          </label>
+          <textarea name="message" type="textarea" data-v-e1068a4a></textarea>
+          <button type="submit">Send</button>
+          <!-- <div data-v-e1068a4a> -->
         </form>
       </div>
     </div>
