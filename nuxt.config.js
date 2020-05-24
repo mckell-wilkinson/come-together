@@ -23,7 +23,8 @@ export default {
     ],
     script: [
       {src:"//wpcc.io/lib/1.0.2/cookieconsent.min.js"},
-      {src:"/script/index.js"}
+      {src:"/script/index.js"},
+      {src:"https://www.googletagmanager.com/gtag/js?id=UA-167450671-1"}
     ]
   },
   generate: {

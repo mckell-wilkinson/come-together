@@ -50,6 +50,8 @@ export default {
 
 footer {
   margin-top: 60vh;
+  position: absolute;
+  bottom: 0;
 }
 
 h1 {
