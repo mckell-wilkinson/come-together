@@ -22,7 +22,8 @@ export default {
       }
     ],
     script: [
-      {src:"//wpcc.io/lib/1.0.2/cookieconsent.min.js"}
+      {src:"//wpcc.io/lib/1.0.2/cookieconsent.min.js"},
+      {src:"/script/index.js"}
     ]
   },
   generate: {
