@@ -31,26 +31,20 @@
           </li>
           <hr />
         </ul>
-        <form
-          name="contact"        
-          method="post"
-          action="contact/thanks"
-          netlify
-        >
-          <label for="name" >
+        <form name="contact" method="post" action="contact/thanks" netlify>
+          <label for="name">
             Name
           </label>
-          <input name="name" type="text"  />
-          <label for="email" >
+          <input name="name" type="text">
+          <label for="email">
             Your email
           </label>
-          <input name="email" type="email"  />
-          <label for="body" y>
+          <input name="email" type="email">
+          <label for="body">
             Message
           </label>
-          <textarea name="message" type="textarea" ></textarea>
+          <textarea name="message" type="textarea"></textarea>
           <button type="submit">Send</button>
-          <!-- <div > -->
         </form>
       </div>
     </div>
