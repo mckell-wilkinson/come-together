@@ -7,7 +7,7 @@
         <hr />
         <ul>
           <li>
-            <img src="/img/assets/instagram-black.svg" data-not-lazy/>
+            <img src="/img/assets/instagram-black.svg" data-not-lazy />
             <p class="bold">
               <a
                 target="_blank"
@@ -19,7 +19,7 @@
           </li>
           <hr />
           <li>
-            <img src="/img/assets/facebook.svg" data-not-lazy/>
+            <img src="/img/assets/facebook.svg" data-not-lazy />
             <p class="bold">
               <a
                 target="_blank"
@@ -32,15 +32,15 @@
           <hr />
         </ul>
         <form name="contact" method="post" action="contact/thanks" netlify>
-        <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="form-name" value="contact" />
           <label for="name">
             Name
           </label>
-          <input name="name" type="text">
+          <input name="name" type="text" />
           <label for="email">
             Your email
           </label>
-          <input name="email" type="email">
+          <input name="email" type="email" />
           <label for="body">
             Message
           </label>
