@@ -34,10 +34,9 @@
         <form
           name="contact"        
           method="post"
-          action="conntact/thanks"
-          data-netlify="true"
+          action="contact/thanks"
+          netlify
         >
-          <input type="hidden" name="contact" value="contact" />
           <label for="name" >
             Name
           </label>
