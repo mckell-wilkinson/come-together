@@ -1,4 +1,3 @@
-
 export default {
   mode: "universal",
   /*
@@ -15,8 +14,16 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" },
-  ]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
+      {
+        rel: "stylesheet",
+        href: "//wpcc.io/lib/1.0.2/cookieconsent.min.css"
+      }
+    ],
+    script: [
+      {src:"//wpcc.io/lib/1.0.2/cookieconsent.min.js"}
+    ]
   },
   generate: {
     subFolders: false,
@@ -66,4 +73,3 @@ export default {
     extend(config, ctx) {}
   }
 };
-
