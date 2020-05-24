@@ -32,6 +32,7 @@
             <hr />
         </ul>
         <form name="contact" action="contact/thanks" netlify>
+        <input type="hidden" name="contact" value="contact">
           <p>
             <label>Name</label><input type="text" name="person"/>
           </p>
