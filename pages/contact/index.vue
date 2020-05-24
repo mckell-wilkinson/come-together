@@ -32,26 +32,26 @@
           <hr />
         </ul>
         <form
-          name="contact"
-          data-netlify-recaptcha="true"
-          data-v-e1068a4a
+          name="contact"        
           method="post"
+          action="conntact/thanks"
+          data-netlify="true"
         >
-          <input type="hidden" name="contact" value="contact-form" />
-          <label for="name" data-v-e1068a4a>
+          <input type="hidden" name="contact" value="contact" />
+          <label for="name" >
             Name
           </label>
-          <input name="name" type="text" data-v-e1068a4a />
-          <label for="email" data-v-e1068a4a>
+          <input name="name" type="text"  />
+          <label for="email" >
             Your email
           </label>
-          <input name="email" type="email" data-v-e1068a4a />
-          <label for="body" data-v-e1068a4a>
+          <input name="email" type="email"  />
+          <label for="body" y>
             Message
           </label>
-          <textarea name="message" type="textarea" data-v-e1068a4a></textarea>
+          <textarea name="message" type="textarea" ></textarea>
           <button type="submit">Send</button>
-          <!-- <div data-v-e1068a4a> -->
+          <!-- <div > -->
         </form>
       </div>
     </div>
