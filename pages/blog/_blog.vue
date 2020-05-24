@@ -5,7 +5,7 @@
       <article class="blog fade-in">
         <h1 class="blog-title">{{ blogPost.title }}</h1>
         <img :src="blogPost.thumbnail" />
-        <div v-html="$md.render(blogPost.body)" />
+        <div class="blog-body" v-html="$md.render(blogPost.body)" />
       </article>
     </div>
     <SideBarMenu />
@@ -34,7 +34,7 @@ export default {
     SideBarMenu,
     SideBarSocial
   },
-    head() {
+  head() {
     return {
       title: `Come Together | ${this.blogPost.title}`,
       meta: [
@@ -42,8 +42,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content:
-            `${this.blogPost.description}`
+          content: `${this.blogPost.description}`
         }
       ]
     };
@@ -66,9 +65,8 @@ img {
     margin: 0 auto;
   }
 
-  p {
-    font-size: 0.7em !important;
+  .blog > .blog-body > p {
+    font-size: 0.7em;
   }
 }
-
 </style>
