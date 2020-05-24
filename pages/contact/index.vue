@@ -7,7 +7,7 @@
         <hr />
         <ul>
           <li>
-            <img src="/img/assets/instagram-black.svg" />
+            <img src="/img/assets/instagram-black.svg" data-not-lazy/>
             <p class="bold">
               <a
                 target="_blank"
@@ -19,7 +19,7 @@
           </li>
           <hr />
           <li>
-            <img src="/img/assets/facebook.svg" />
+            <img src="/img/assets/facebook.svg" data-not-lazy/>
             <p class="bold">
               <a
                 target="_blank"
