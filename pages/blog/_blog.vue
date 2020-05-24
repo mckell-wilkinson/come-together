@@ -67,7 +67,7 @@ img {
   }
 
   p {
-    font-size: 0.7em;
+    font-size: 0.7em !important;
   }
 }
 
