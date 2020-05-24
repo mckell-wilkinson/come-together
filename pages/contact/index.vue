@@ -4,6 +4,33 @@
     <div class="content fade-in">
       <div class="contact">
         <h1>Whatever the reason is drop a line here:</h1>
+        <hr>
+        <ul>
+          <li>
+            <img src="/img/assets/instagram-black.svg" />
+            <p class="bold">
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href="https://www.instagram.com/cometogethercollective/"
+                >@ComeTogetherCollective</a
+              >
+            </p>
+          </li>
+          <hr />
+          <li>
+            <img src="/img/assets/facebook.svg" />
+            <p class="bold">
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href="https://www.facebook.com/Come-Together-Collective-110538887071305/"
+                >@ComeTogetherManchester</a
+              >
+            </p>
+          </li>
+            <hr />
+        </ul>
         <form name="contact" action="contact/thanks" netlify>
           <p>
             <label>Name<input type="text" name="person"/></label>
@@ -63,6 +90,10 @@ h1 {
   padding: 0;
 }
 
+p {
+  font-size: 0.8em;
+}
+
 input,
 textarea {
   border: none;
@@ -83,6 +114,32 @@ textarea {
   height: 300px;
 }
 
+li {
+  list-style-type: none;
+}
+
+img {
+  width: 30px;
+  margin-right: 0.7em;
+}
+
+li > img,
+li > p {
+  display: inline;
+}
+
+li {
+  display: flex;
+  padding: 1em 0;
+}
+
+ul {
+  margin-bottom: 4em;
+}
+
+hr {
+  border-color: 1px solid rgb(226, 226, 226);
+}
 @media only screen and (min-width: 1024px) {
   .contact {
     width: 60%;

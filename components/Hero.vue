@@ -11,7 +11,7 @@
     </div>
     <div class="welcome-container">
       <img
-        class="welcome appear"
+        class="welcome fade-in"
         id="welcome"
         src="/img/assets/welcome.svg"
         alt="Welcome from the Come Together Collective"

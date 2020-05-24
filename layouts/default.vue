@@ -4,7 +4,6 @@
   </div>
 </template>
 
-
 <style>
 
 @font-face {
@@ -27,7 +26,7 @@
 @font-face {
   font-family: 'Montserrat';
   font-weight: bold;
-  src: url('~static/fonts/Montserrat-Medium.ttf');
+  src: url('~static/fonts/Montserrat-Bold.ttf');
 }
 
 @keyframes fadeIn {
@@ -86,6 +85,9 @@ li, ul, p {
   background: transparent;
 }
 
+.bold {
+  font-weight: bold;
+}
 .content {
   width: 80%;
   margin: 0 auto;

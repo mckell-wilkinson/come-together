@@ -61,7 +61,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/markdownit"],
+  modules: ["@nuxtjs/markdownit", 'nuxt-lazy-load'],
   markdownit: {
     injected: true
   },

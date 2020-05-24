@@ -1,5 +1,5 @@
 <template>
-   <nuxt-link :to="`/`"><img class="logo" src="/img/assets/logo.png" alt="Come Together logo" /></nuxt-link>
+   <nuxt-link :to="`/`"><img class="logo" src="/img/assets/logo.png" alt="Come Together logo" data-not-lazy/></nuxt-link>
 </template>
 <style scoped>
 
