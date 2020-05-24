@@ -65,6 +65,10 @@ img {
     width: 80%;
     margin: 0 auto;
   }
+
+  p {
+    font-size: 0.7em;
+  }
 }
 
 </style>
