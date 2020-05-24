@@ -63,6 +63,10 @@ export default {
 </script>
 
 <style scoped>
+
+.content {
+  margin-top: 1.5em;
+}
 footer {
   margin: 3em auto 0;
   background: #f6f2f1;
