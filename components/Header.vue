@@ -78,8 +78,7 @@ export default {
 }
 
 .active {
-  text-decoration: line-through;
-  text-decoration-color: #222;
+opacity: 0.5;
 }
 .content {
   margin-top: 0;
