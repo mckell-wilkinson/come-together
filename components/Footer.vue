@@ -4,29 +4,29 @@
       <div class="social-container">
         <ul>
           <li>
-            <nuxt-link :to="`/`">
+             <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/cometogethercollective/">
               <img
                 class="social-logo"
                 src="/img/assets/instagram-black.svg"
                 alt="Instagram logo"
               />
-            </nuxt-link>
+            </a>
           </li>
           <li>
-            <nuxt-link :to="`/`">
+            <a target="_blank" rel="noreferrer noopener" href="https://www.facebook.com/pages/category/Community/Come-Together-Collective-110538887071305/">
               <img
                 class="social-logo"
                 src="/img/assets/facebook.svg"
-                alt="Instagram logo"
+                alt="Facebook logo"
               />
-            </nuxt-link>
+            </a>
           </li>
           <li>
-            <nuxt-link :to="`/`">
+            <nuxt-link :to="`/contact`">
               <img
                 class="social-logo"
                 src="/img/assets/mail.svg"
-                alt="Instagram logo"
+                alt="Email icon"
               />
             </nuxt-link>
           </li>
@@ -36,14 +36,14 @@
         <ul>
           <li>
             <p>
-              <nuxt-link :to="`/`">
+              <nuxt-link :to="`/privacy`">
                 Privacy statement
               </nuxt-link>
             </p>
           </li>
           <li>
             <p>
-              <nuxt-link :to="`/`">
+              <nuxt-link :to="`/service`">
                 Terms of service
               </nuxt-link>
             </p>

@@ -14,7 +14,7 @@
               <div class="event-content">
                 <ul>
                   <li class="event-img">
-                    <img :src="event.thumbnail" />
+                    <a :href="`${event.url}`"><img :src="event.thumbnail" /></a>
                   </li>
                   <li>
                     <h4>
@@ -136,5 +136,10 @@ p {
     width: 60%;
     margin: 0 auto;
   }
+
+  
+.event-description {
+  margin-bottom: 1.5em;
+}
 }
 </style>

@@ -3,20 +3,20 @@
     <Header />
     <div class="content">
       <h1 class="come-together fade-in">Come Together Collective</h1>
-      <img class="roundel fade-in" src="/img/assets/roundel.svg" alt="" />
+      <img class="roundel fade-in" src="/img/assets/roundel.svg" alt="Come Together design" />
       <h2 class="intro fade-in">
-        We’re an art collective based in Manchester. Our main objective is to
-        bring people together through music and the arts.
+        We’re an art collective based in Manchester. Our main objective is, as
+        the name suggests, to bring people together.
       </h2>
     </div>
-          <div class="welcome-container">
-        <img
-          class="welcome appear"
-          id="welcome"
-          src="/img/assets/welcome.svg"
-          alt=""
-        />
-      </div>
+    <div class="welcome-container">
+      <img
+        class="welcome appear"
+        id="welcome"
+        src="/img/assets/welcome.svg"
+        alt="Welcome from the Come Together Collective"
+      />
+    </div>
   </div>
 </template>
 
@@ -44,7 +44,6 @@ export default {
 </script>
 
 <style scoped>
-
 .content {
   margin-top: 0;
 }
@@ -81,7 +80,7 @@ h2 {
 }
 
 .welcome-container {
-display: none;
+  display: none;
 }
 
 .intro {
@@ -101,9 +100,8 @@ display: none;
 
   .welcome-container {
     display: block;
-  position: absolute;
-  bottom: 0;
-
+    position: absolute;
+    bottom: 0;
   }
   .welcome {
     width: 4.5em;

@@ -38,7 +38,7 @@
           <div class="person">
             <h3>{{ people.name }}</h3>
             <p>{{ people.title }}</p>
-            <img :src="people.image" alt="" />
+            <img :src="people.image" :alt="people.name" />
           </div>
         </li>
       </ul>
@@ -84,7 +84,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 li {
   list-style-type: none;
 }

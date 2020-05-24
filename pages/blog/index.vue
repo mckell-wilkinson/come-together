@@ -13,7 +13,9 @@
             <div class="blog-content">
               <ul>
                 <li class="blog-img">
-                  <img :src="blog.thumbnail" />
+                  <nuxt-link :to="`blog/${blog.slug}`"
+                    ><img :src="blog.thumbnail"
+                  /></nuxt-link>
                 </li>
                 <li>
                   <h4>
@@ -58,7 +60,7 @@ export default {
       blogs: []
     };
   },
-      head() {
+  head() {
     return {
       title: `Come Together | Blog`,
       meta: [
@@ -66,8 +68,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content:
-            "Keep up-to-date with everything going on with Come Together"
+          content: "Keep up-to-date with everything going on with Come Together"
         }
       ]
     };

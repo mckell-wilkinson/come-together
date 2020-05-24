@@ -32,7 +32,7 @@
 
   .sidebar > ul > li {
     /* transform: rotate(270deg); */
-    margin-top: 52vh;
+    margin-top: 62vh;
     transform: translateX(-50%) rotate(90deg);
   }
 

@@ -40,11 +40,10 @@ export default {
     sidebarSocial
   },
 
-    head() {
+  head() {
     return {
       title: `Come Together | Contact`,
       meta: [
- 
         {
           hid: "description",
           name: "description",
@@ -53,7 +52,7 @@ export default {
         }
       ]
     };
-  },
+  }
 };
 </script>
 
@@ -73,11 +72,8 @@ textarea {
   padding: 0.5em;
   font-size: 1em;
   font-family: "Montserrat", sans-serif;
-  color: #E62F20;
- 
+  color: #e62f20;
 }
-
-
 
 input {
   height: 50px;
@@ -87,13 +83,10 @@ textarea {
   height: 300px;
 }
 
-
 @media only screen and (min-width: 1024px) {
   .contact {
     width: 60%;
     margin: 0 auto;
   }
 }
-
-
 </style>

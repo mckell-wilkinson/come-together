@@ -54,7 +54,7 @@
   width: 100%;
 }
 
-body {
+body, li, p {
   font-family: "Montserrat", sans-serif;
   background: #fff;
   color: #222;
@@ -82,6 +82,10 @@ h1, h2, h3, h4, h5, p {
   margin: 0.5em 0;
 }
 
+li, ul, p {
+  background: transparent;
+}
+
 .content {
   width: 80%;
   margin: 0 auto;
@@ -89,25 +93,25 @@ h1, h2, h3, h4, h5, p {
 }
 
 @media only screen and (min-width: 400px) {
-  body {
+  body, li, p {
     font-size: 18px;
   }
 }
 
 @media only screen and (min-width: 600px) {
-  body {
+  body, li, p {
     font-size: 20px;
   }
 }
 
 @media only screen and (min-width: 900px) {
-  body {
+  body, li, p {
     font-size: 22px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  body {
+  body, li, p {
     font-size: 24px;
   }
 
@@ -117,13 +121,13 @@ h1, h2, h3, h4, h5, p {
 }
 
 @media only screen and (min-width: 1200px) {
-  body {
+  body, li, p {
     font-size: 28px;
   }
 }
 
 @media only screen and (min-width: 1400px) {
-  body {
+  body, li, p {
     font-size: 32px;
   }
 
@@ -133,25 +137,25 @@ h1, h2, h3, h4, h5, p {
 }
 
 @media only screen and (min-width: 1600px) {
-  body {
+  body, li, p {
     font-size: 34px;
   }
 }
 
 @media only screen and (min-width: 1800px) {
-  body {
+  body, li, p {
     font-size: 36px;
   }
 }
 
 @media only screen and (min-width: 2000px) {
-  body {
+  body, li, p {
     font-size: 38px;
   }
 }
 
 @media only screen and (min-width: 3000px) {
-  body {
+  body, li, p {
     font-size: 60px;
   }
 }

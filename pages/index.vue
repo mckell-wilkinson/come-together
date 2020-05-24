@@ -5,8 +5,14 @@
       <div class="insta">
         <h2>Art, music & community</h2>
         <p>
-          <a href="">Follow us on instagram</a> to be the first to hear about
-          all the latest events
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.instagram.com/cometogethercollective/"
+            >Follow us on instagram</a
+          >
+          to be the first to hear about all our latest events, get involved in
+          creating great art and become part of the Come Together Collective.
         </p>
         <ul class="insta-list">
           <li
@@ -19,12 +25,12 @@
               rel="noreferrer noopener"
               href="https://www.instagram.com/cometogethercollective/"
             >
-              <img :src="insta" alt="Follow us on instagram"/>
+              <img :src="insta" alt="Follow us on instagram" />
             </a>
           </li>
         </ul>
       </div>
-      <h2>Blogs</h2>
+      <h2><nuxt-link :to="`blog/`">Blogs</nuxt-link></h2>
       <ul id="blog-list">
         <!-- Limits number of blogposts displayed to three -->
         <li
@@ -35,7 +41,9 @@
           <div class="blog-content">
             <ul>
               <li>
-                <img :src="blog.thumbnail" />
+                <nuxt-link :to="`blog/${blog.slug}`"
+                  ><img :src="blog.thumbnail"
+                /></nuxt-link>
               </li>
               <li>
                 <h4>
@@ -102,8 +110,13 @@ export default {
   head() {
     return {
       title: `Come Together | Home`,
-        meta: [
-        { hid: 'description', name: 'description', content: 'We’re an art collective based in Manchester. Our main objective is, as the name suggests, to bring people together' }
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "We’re an art collective based in Manchester. Our main objective is, as the name suggests, to bring people together"
+        }
       ],
       script: [
         { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
@@ -115,7 +128,6 @@ export default {
 </script>
 
 <style scoped>
-
 .content {
   margin-top: 0;
 }
@@ -145,10 +157,9 @@ h2 {
   margin: 0;
 }
 
-.insta-list > li:nth-child(n+7) {
+.insta-list > li:nth-child(n + 7) {
   display: none;
 }
-
 
 @media only screen and (min-width: 600px) {
   .insta > ul {
@@ -194,10 +205,9 @@ h2 {
     width: 33.333%;
   }
 
-  .insta-list > li:nth-child(n+7) {
-  display: block;
-}
-
+  .insta-list > li:nth-child(n + 7) {
+    display: block;
+  }
 
   .insta > ul > li:nth-child(3n + 1) {
     padding: 0.5em 0.5em 0.5em 0;
@@ -230,6 +240,10 @@ h2 {
 }
 
 @media only screen and (min-width: 1024px) {
+  .insta > p {
+    font-size: 0.6em;
+  }
+
   #blog-list {
     margin: 0;
   }

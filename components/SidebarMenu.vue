@@ -42,6 +42,10 @@
     transform: translateX(-50%) rotate(270deg);
   }
 
+    .sidebar > ul > li:nth-child(1) {
+margin-top: 28vh;
+    }
+
   a {
     font-size: 16px;
     color: #222;
