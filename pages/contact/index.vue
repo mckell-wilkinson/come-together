@@ -4,7 +4,7 @@
     <div class="content fade-in">
       <div class="contact">
         <h1>Whatever the reason is drop a line here:</h1>
-        <form name="contact" method="POST" action="contact/thanks" netlify>
+        <form name="contact" action="contact/thanks" netlify>
           <p>
             <label>Name<input type="text" name="person"/></label>
           </p>
