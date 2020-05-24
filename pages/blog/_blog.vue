@@ -34,7 +34,7 @@ export default {
     SideBarMenu,
     SideBarSocial
   },
-  head() {
+    head() {
     return {
       title: `Come Together | ${this.blogPost.title}`,
       meta: [
@@ -42,7 +42,8 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: `${this.blogPost.description}`
+          content:
+            `${this.blogPost.description}`
         }
       ]
     };
@@ -59,7 +60,15 @@ img {
   margin-bottom: 1em;
 }
 
+@media only screen and (min-width: 1024px) {
+  .content {
+    width: 60%;
+    margin: 0 auto;
+  }
 
-
+  .blog > .blog-body > p {
+    font-size: 0.7em !important;
+  }
+}
 
 </style>
