@@ -70,30 +70,46 @@ export const actions = {
       /\.json$/
     );
 
-    let blogPosts = files.keys().map(key => {
-      let res = files(key);
-      res.slug = key.slice(2, -5);
-      return res;
-    });
+    console.log(files);
 
-    let eventPosts = eventFiles.keys().map(key => {
-      let result = eventFiles(key);
-      result.slug = key.slice(2, -5);
-      return result;
-    });
+    if (files) {
+      let blogPosts = files.keys().map(key => {
+        let res = files(key);
+        res.slug = key.slice(2, -5);
+        return res;
+      });
 
-    //sort newest published first
+      blogPosts.sort(function(a, b) {
+        return new Date(b.date) - new Date(a.date);
+      });
 
-    blogPosts.sort(function(a, b) {
-      return new Date(b.date) - new Date(a.date);
-    });
+      await commit("setBlogPosts", blogPosts);
+    }
 
-    //sort soonest event first
+    if (eventFiles) {
+
+      let eventPosts = eventFiles.keys().map(key => {
+        let result = eventFiles(key);
+        result.slug = key.slice(2, -5);
+        return result;
+      });
+  
+          //sort soonest event first
     eventPosts.sort(function(a, b) {
       return new Date(a.eventdate) - new Date(b.eventdate);
     });
 
-    await commit("setBlogPosts", blogPosts);
     await commit("setEventPosts", eventPosts);
+
+    }
+
+
+
+
+    //sort newest published first
+
+ 
+
+
   }
 };
