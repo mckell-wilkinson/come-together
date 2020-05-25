@@ -31,7 +31,6 @@
         </ul>
       </div>
       <h2><nuxt-link :to="`blog/`">Blogs</nuxt-link></h2>
-       <div v-if="blogPost.length > 0">
       <ul id="blog-list">
         <!-- Limits number of blogposts displayed to three -->
         <li
@@ -61,10 +60,6 @@
           </div>
         </li>
       </ul>
-       </div>
-       <div v-else>
-         <p>Sorry we haven't published any blogs yet!</p>
-       </div>
     </div>
 
     <Footer />

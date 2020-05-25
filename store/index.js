@@ -60,48 +60,40 @@ export const actions = {
   async nuxtServerInit({ commit }) {
     let files = await require.context(
       "~/assets/content/blog/",
-      true,
+      false,
       /\.json$/
     );
 
     let eventFiles = await require.context(
       "~/assets/content/event/",
-      true,
+      false,
       /\.json$/
     );
 
-    console.log(eventFiles);
+    let blogPosts = files.keys().map(key => {
+      let res = files(key);
+      res.slug = key.slice(2, -5);
+      return res;
+    });
 
+    let eventPosts = eventFiles.keys().map(key => {
+      let result = eventFiles(key);
+      result.slug = key.slice(2, -5);
+      return result;
+    });
 
-      let blogPosts = files.keys().map(key => {
-        let res = files(key);
-        res.slug = key.slice(2, -5);
-        return res;
-      });
+    //sort newest published first
 
-      blogPosts.sort(function(a, b) {
-        return new Date(b.date) - new Date(a.date);
-      });
+    blogPosts.sort(function(a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
 
-      await commit("setBlogPosts", blogPosts);
-    
-
-
-
-      let eventPosts = eventFiles.keys().map(key => {
-        let result = eventFiles(key);
-        result.slug = key.slice(2, -5);
-        return result;
-      });
-  
-          //sort soonest event first
+    //sort soonest event first
     eventPosts.sort(function(a, b) {
       return new Date(a.eventdate) - new Date(b.eventdate);
     });
 
+    await commit("setBlogPosts", blogPosts);
     await commit("setEventPosts", eventPosts);
-
-    }
-
-
+  }
 };

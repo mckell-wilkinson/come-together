@@ -3,8 +3,7 @@
     <Header />
     <div class="content">
       <div class="blog">
-         <div v-if="blogs.length > 0">
-        <ul id="blog-list">         
+        <ul id="blog-list">
           <!-- Limits number of blogposts displayed to three -->
           <li
             class="blog-item fade-in"
@@ -33,10 +32,6 @@
             </div>
           </li>
         </ul>
-         </div>
-         <div v-else>
-           <h2>Sorry we haven't published any blogs yet!</h2>
-         </div>
         <button
           id="more-blogs"
           class="more-blogs hide"
