@@ -4,7 +4,11 @@
       <div class="social-container">
         <ul>
           <li>
-             <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/cometogethercollective/">
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://www.instagram.com/cometogethercollective/"
+            >
               <img
                 class="social-logo"
                 src="/img/assets/instagram-black.svg"
@@ -13,7 +17,11 @@
             </a>
           </li>
           <li>
-            <a target="_blank" rel="noreferrer noopener" href="https://www.facebook.com/pages/category/Community/Come-Together-Collective-110538887071305/">
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://www.facebook.com/pages/category/Community/Come-Together-Collective-110538887071305/"
+            >
               <img
                 class="social-logo"
                 src="/img/assets/facebook.svg"
@@ -63,7 +71,6 @@ export default {
 </script>
 
 <style scoped>
-
 .content {
   margin-top: 1.5em;
 }

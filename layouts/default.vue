@@ -5,28 +5,26 @@
 </template>
 
 <style>
-
 @font-face {
-  font-family: 'Corben';
+  font-family: "Corben";
   font-weight: bold;
-  src: url('~static/fonts/Corben-Bold.ttf');
+  src: url("~static/fonts/Corben-Bold.ttf");
 }
 
-
 @font-face {
-  font-family: 'Corben';
+  font-family: "Corben";
   font-weight: normal;
-  src: url('~static/fonts/Corben-Regular.ttf');
+  src: url("~static/fonts/Corben-Regular.ttf");
 }
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: normal;
-  src: url('~static/fonts/Montserrat-Medium.ttf');
+  src: url("~static/fonts/Montserrat-Medium.ttf");
 }
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: bold;
-  src: url('~static/fonts/Montserrat-Bold.ttf');
+  src: url("~static/fonts/Montserrat-Bold.ttf");
 }
 
 @keyframes fadeIn {
@@ -40,7 +38,6 @@
   }
 }
 
-
 .fade-in {
   animation: fadeIn 1s;
 }
@@ -53,7 +50,9 @@
   width: 100%;
 }
 
-body, li, p {
+body,
+li,
+p {
   font-family: "Montserrat", sans-serif;
   background: #fff;
   color: #222;
@@ -73,15 +72,22 @@ a {
 }
 
 a:hover {
-  color: #E62F20;
+  color: #e62f20;
 }
 
-h1, h2, h3, h4, h5, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   padding: 0;
   margin: 0.5em 0;
 }
 
-li, ul, p {
+li,
+ul,
+p {
   background: transparent;
 }
 
@@ -95,25 +101,33 @@ li, ul, p {
 }
 
 @media only screen and (min-width: 400px) {
-  body, li, p {
+  body,
+  li,
+  p {
     font-size: 18px;
   }
 }
 
 @media only screen and (min-width: 600px) {
-  body, li, p {
+  body,
+  li,
+  p {
     font-size: 20px;
   }
 }
 
 @media only screen and (min-width: 900px) {
-  body, li, p {
+  body,
+  li,
+  p {
     font-size: 22px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  body, li, p {
+  body,
+  li,
+  p {
     font-size: 24px;
   }
 
@@ -123,13 +137,17 @@ li, ul, p {
 }
 
 @media only screen and (min-width: 1200px) {
-  body, li, p {
+  body,
+  li,
+  p {
     font-size: 28px;
   }
 }
 
 @media only screen and (min-width: 1400px) {
-  body, li, p {
+  body,
+  li,
+  p {
     font-size: 32px;
   }
 
@@ -139,40 +157,53 @@ li, ul, p {
 }
 
 @media only screen and (min-width: 1600px) {
-  body, li, p {
+  body,
+  li,
+  p {
     font-size: 34px;
   }
 }
 
 @media only screen and (min-width: 1800px) {
-  body, li, p {
+  body,
+  li,
+  p {
     font-size: 36px;
   }
 }
 
 @media only screen and (min-width: 2000px) {
-  body, li, p {
+  body,
+  li,
+  p {
     font-size: 38px;
   }
 }
 
 @media only screen and (min-width: 3000px) {
-  body, li, p {
+  body,
+  li,
+  p {
     font-size: 60px;
   }
 }
 
-@media only screen and (min-width: 1024px) {
+/*  */
 
-  .blog > .blog-body > p, .blog > .blog-body > ul > li, .blog > .blog-body > ol > li {
+@media only screen and (min-width: 1024px) {
+  .blog > .blog-body > p,
+  .blog > .blog-body > ul > li,
+  .blog > .blog-body > ol > li {
     font-size: 0.7em;
   }
 
-    .blog > .blog-body > ul > li, .blog > .blog-body > ol > li {
+  .blog > .blog-body > ul > li,
+  .blog > .blog-body > ol > li {
     margin: 0.5em 0 0.5em 5%;
   }
 
-      .blog > .blog-body > ul, .blog > .blog-body > ol {
+  .blog > .blog-body > ul,
+  .blog > .blog-body > ol {
     margin: 1em 0;
   }
 }
@@ -241,7 +272,8 @@ li, ul, p {
   border: solid 5px #e62f20;
 }
 
-.button, button {
+.button,
+button {
   background: none;
   border: solid 5px #222;
   color: #222;
@@ -256,13 +288,12 @@ li, ul, p {
   text-decoration: none;
 }
 
-.button:hover, button:hover {
+.button:hover,
+button:hover {
   color: #fff;
   background-color: #e62f20;
   border: solid 5px #e62f20;
 }
-
-
 
 @media only screen and (min-width: 1024px) {
   #blog-list > li {

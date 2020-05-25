@@ -1,8 +1,13 @@
 <template>
-   <nuxt-link :to="`/`"><img class="logo" src="/img/assets/logo.png" alt="Come Together logo" data-not-lazy/></nuxt-link>
+  <nuxt-link :to="`/`"
+    ><img
+      class="logo"
+      src="/img/assets/logo.png"
+      alt="Come Together logo"
+      data-not-lazy
+  /></nuxt-link>
 </template>
 <style scoped>
-
 .logo {
   width: 50px;
   position: absolute;
@@ -31,7 +36,6 @@
     margin-left: 30px;
   }
 }
-
 
 @media only screen and (min-width: 3000px) {
   .logo {

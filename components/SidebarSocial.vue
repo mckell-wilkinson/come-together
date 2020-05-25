@@ -2,7 +2,11 @@
   <div class="sidebar">
     <ul>
       <li>
-        <nuxt-link  v-bind:class="{ 'active': $route.path.includes('/contact') }" to="/contact">CONTACT&SOCIAL</nuxt-link>
+        <nuxt-link
+          v-bind:class="{ active: $route.path.includes('/contact') }"
+          to="/contact"
+          >CONTACT&SOCIAL</nuxt-link
+        >
       </li>
     </ul>
   </div>

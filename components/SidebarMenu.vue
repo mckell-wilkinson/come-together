@@ -2,18 +2,29 @@
   <div class="sidebar">
     <ul>
       <li>
-        <nuxt-link  v-bind:class="{ 'active': $route.path.includes('/blog') }" to="/blog">BLOG</nuxt-link>
+        <nuxt-link
+          v-bind:class="{ active: $route.path.includes('/blog') }"
+          to="/blog"
+          >BLOG</nuxt-link
+        >
       </li>
       <li>
-        <nuxt-link  v-bind:class="{ 'active': $route.path == '/about' }" to="/about">ABOUT</nuxt-link>
+        <nuxt-link
+          v-bind:class="{ active: $route.path == '/about' }"
+          to="/about"
+          >ABOUT</nuxt-link
+        >
       </li>
       <li>
-        <nuxt-link  v-bind:class="{ 'active': $route.path == '/events' }" to="/events">EVENTS</nuxt-link>
+        <nuxt-link
+          v-bind:class="{ active: $route.path == '/events' }"
+          to="/events"
+          >EVENTS</nuxt-link
+        >
       </li>
     </ul>
   </div>
 </template>
-
 
 <style scoped>
 .sidebar {
@@ -42,9 +53,9 @@
     transform: translateX(-50%) rotate(270deg);
   }
 
-    .sidebar > ul > li:nth-child(1) {
-margin-top: 28vh;
-    }
+  .sidebar > ul > li:nth-child(1) {
+    margin-top: 28vh;
+  }
 
   a {
     font-size: 16px;
@@ -56,8 +67,6 @@ margin-top: 28vh;
     color: #e62f20;
   }
 }
-
-
 
 @media only screen and (min-width: 2000px) {
   a {

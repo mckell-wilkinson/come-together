@@ -1,17 +1,17 @@
 <template>
-<div>
+  <div>
     <Header />
-<div class="content">
-    <div class="thanks">
+    <div class="content">
+      <div class="thanks">
         <h1>Thanks for getting in touch</h1>
         <p>We'll be in touch soon 😃</p>
-        </div> 
-</div>
+      </div>
+    </div>
 
-<Footer />
-<sidebar />
-<sidebarSocial />
-</div>
+    <Footer />
+    <sidebar />
+    <sidebarSocial />
+  </div>
 </template>
 
 <script>
@@ -27,27 +27,22 @@ export default {
     sidebar,
     sidebarSocial
   },
-      head() {
+  head() {
     return {
       title: `Come Together | Thanks for getting in touch`,
       meta: [
-
         {
           hid: "description",
           name: "description",
-          content:
-            "Thanks for getting in touch"
+          content: "Thanks for getting in touch"
         }
       ]
     };
-  },
+  }
 };
-
 </script>
 
-
 <style scoped>
-
 footer {
   margin-top: 60vh;
   position: absolute;
@@ -55,7 +50,7 @@ footer {
 }
 
 h1 {
-    text-align: left;
+  text-align: left;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -64,5 +59,4 @@ h1 {
     margin: 0 auto;
   }
 }
-
 </style>

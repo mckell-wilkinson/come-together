@@ -3,7 +3,12 @@
     <Header />
     <div class="content">
       <h1 class="come-together fade-in">Come Together Collective</h1>
-      <img class="roundel fade-in" src="/img/assets/roundel.svg" alt="Come Together design" data-not-lazy/>
+      <img
+        class="roundel fade-in"
+        src="/img/assets/roundel.svg"
+        alt="Come Together design"
+        data-not-lazy
+      />
       <h2 class="intro fade-in">
         We’re an art collective based in Manchester. Our main objective is, as
         the name suggests, to bring people together.

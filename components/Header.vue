@@ -30,19 +30,39 @@
       <!-- <img class="roundel" src="/img/assets/roundel.svg" alt="" /> -->
       <ul class="hide mobile-items fade-in" id="mobile-items">
         <li>
-          <nuxt-link to="/"><h3 v-bind:class="{ 'active': $route.path == '/' }">HOME</h3></nuxt-link>
-        </li>
-         <li>
-          <nuxt-link to="/blog"><h3 v-bind:class="{ 'active': $route.path.includes('/blog') }">BLOG</h3></nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/about"><h3 v-bind:class="{ 'active': $route.path == '/about' }">ABOUT</h3></nuxt-link>
+          <nuxt-link to="/"
+            ><h3 v-bind:class="{ active: $route.path == '/' }">
+              HOME
+            </h3></nuxt-link
+          >
         </li>
         <li>
-          <nuxt-link to="/events"><h3 v-bind:class="{ 'active': $route.path == '/events' }">EVENTS</h3></nuxt-link>
+          <nuxt-link to="/blog"
+            ><h3 v-bind:class="{ active: $route.path.includes('/blog') }">
+              BLOG
+            </h3></nuxt-link
+          >
         </li>
         <li>
-          <nuxt-link to="/contact"><h3 v-bind:class="{ 'active': $route.path.includes('/contact') }">CONTACT & SOCIAL</h3></nuxt-link>
+          <nuxt-link to="/about"
+            ><h3 v-bind:class="{ active: $route.path == '/about' }">
+              ABOUT
+            </h3></nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link to="/events"
+            ><h3 v-bind:class="{ active: $route.path == '/events' }">
+              EVENTS
+            </h3></nuxt-link
+          >
+        </li>
+        <li>
+          <nuxt-link to="/contact"
+            ><h3 v-bind:class="{ active: $route.path.includes('/contact') }">
+              CONTACT & SOCIAL
+            </h3></nuxt-link
+          >
         </li>
       </ul>
     </div>
@@ -78,7 +98,7 @@ export default {
 }
 
 .active {
-opacity: 0.5;
+  opacity: 0.5;
 }
 .content {
   margin-top: 0;
