@@ -60,19 +60,19 @@ export const actions = {
   async nuxtServerInit({ commit }) {
     let files = await require.context(
       "~/assets/content/blog/",
-      false,
+      true,
       /\.json$/
     );
 
     let eventFiles = await require.context(
       "~/assets/content/event/",
-      false,
+      true,
       /\.json$/
     );
 
     console.log(eventFiles);
 
-    if (files.keys == "[Function: webpackContextKeys]") {
+
       let blogPosts = files.keys().map(key => {
         let res = files(key);
         res.slug = key.slice(2, -5);
@@ -84,9 +84,9 @@ export const actions = {
       });
 
       await commit("setBlogPosts", blogPosts);
-    }
+    
 
-    if (eventFiles.keys == "[Function: webpackContextKeys]") {
+
 
       let eventPosts = eventFiles.keys().map(key => {
         let result = eventFiles(key);
@@ -104,12 +104,4 @@ export const actions = {
     }
 
 
-
-
-    //sort newest published first
-
- 
-
-
-  }
 };
