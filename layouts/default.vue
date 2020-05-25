@@ -100,6 +100,16 @@ p {
   margin-top: 4em;
 }
 
+.blog > .blog-body > ul > li,
+.blog > .blog-body > ol > li {
+  margin: 0.5em 0 0.5em 2em;
+}
+
+.blog > .blog-body > ul,
+.blog > .blog-body > ol {
+  margin: 1em 0;
+}
+
 @media only screen and (min-width: 400px) {
   body,
   li,
@@ -188,23 +198,11 @@ p {
   }
 }
 
-/*  */
-
 @media only screen and (min-width: 1024px) {
   .blog > .blog-body > p,
   .blog > .blog-body > ul > li,
   .blog > .blog-body > ol > li {
     font-size: 0.7em;
-  }
-
-  .blog > .blog-body > ul > li,
-  .blog > .blog-body > ol > li {
-    margin: 0.5em 0 0.5em 5%;
-  }
-
-  .blog > .blog-body > ul,
-  .blog > .blog-body > ol {
-    margin: 1em 0;
   }
 }
 

@@ -29,7 +29,7 @@
   .sidebar > ul {
     position: fixed;
     top: 50px;
-    left: 95vw;
+    right: 70px;
     list-style-type: none;
     width: 0;
   }

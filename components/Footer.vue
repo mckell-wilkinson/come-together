@@ -13,6 +13,7 @@
                 class="social-logo"
                 src="/img/assets/instagram-black.svg"
                 alt="Instagram logo"
+                data-not-lazy
               />
             </a>
           </li>
@@ -26,6 +27,7 @@
                 class="social-logo"
                 src="/img/assets/facebook.svg"
                 alt="Facebook logo"
+                data-not-lazy
               />
             </a>
           </li>
@@ -35,6 +37,7 @@
                 class="social-logo"
                 src="/img/assets/mail.svg"
                 alt="Email icon"
+                data-not-lazy
               />
             </nuxt-link>
           </li>
@@ -75,7 +78,7 @@ export default {
   margin-top: 1.5em;
 }
 footer {
-  margin: 3em auto 0;
+  margin: 6em auto 0;
   background: #f6f2f1;
   padding: 1em 0;
 }

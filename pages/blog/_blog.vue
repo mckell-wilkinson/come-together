@@ -62,7 +62,7 @@ img {
 @media only screen and (min-width: 1024px) {
   .content {
     width: 60%;
-    margin: 0 auto;
+    margin: 4em auto 0;
   }
 
   .blog > .blog-body > p {

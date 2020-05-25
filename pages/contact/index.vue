@@ -4,7 +4,7 @@
     <div class="content fade-in">
       <div class="contact">
         <h1>Whatever the reason is drop a line here:</h1>
-        <hr />
+
         <ul>
           <li>
             <img src="/img/assets/instagram-black.svg" data-not-lazy />
@@ -17,7 +17,7 @@
               >
             </p>
           </li>
-          <hr />
+
           <li>
             <img src="/img/assets/facebook.svg" data-not-lazy />
             <p class="bold">
@@ -29,7 +29,6 @@
               >
             </p>
           </li>
-          <hr />
         </ul>
         <form name="contact" method="post" action="contact/thanks" netlify>
           <input type="hidden" name="form-name" value="contact" />
@@ -133,15 +132,16 @@ li > p {
 li {
   display: flex;
   padding: 1em 0;
+  border-top: solid 1px rgb(220, 220, 220);
 }
 
+li:nth-child(2) {
+  border-bottom: solid 1px rgb(220, 220, 220);
+}
 ul {
   margin-bottom: 4em;
 }
 
-hr {
-  border-color: 1px solid rgb(226, 226, 226);
-}
 @media only screen and (min-width: 1024px) {
   .contact {
     width: 60%;
