@@ -93,7 +93,7 @@ export const actions = {
       return new Date(a.eventdate) - new Date(b.eventdate);
     });
     
-    let eventPostRemoved = eventPosts.shift();
+    eventPosts.shift();
 
     await commit("setBlogPosts", blogPosts);
     await commit("setEventPosts", eventPosts);
