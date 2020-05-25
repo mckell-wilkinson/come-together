@@ -3,7 +3,7 @@
     <Header />
     <div class="content">
       <div class="event">
-        <div v-if="event.length > 0">
+        <div v-if="event.length">
           <ul id="event-list">
             <!-- Limits number of eventposts displayed to three -->
             <li
