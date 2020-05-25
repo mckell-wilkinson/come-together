@@ -201,7 +201,7 @@ p {
 @media only screen and (min-width: 1024px) {
   .blog > .blog-body > p,
   .blog > .blog-body > ul > li,
-  .blog > .blog-body > ol > li {
+  .blog > .blog-body > ol > li, .event-description {
     font-size: 0.7em;
   }
 }
