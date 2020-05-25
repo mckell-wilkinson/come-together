@@ -21,6 +21,7 @@ collections:
       - { label: 'Description', name: 'description', widget: 'string', required: true }
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }
       - { label: "Featured image", name: "thumbnail", widget: "image", required: true}
+      - { label: 'Image alt name - good for SEO', name: 'alt', widget: 'string', required: true}
 
 
   - name: 'event'
@@ -28,13 +29,13 @@ collections:
     folder: 'assets/content/event'
     create: true
     format: 'json'
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Publish date', name: 'date', widget: 'datetime', required: true }
       - { label: "Featured image", name: "thumbnail", widget: "image", required: true}
+      - { label: 'Image alt name - good for SEO', name: 'alt', widget: 'string', required: true}
       - { label: 'Event start date and time', name: 'eventdate', widget: 'datetime', required: true }
       - { label: 'Location', name: 'location', widget: 'string', required: true }
       - { label: 'Link to eventbrite', name: 'url', widget: 'string', required: true }
