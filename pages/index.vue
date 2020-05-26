@@ -16,7 +16,7 @@
         </p>
         <ul class="insta-list">
           <li
-            class="insta-image fade-in"
+            class="insta-image"
             v-for="(insta, index) in instaImages"
             :key="index"
           >
@@ -25,7 +25,7 @@
               rel="noreferrer noopener"
               href="https://www.instagram.com/cometogethercollective/"
             >
-              <img :src="insta" alt="Follow us on instagram" />
+              <img class="fade-in" :src="insta" alt="Follow us on instagram" />
             </a>
           </li>
         </ul>
@@ -43,7 +43,7 @@
             <ul>
               <li>
                 <nuxt-link :to="`blog/${blog.slug}`"
-                  ><img :src="blog.thumbnail"
+                  ><img class="fade-in" :src="blog.thumbnail"
                 /></nuxt-link>
               </li>
               <li>

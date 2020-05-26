@@ -38,7 +38,7 @@
             <div class="person">
               <h3>{{ people.name }}</h3>
               <p>{{ people.title }}</p>
-              <img :src="people.image" :alt="people.name" />
+              <img class="fade-in" :src="people.image" :alt="people.name" />
             </div>
           </li>
         </ul>

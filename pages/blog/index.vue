@@ -15,7 +15,7 @@
               <ul>
                 <li class="blog-img">
                   <nuxt-link :to="`blog/${blog.slug}`"
-                    ><img :src="blog.thumbnail"
+                    ><img class="fade-in" :src="blog.thumbnail"
                   /></nuxt-link>
                 </li>
                 <li>
