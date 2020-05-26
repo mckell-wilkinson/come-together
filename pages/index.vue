@@ -43,7 +43,7 @@
             <ul>
               <li>
                 <nuxt-link :to="`blog/${blog.slug}`"
-                  ><img class="fade-in" :src="blog.thumbnail"
+                  ><img class="fade-in" :alt="`${blog.alt}`" :src="blog.thumbnail"
                 /></nuxt-link>
               </li>
               <li>

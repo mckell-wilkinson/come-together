@@ -3,40 +3,44 @@
     <Header />
     <div class="content">
       <div class="blog">
-         <div v-if="blogs.length > 0">
-        <ul id="blog-list">         
-          <!-- Limits number of blogposts displayed to three -->
-          <li
-            class="blog-item fade-in"
-            v-for="(blog, index) in blogs"
-            :key="index"
-          >
-            <div class="blog-content">
-              <ul>
-                <li class="blog-img">
-                  <nuxt-link :to="`blog/${blog.slug}`"
-                    ><img class="fade-in" :src="blog.thumbnail"
-                  /></nuxt-link>
-                </li>
-                <li>
-                  <h4>
-                    <nuxt-link :to="`blog/${blog.slug}`">{{
-                      blog.title
-                    }}</nuxt-link>
-                  </h4>
-                  <p class="blog-description">{{ blog.description }}</p>
-                  <p class="blog-date">
-                    {{ new Date(blog.date).toDateString() }}
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-         </div>
-         <div v-else>
-           <h2>Sorry we haven't published any blogs yet!</h2>
-         </div>
+        <div v-if="blogs.length > 0">
+          <ul id="blog-list">
+            <!-- Limits number of blogposts displayed to three -->
+            <li
+              class="blog-item fade-in"
+              v-for="(blog, index) in blogs"
+              :key="index"
+            >
+              <div class="blog-content">
+                <ul>
+                  <li class="blog-img">
+                    <nuxt-link :to="`blog/${blog.slug}`"
+                      ><img
+                        class="fade-in"
+                        :src="blog.thumbnail"
+                        :alt="`${blog.alt}`"
+                      />
+                    </nuxt-link>
+                  </li>
+                  <li>
+                    <h4>
+                      <nuxt-link :to="`blog/${blog.slug}`">{{
+                        blog.title
+                      }}</nuxt-link>
+                    </h4>
+                    <p class="blog-description">{{ blog.description }}</p>
+                    <p class="blog-date">
+                      {{ new Date(blog.date).toDateString() }}
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div v-else>
+          <h2>Sorry we haven't published any blogs yet!</h2>
+        </div>
         <button
           id="more-blogs"
           class="more-blogs hide"

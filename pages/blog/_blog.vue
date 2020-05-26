@@ -4,7 +4,7 @@
     <div class="content">
       <article class="blog fade-in">
         <h1 class="blog-title">{{ blogPost.title }}</h1>
-        <img class="fade-in" :src="blogPost.thumbnail" />
+        <img class="fade-in" :src="blogPost.thumbnail" :alt="`${blogPost.alt}`"/>
         <div class="blog-body" v-html="$md.render(blogPost.body)" />
       </article>
     </div>

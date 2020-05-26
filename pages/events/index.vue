@@ -15,7 +15,7 @@
                 <ul>
                   <li class="event-img">
                     <a :href="`${event.url}`">
-                      <img class="fade-in" :src="event.thumbnail"/></a>
+                      <img class="fade-in" :alt="`${event.alt}`" :src="event.thumbnail"/></a>
                   </li>
                   <li>
                     <h4>
