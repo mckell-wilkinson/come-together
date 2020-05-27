@@ -16,6 +16,7 @@
     "axios": "^0.19.2",
     "front-matter-markdown": "^0.4.4",
     "frontmatter-markdown-loader": "^3.3.0",
+    "netlify-plugin-minify-html": "^0.2.2",
     "nuxt": "^2.0.0",
     "nuxt-lazy-load": "^1.2.4"
   },
