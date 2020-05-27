@@ -43,3 +43,12 @@
   [plugins.inputs.minifierOptions]
     removeComments = true
     collapseInlineTagWhitespace = false
+
+
+    # Config for the Netlify Build Plugin: create sitemap
+
+    [[plugins]]
+package = "@netlify/plugin-sitemap"
+
+  [plugins.inputs]
+  buildDir = "public"
