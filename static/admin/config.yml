@@ -21,6 +21,7 @@ collections:
       - { label: 'Image alt tag', name: 'alt', widget: 'string', required: true}
       - { label: 'Publish date', name: 'date', widget: 'datetime', required: true }
       - { label: 'Description', name: 'description', widget: 'string', required: true }
+      - { label: 'Description', name: 'description', widget: 'select', options: ["Dan", "Ellie", "Lanks", "Roisin"]}
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }
 
 
