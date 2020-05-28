@@ -4,5 +4,6 @@
   "description": "We hope you like it",
   "body": "Lorem ipsum sit dolor amet",
   "thumbnail": "/img/website.jpg",
-  "alt": "Coding a website"
+  "alt": "Coding a website",
+  "author": "Dan"
 }
