@@ -4,9 +4,85 @@
     <div class="content">
       <article class="blog fade-in">
         <h1 class="blog-title">{{ blogPost.title }}</h1>
-        <img class="fade-in" :src="blogPost.thumbnail" :alt="`${blogPost.alt}`"/>
+        <img
+          class="fade-in"
+          :src="blogPost.thumbnail"
+          :alt="`${blogPost.alt}`"
+        />
         <div class="blog-body" v-html="$md.render(blogPost.body)" />
+        <div class="addthis_inline_share_toolbox"></div>
       </article>
+
+
+<!-- SOCIAL SHARE  -->
+
+<div class="share-container">
+  <h5>Please share:</h5>
+<div class="share-buttons">
+
+      <!-- TWITTER -->
+      <ShareNetwork
+        network="Twitter"
+        :url="`https://cometogethercollective.co.uk/${$route.fullPath}`"
+        :title="`${blogPost.title}...${blogPost.description}`"
+        hashtags="cometogether"
+      >
+       <img src="~/static/img/assets/twitter-blue.svg" alt="" class="share-icon twitter">
+      </ShareNetwork>
+      <!-- FACEBOOK -->
+      <ShareNetwork
+        network="Facebook"
+        :url="`https://cometogethercollective.co.uk/${$route.fullPath}`"
+        :title="`${blogPost.title}...${blogPost.description}`"
+        :description="`${blogPost.title}...${blogPost.description}`"
+        :quote="`${blogPost.title}...${blogPost.description}`"
+        hashtags="cometogether"
+      >
+        <img src="~/static/img/assets/facebook.png" alt="" class="share-icon facebook">
+      </ShareNetwork>
+
+
+      <!-- PINTEREST  -->
+      <ShareNetwork
+        network="Pinterest"
+        :url="`https://cometogethercollective.co.uk/${$route.fullPath}`"
+        :title="`${blogPost.title}...${blogPost.description}`"
+        :media="`${blogPost.thumbnail}`"
+      >
+        <img src="~/static/img/assets/pinterest.svg" alt="" class="share-icon pinterest">
+      </ShareNetwork>
+
+      <!-- EMAIL  -->
+      <ShareNetwork
+        network="Email"
+        :url="`https://cometogethercollective.co.uk/${$route.fullPath}`"
+        :title="`${blogPost.title}...${blogPost.description}`"
+        :description="`${blogPost.title}...${blogPost.description}`"
+      >
+       <img src="~/static/img/assets/mail.svg" alt="" class="share-icon email">
+      </ShareNetwork>
+
+      <!-- SMS  -->
+      <ShareNetwork
+        network="SMS"
+        :url="`https://cometogethercollective.co.uk/${$route.fullPath}`"
+        :title="`${blogPost.title}...${blogPost.description}`"
+        :description="`${blogPost.title}...${blogPost.description}`"
+      >
+        <img src="~/static/img/assets/smartphone.svg" alt="" class="share-icon sms">
+      </ShareNetwork>
+
+      <!-- Whatsapp  -->
+      <ShareNetwork
+        network="WhatsApp"
+        :url="`https://cometogethercollective.co.uk/${$route.fullPath}`"
+        :title="`${blogPost.title}...${blogPost.description}`"
+        :description="`${blogPost.title}...${blogPost.description}`"
+      >
+        <img src="~/static/img/assets/whatsapp.svg" alt="" class="share-icon whatsapp">
+      </ShareNetwork>
+</div>
+</div>
     </div>
     <SideBarMenu />
     <SideBarSocial />
@@ -59,6 +135,30 @@ img {
   margin-bottom: 1em;
 }
 
+.share-container {
+  margin-top: 2em;
+  text-align: left;
+}
+
+
+.share-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1em;
+  max-width: 700px;
+
+}
+
+
+.share-icon {
+  width: 37px;
+  cursor: pointer;
+}
+
+.share-icon.facebook, .share-icon.pinterest, .share-icon.sms, .share-icon.email {
+  width: 25px;
+}
 @media only screen and (min-width: 1024px) {
   .content {
     width: 60%;
