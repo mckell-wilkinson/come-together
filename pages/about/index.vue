@@ -6,13 +6,13 @@
         <ul class="about-intro">
           <li><h1>About</h1></li>
           <li>
-            <p>
-              <strong>
+            <p class="bold">
+              
                 We are an arts and community events collective based in
                 Chorlton, Manchester. Our mission is to offer a platform to
                 artists and performers to exhibit their work while bringing
                 people together to share temporary creative spaces.
-              </strong>
+            
             </p>
             <p>
               Our DIY events see residential homes and local venues undergo
@@ -89,6 +89,11 @@ export default {
 </script>
 
 <style scoped>
+
+.bold {
+  font-weight: bold;
+}
+
 li {
   list-style-type: none;
 }

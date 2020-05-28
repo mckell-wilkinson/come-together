@@ -38,6 +38,7 @@
           class="blog-item fade-in"
           v-for="(blog, index) in blogPost"
           :key="index"
+          
         >
           <div class="blog-content">
             <ul>
