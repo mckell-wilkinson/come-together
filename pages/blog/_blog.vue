@@ -12,54 +12,6 @@
         <div class="blog-body" v-html="$md.render(blogPost.body)" />
         <div class="addthis_inline_share_toolbox"></div>
       </article>
-      <div v-if="blogPost.author === 'Dan'" class="author">
-        <div class="img-container">
-          <img
-            src="~/static/img/assets/dan-thumbnail.jpg"
-            alt="Author of this article Dan"
-          />
-        </div>
-        <div class="author-container">
-          <h5>Written by Dan</h5>
-          <p>Developer</p>
-        </div>
-      </div>
-      <div v-else-if="blogPost.author === 'Ellie'" class="author">
-        <div class="img-container">
-          <img
-            src="~/static/img/assets/ellie-thumbnail.jpg"
-            alt="Author of this article Ellie"
-          />
-        </div>
-        <div class="author-container">
-          <h5>Written by Ellie</h5>
-          <p>Visual Branding and Technical Director</p>
-        </div>
-      </div>
-      <div v-else-if="blogPost.author === 'Lanks'" class="author">
-        <div class="img-container">
-          <img
-            src="~/static/img/assets/laura-thumbnail.jpg"
-            alt="Author of this article Lanks"
-          />
-        </div>
-        <div class="author-container">
-          <h5>Written by Lanks</h5>
-          <p>Project Manager</p>
-        </div>
-      </div>
-      <div v-else-if="blogPost.author === 'Roisin'" class="author">
-        <div class="img-container">
-          <img
-            src="~/static/img/assets/roisin-thumbnail.jpg"
-            alt="Author of this article Roisin"
-          />
-        </div>
-        <div class="author-container">
-          <h5>Written by Roisin</h5>
-          <p>Creative and Media Manager</p>
-        </div>
-      </div>
 
       <!-- SOCIAL SHARE  -->
 
@@ -152,6 +104,57 @@
           </ShareNetwork>
         </div>
       </div>
+
+      
+      <!-- AUTHORS  -->
+      <div v-if="blogPost.author === 'Dan'" class="author">
+        <div class="img-container">
+          <img
+            src="~/static/img/assets/dan-thumbnail.jpg"
+            alt="Author of this article Dan"
+          />
+        </div>
+        <div class="author-container">
+          <h5>Written by Dan</h5>
+          <p>Developer</p>
+        </div>
+      </div>
+      <div v-else-if="blogPost.author === 'Ellie'" class="author">
+        <div class="img-container">
+          <img
+            src="~/static/img/assets/ellie-thumbnail.jpg"
+            alt="Author of this article Ellie"
+          />
+        </div>
+        <div class="author-container">
+          <h5>Written by Ellie</h5>
+          <p>Visual Branding and Technical Director</p>
+        </div>
+      </div>
+      <div v-else-if="blogPost.author === 'Lanks'" class="author">
+        <div class="img-container">
+          <img
+            src="~/static/img/assets/laura-thumbnail.jpg"
+            alt="Author of this article Lanks"
+          />
+        </div>
+        <div class="author-container">
+          <h5>Written by Lanks</h5>
+          <p>Project Manager</p>
+        </div>
+      </div>
+      <div v-else-if="blogPost.author === 'Roisin'" class="author">
+        <div class="img-container">
+          <img
+            src="~/static/img/assets/roisin-thumbnail.jpg"
+            alt="Author of this article Roisin"
+          />
+        </div>
+        <div class="author-container">
+          <h5>Written by Roisin</h5>
+          <p>Creative and Media Manager</p>
+        </div>
+      </div>
     </div>
     <SideBarMenu />
     <SideBarSocial />
@@ -241,7 +244,7 @@ img {
 }
 
 .share-container {
-  margin-top: 2em;
+  margin-top: -1em;
   text-align: left;
 }
 
