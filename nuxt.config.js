@@ -16,7 +16,10 @@ export default {
         name: "description",
         content: process.env.npm_package_description || ""
       },
-      { property: 'og:image:secure_url', content: "https://cometogethercollective.co.uk/img/assets/og-img.jpg" || '' },
+      { property: 'og:image:secure_url', content: "https://cometogethercollective.co.uk/img/assets/og-img.jpg" },
+      { property: 'og:image:type', content: "image/jpeg" },
+      { property: 'og:image:width', content: "1200" },
+      { property: 'og:image:height', content: "630" },
       { property: 'og:type', content: "website"}
 
     ],
