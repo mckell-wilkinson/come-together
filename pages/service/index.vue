@@ -127,6 +127,19 @@ export default {
     Footer,
     SideBarMenu,
     SideBarSocial
+  },
+    head() {
+    return {
+      title: `Come Together Collective | Terms of Service`,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "Ts and Cs"
+        }
+      ]
+    };
   }
 };
 </script>

@@ -184,7 +184,7 @@ export default {
   },
   head() {
     return {
-      title: `Come Together | ${this.blogPost.title}`,
+      title: `Come Together Collective | ${this.blogPost.title}`,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {

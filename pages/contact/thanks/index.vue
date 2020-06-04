@@ -29,7 +29,7 @@ export default {
   },
   head() {
     return {
-      title: `Come Together | Thanks for getting in touch`,
+      title: `Come Together Collective | Thanks for getting in touch`,
       meta: [
         {
           hid: "description",

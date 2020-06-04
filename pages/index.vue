@@ -115,7 +115,7 @@ export default {
 
   head() {
     return {
-      title: `Come Together | Home`,
+      title: `Come Together Collective | Home`,
       meta: [
         {
           hid: "description",

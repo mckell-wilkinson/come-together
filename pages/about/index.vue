@@ -59,7 +59,7 @@ import sidebarSocial from "~/components/SidebarSocial";
 export default {
   head() {
     return {
-      title: `Come Together | About`,
+      title: `Come Together Collective | About`,
       meta: [
         {
           hid: "description",

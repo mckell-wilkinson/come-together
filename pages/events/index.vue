@@ -81,7 +81,7 @@ export default {
 
   head() {
     return {
-      title: `Come Together | Events`,
+      title: `Come Together Collective | Events`,
       meta: [
         {
           hid: "description",
