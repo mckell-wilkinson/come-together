@@ -3,7 +3,10 @@
     <Hero />
     <div class="content">
       <div class="insta">
+     
         <h2>Art, music & community</h2>
+           <p>
+We are an arts, music and community events collective based in Chorlton, Manchester. Our mission is to offer a platform to artists and performers to exhibit their work while bringing people together to share temporary creative spaces.</p>
         <p>
           <a
             target="_blank"
@@ -11,8 +14,7 @@
             href="https://www.instagram.com/cometogethercollective/"
             >Follow us on instagram</a
           >
-          to be the first to hear about all our latest events, get involved in
-          creating great art and become part of the Come Together Collective.
+          to be the first to hear about all our latest events.
         </p>
         <ul class="insta-list">
           <li
